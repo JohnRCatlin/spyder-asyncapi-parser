@@ -62,7 +62,7 @@ public class HTTPOperationBindingParserTest {
 
 	@Before
 	public void setUp() throws Exception {
-		System.out.println(rawModel);
+		//System.out.println(rawModel);
 		mapper = ObjectMapperFactory.forYaml();
 		rootNode = mapper.readTree(rawModel);
 	}
