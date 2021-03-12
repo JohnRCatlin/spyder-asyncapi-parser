@@ -1,0 +1,59 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+def group = 'engineer.asyncapi'
+def ver = '1.0.alpha-SNAPSHOT'
+def artifact = "spyder.parser"
+sourceCompatibility = '1.8'
+
+task javadocs(type: Javadoc) {
+	source = sourceSets.main.allJava
+}
+
+repositories {
+    mavenLocal()
+    maven { url "http://maven.springframework.org/release" }
+  	maven { url "http://maven.restlet.org" }
+  	mavenCentral()
+    maven { url "http://repo.maven.apache.org/maven2" }
+}
+
+javadoc {
+    options.overview = "src/main/java/overview.html"
+    options.docTitle = "Spyder AsyncAPI Parser (${ver})"
+    destinationDir = project.file("docs/javadoc")
+
+    failOnError = false
+}
+
+jar {
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        sourceSets.main.allSource
+    }
+}
+
+dependencies {
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.11.2'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.11.2'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.2'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.11.2'
+    implementation 'org.apache.commons:commons-lang3:3.11'
+    implementation 'commons-io:commons-io:2.7'
+  	implementation group: 'org.slf4j', name: 'slf4j-log4j12', version: '2.0.0-alpha1'
+    implementation 'org.yaml:snakeyaml:1.26'
+    testImplementation 'junit:junit:4.13'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = group
+            artifactId = artifact
+            version = ver
+            from(components.java)
+        }
+    }
+}

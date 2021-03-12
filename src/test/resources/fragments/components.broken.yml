@@ -1,0 +1,15 @@
+asyncapi: 2.0.0
+
+components:
+   schemas:
+   messages:
+   securitySchemes:
+   parameters:
+   correlationIds:
+   operationTraits:
+   messageTraits:
+   serverBindings:
+   channelBindings:
+   operationBindings:
+   messageBindings:
+   extensions:

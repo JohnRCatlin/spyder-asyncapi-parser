@@ -1,0 +1,14 @@
+asyncapi: 2.0.0
+
+servers:
+
+   dev:
+     url:
+     description:
+     protocol:
+     protocolVersion:
+     extensions:
+     security:
+     bindings:
+       
+        

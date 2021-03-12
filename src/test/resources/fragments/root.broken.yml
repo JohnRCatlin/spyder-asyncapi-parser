@@ -1,0 +1,11 @@
+asyncapi: 2.0.0
+id:
+info:
+servers:
+defaultContentType:
+channels:
+tags:
+externalDocs:
+extensions:
+  x-a: 
+  x-b: 

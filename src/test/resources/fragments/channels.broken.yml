@@ -1,0 +1,27 @@
+asyncapi: 2.0.0
+
+channels:
+
+   feeds/foo:
+     $ref:
+     description:
+     subscribe:
+     publish:
+     parameters:
+     bindings:
+   
+   commands/foo:
+     $ref:
+     description:
+     subscribe:
+     publish:
+     parameters:
+     bindings:
+
+   events/foo:
+     $ref:
+     description:
+     subscribe:
+     publish:
+     parameters:
+     bindings:

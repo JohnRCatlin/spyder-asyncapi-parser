@@ -1,0 +1,5 @@
+engineer.asyncapi.spyder.model
+engineer.asyncapi.spyder.model.bindings
+engineer.asyncapi.spyder.model.fields
+engineer.asyncapi.spyder.model.security
+engineer.asyncapi.spyder.parser

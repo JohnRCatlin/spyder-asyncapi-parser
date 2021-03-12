@@ -1,0 +1,22 @@
+asyncapi: 2.0.0
+
+id: urn:com:smartylighting:streetlights:server
+
+defaultContentType: application/json
+
+externalDocs:
+   description: Find more info here
+   url: https://example.com
+   extensions:
+      x-a: x-a-value
+      x-b: x-b-value   
+
+extensions:
+   x-c: x-c-value
+   x-d: x-d-value
+
+tags:
+  - name: foo tag name
+    description: foo tag description
+  - name: bar tag name
+    description: bar tag description

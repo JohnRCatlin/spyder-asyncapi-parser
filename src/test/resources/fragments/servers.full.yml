@@ -1,0 +1,40 @@
+asyncapi: 2.0.0
+
+servers:
+
+   dev:
+     url: dev.example.com
+     description: Dev server
+     protocol: kafka
+     protocolVersion: '1.0.1' 
+     extensions:
+        x-a: x-a-value
+        x-b: x-b-value
+     bindings:
+        kafka:
+     security:
+      - apiKey: []
+      - supportedOauthFlows:
+        - foo:a
+        - bar:b
+      - openIdConnectWellKnown: []
+
+         
+   ci:
+     url: ci.example.com
+     description: CI server
+     protocol: kafka
+     protocolVersion: '1.0.2'   
+     extensions:
+        x-c: x-c-value
+        x-d: x-d-value
+
+   prod:
+     url: prod.example.com
+     description: Prod server
+     protocol: kafka
+     protocolVersion: '1.0.3'
+     extensions:
+        x-e: x-e-value
+        x-f: x-f-value
+        

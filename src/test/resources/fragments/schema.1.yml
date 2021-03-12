@@ -1,0 +1,24 @@
+asyncapi: 2.0.0
+
+components:
+
+   schemas:
+      test:
+         type: object
+         required:
+         - name
+         properties:
+            name:
+               type: string
+            address:
+               $ref: '#/components/schemas/Address'
+            age:
+               type: integer
+               format: int32
+               minimum: 0
+         extensions:
+            x-s: x-s-value
+            x-t: x-t-value
+         
+
+ 

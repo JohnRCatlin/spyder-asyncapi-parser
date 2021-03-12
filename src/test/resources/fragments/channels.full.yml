@@ -1,0 +1,33 @@
+asyncapi: 2.0.0
+
+channels:
+
+   feeds/foo:
+     $ref: '#/.../feeds/foo'
+     
+   commands/foo:
+     description: description value
+     
+     parameters:
+      foo:
+        $ref: '#/components/.../ref1'
+     
+     subscribe:
+        summary: subscribe summary
+        description: subscribe description
+        operationId: subscribeFooId
+        traits:
+          - $ref: '#/components/.../ref2'
+        message:
+          $ref: '#/components/.../ref3'
+      
+     publish:
+        summary: publish summary
+        description: publish description
+        operationId: publishFooId
+        traits:
+          - $ref: '#/components/.../ref4'
+        message:
+          $ref: '#/components/.../ref5'
+
+     bindings: 

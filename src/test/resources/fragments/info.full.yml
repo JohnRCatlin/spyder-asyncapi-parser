@@ -1,0 +1,23 @@
+asyncapi: 2.0.0
+info:
+   title: example api
+   version: 1.0.0
+   description: "description text...  \n"
+   termsOfService: A URL to the Terms of Service for the API. MUST be in the format of a URL.
+   license:
+      name: Apache 2.0
+      url: https://www.apache.org/licenses/LICENSE-2.0
+      extensions:
+         x-a: x-a-value
+         x-b: x-b-value   
+   contact:
+      name: john
+      url: https://example.com
+      email: no@way.com
+      extensions:
+         x-c: x-c-value
+         x-d: x-d-value
+   extensions:
+      x-e: x-e-value
+      x-f: x-f-value
+

@@ -1,0 +1,69 @@
+asyncapi: 2.0.0
+
+components:
+
+   schemas:
+    test:
+      title: title value
+      type: string
+      required: 
+         - name
+      multipleOf: 1
+      maximum: 10
+      exclusiveMaximum: true
+      minimum: 0
+      exclusiveMinimum: false
+      maxLength: 100
+      minLength: 10
+      pattern: ^foo
+      maxItems: 10
+      minItems: 0
+      uniqueItems: true
+      maxProperties: 10
+      minProperties: 1
+      enum:
+         - 'high'
+         - 'low'
+      const: false
+      examples:         
+      readOnly: true
+      writeOnly: false
+      properties:
+         name:
+            type: string
+            maxLength: 50
+            minLength: 1
+      patternProperties:
+         - "^S_": 
+            type: string
+         - "^I_": 
+            type: integer
+      additionalProperties: false
+      additionalItems: flase
+      items:
+         - type: number
+      propertyNames:
+         pattern: "^[A-Za-z_][A-Za-z0-9_]*$"
+      contains:
+         - type: number
+      allOf:
+        - $ref: "#/components/schemas/allOf1"
+        - $ref: "#/components/schemas/allOf2"
+      oneOf:
+        - $ref: "#/components/schemas/oneOf1"
+        - $ref: "#/components/schemas/oneOf2"
+      anyOf:
+        - $ref: "#/components/schemas/anyOf1"
+        - $ref: "#/components/schemas/anyOf1"
+      not:
+        - $ref: "#/components/schemas/not1"
+        - $ref: "#/components/schemas/not2"
+      discriminator: monkey
+      externalDocs:
+         description: Find more info here
+         url: https://example.com
+      deprecated: false
+      extensions:
+         x-a: x-a-value
+         x-b: x-b-value
+ 

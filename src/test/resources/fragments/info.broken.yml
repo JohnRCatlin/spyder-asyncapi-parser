@@ -1,0 +1,22 @@
+asyncapi: 2.0.0
+info:
+   title: 
+   version: 
+   description: 
+   termsOfService: 
+   license:
+      name: 
+      url: 
+      extensions:
+         x-a: 
+         x-b:   
+   contact:
+      name: 
+      url: 
+      email: 
+      extensions:
+         x-c: 
+         x-d: 
+   extensions:
+      x-e: 
+      x-f: 

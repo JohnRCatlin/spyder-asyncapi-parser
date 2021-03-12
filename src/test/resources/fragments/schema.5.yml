@@ -1,0 +1,11 @@
+asyncapi: 2.0.0
+
+components:
+
+   schemas:
+    test:
+      type: string
+      format: date-time
+      description: Date and time when the message was sent.
+
+ 

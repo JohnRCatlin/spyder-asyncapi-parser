@@ -1,0 +1,39 @@
+asyncapi: 2.0.0
+
+components:
+
+   schemas:
+    test:
+      title:
+      type:
+      required:
+      multipleOf:
+      maximum:
+      exclusiveMaximum:
+      minimum:
+      exclusiveMinimum:
+      maxLength:
+      minLength:
+      pattern:
+      maxItems:
+      minItems:
+      uniqueItems:
+      maxProperties:
+      minProperties:
+      enum:
+      const:
+      examples:
+      readOnly:
+      writeOnly:
+      properties:
+      patternProperties:
+      additionalProperties:
+      additionalItems:
+      items:
+      propertyNames:
+      contains:
+      allOf:
+      oneOf:
+      anyOf:
+      not:
+ 

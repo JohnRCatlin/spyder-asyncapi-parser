@@ -1,0 +1,198 @@
+asyncapi: 2.0.0
+
+components:
+
+   schemas:
+      foo:
+         type: object
+         required:
+         - name
+         properties:
+            name:
+               type: string
+            address:
+               $ref: '#/components/schemas/Address'
+            age:
+               type: integer
+               format: int32
+               minimum: 0
+         extensions:
+            x-s: x-s-value
+            x-t: x-t-value
+         
+   messages:
+      userSignUp:
+         summary: Action to sign a user up.
+         description: |
+           Multiline description of what this action does.
+           Here you have another line.
+         tags:
+           - name: user
+           - name: signup
+         headers:
+           type: object
+           properties:
+             applicationInstanceId:
+               description: Unique identifier for a given instance of the publishing application
+               type: string
+         payload:
+           type: object
+           properties:
+             user:
+               $ref: "#/components/schemas/userCreate"
+             signup:
+               $ref: "#/components/schemas/signup"
+         correlationId:
+            description: Default Correlation ID
+            location: $message.header#/correlationId
+         schemaFormat: application/schema+json;version=draft-07
+         contentType: application/json
+         name: name value
+         title: title value
+         externalDocs:
+            description: Find more info here
+            url: https://example.com         
+         bindings:
+            kafka:
+               key:
+                 type: string
+                 enum: ['myKey']
+               bindingVersion: '0.1.0'
+         examples:
+         traits:
+         extensions:
+            x-q: x-q-value
+            x-r: x-r-value  
+               
+   securitySchemes:
+      supportedOauthFlows:
+         type: oauth2
+         flows:
+            implicit:
+               authorizationUrl: https://example.com/api/oauth/dialog
+               scopes:
+                  write:pets: modify pets in your account
+                  read:pets: read your pets
+         description:
+         name:
+         in:
+         scheme:
+         bearerFormat:
+         openIdConnectUrl:
+
+   parameters:
+      userId:
+         description: Id of the user.
+         schema:
+            type: string
+         location: $message.payload#/user/id
+      subscribe:
+         #note the use "#..." ratehr than #... because # is syntax for a yaml comment
+         $ref: "#/components/messages/userSignedUp"
+
+   correlationIds:
+      foo:
+         description: foo Correlation ID
+         location: $message.header#/correlationId/foo
+      bar:
+         description: bar Correlation ID
+         location: $message.header#/correlationId/bar     
+
+   operationTraits:
+      foo:
+         operationId:
+         summary: foo op trait summary
+         description: foo op trait description
+         tags:
+         externalDocs:
+             description: Find more info here
+             url: https://example.com
+             extensions:
+                x-o: x-o-value
+         extensions:
+         bindings:
+           kafka:
+             clientId:
+               type: string
+               enum: ['myClientId']
+                  
+   messageTraits:
+      fooMessageTrait:         
+         headers:
+           type: object
+           properties:
+             applicationInstanceId:
+               description: applicationInstanceId description
+               type: string
+         correlationId:
+            description: Default Correlation ID
+            location: $message.header#/correlationId
+            extensions:
+               x-m: x-m-value
+               x-n: x-n-value           
+         schemaFormat: application/vnd.aai.asyncapi;version=2.0.0
+         contentType: application/json
+         name: name value
+         title: title value
+         summary: summary value
+         description: description value
+         tags:
+            - name: foo tag name
+              description: foo tag description
+            - name: bar tag name
+              description: bar tag description
+         externalDocs:
+         bindings:
+            kafka:
+               key:
+                 type: string
+                 enum: ['myKey']
+               bindingVersion: '0.1.0'         
+         examples:
+         extensions:
+            x-k: x-k-value
+            x-l: x-l-value
+            
+   serverBindings:
+     foo:
+       kafka:
+         extensions:
+            x-i: x-i-value
+            x-j: x-j-value
+            
+   channelBindings:
+     foo:  
+       kafka:
+         extensions:
+            x-g: x-g-value
+            x-h: x-h-value
+
+   operationBindings:
+     foo:
+       kafka:
+         groupId:
+            type: string
+            enum: ['myGroupId']
+         clientId:
+            type: string
+            enum: ['myClientId']
+         bindingVersion: '0.1.0'
+         extensions:
+            x-e: x-e-value
+            x-f: x-f-value
+
+   messageBindings:
+     foo:
+       kafka:
+         key:
+            type: string
+            enum: ['myKey']
+         bindingVersion: '0.1.0'
+         extensions:
+            x-a: x-a-value
+            x-b: x-b-value
+
+   extensions:
+      x-c: x-c-value
+      x-d: x-d-value
+ 

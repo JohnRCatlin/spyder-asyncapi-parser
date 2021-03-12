@@ -1,0 +1,17 @@
+asyncapi: 2.0.0
+
+components:
+
+   schemas:
+    test:
+      type: object
+      properties:
+        percentage:
+          type: integer
+          description: Percentage to which the light should be dimmed to.
+          minimum: 0
+          maximum: 100
+        sentAt:
+          $ref: "#/components/schemas/sentAt"
+
+ 
