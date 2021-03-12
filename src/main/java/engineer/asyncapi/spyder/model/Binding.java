@@ -22,6 +22,6 @@ package engineer.asyncapi.spyder.model;
  */
 public interface Binding {
 
-	public String getType();
+	public String getBindingType();
 
 }

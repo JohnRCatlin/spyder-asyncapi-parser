@@ -87,7 +87,7 @@ public class FabricAMQPRecipeTest {
 		assertEquals("/", binding.getQueueVHost());
 
 		assertEquals("your-exchange-name", binding.getExchangeName());
-		assertEquals("amqp", binding.getType());
+		assertEquals("amqp", binding.getBindingType());
 		assertEquals("topic", binding.getExchangeType());
 		assertTrue(binding.isExchangeDurable());
 		assertFalse(binding.isExchangeAutoDelete());

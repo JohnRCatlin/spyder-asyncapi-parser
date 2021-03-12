@@ -87,7 +87,7 @@ final class AMQP091MessageBinding020Impl implements AMQP091MessageBinding020 {
 	}
 
 	@Override
-	public final String getType() {
+	public final String getBindingType() {
 		return TYPE;
 	}
 

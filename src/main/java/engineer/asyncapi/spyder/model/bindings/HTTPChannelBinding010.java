@@ -15,11 +15,19 @@ limitations under the License.
 ------------------------------------------------------------------ */
 package engineer.asyncapi.spyder.model.bindings;
 
+import engineer.asyncapi.spyder.model.Schema;
+
 /**
  * 
  * @author johncatlin
  *
  */
 public interface HTTPChannelBinding010 extends HTTPChannelBinding {
+
+	String getChannelType();
+
+	String getMethod();
+	
+	Schema getQuery();
 
 }

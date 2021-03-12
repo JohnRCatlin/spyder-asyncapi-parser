@@ -65,7 +65,7 @@ final class KafkaServerBinding010Impl implements KafkaServerBinding010 {
 	}
 
 	@Override
-	public final String getType() {
+	public final String getBindingType() {
 		return TYPE;
 	}
 

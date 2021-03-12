@@ -62,7 +62,7 @@ final class AMQP091ServerBinding020Impl implements AMQP091ServerBinding020 {
 	}
 
 	@Override
-	public final String getType() {
+	public final String getBindingType() {
 		return TYPE;
 	}
 

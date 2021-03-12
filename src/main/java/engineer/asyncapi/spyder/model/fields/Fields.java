@@ -51,6 +51,7 @@ public enum Fields {
 	DEPRECATED("deprecated"),
 	DESCRIPTION("description"),
 	DISCRIMINATOR("discriminator"),
+	DURABLE("durable"),
 	EMAIL("email"),
 	ENUM("enum"),
 	EXCHANGE("exchange"),
@@ -83,6 +84,7 @@ public enum Fields {
 	MESSAGE_TRAITS("messageTraits"),
 	MESSAGE_TYPE("messageType"),
 	MESSAGES("messages"),
+	METHOD("method"),
 	MIN_ITEMS("minItems"),
 	MIN_LENGTH("minLength"),
 	MIN_PROPERTIES("minProperties"),
@@ -105,6 +107,7 @@ public enum Fields {
 	PROTOCOL("protocol"),
 	PROTOCOL_VERSION("protocolVersion"),
 	PUBLISH("publish"),
+	QUERY("query"),
 	QUEUE("queue"),
 	READ_ONLY("readOnly"),
 	REF("$ref"),
@@ -136,8 +139,7 @@ public enum Fields {
 	VARIABLES("variables"),
 	VERSION("version"),
 	VHOST("vhost"),
-	WRITE_ONLY("writeOnly"),
-	DURABLE("durable");
+	WRITE_ONLY("writeOnly");
 
 	public final String value;
 

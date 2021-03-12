@@ -164,7 +164,7 @@ final class AMQP091OperationBinding020Impl implements AMQP091OperationBinding020
 	}
 
 	@Override
-	public final String getType() {
+	public final String getBindingType() {
 		return TYPE;
 	}
 

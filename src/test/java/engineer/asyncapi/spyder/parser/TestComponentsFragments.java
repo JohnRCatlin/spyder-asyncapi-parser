@@ -112,8 +112,8 @@ public class TestComponentsFragments extends AsyncApiV2ParserTestBase {
 		assertTrue(channelBindings.get("foo") instanceof KafkaChannelBinding010);
 		KafkaChannelBinding010 kafkaChannelBinding = (KafkaChannelBinding010) channelBindings.get("foo");
 
-		assertNotNull(kafkaChannelBinding.getType());
-		assertEquals("kafka", kafkaChannelBinding.getType());
+		assertNotNull(kafkaChannelBinding.getBindingType());
+		assertEquals("kafka", kafkaChannelBinding.getBindingType());
 
 		assertNotNull(kafkaChannelBinding.getExtensions());
 		assertEquals(2, kafkaChannelBinding.getExtensions().size());
@@ -182,8 +182,8 @@ public class TestComponentsFragments extends AsyncApiV2ParserTestBase {
 		assertTrue(messageBindings.get("foo") instanceof KafkaMessageBinding010);
 		KafkaMessageBinding010 kafkaMessageBinding = (KafkaMessageBinding010) messageBindings.get("foo");
 
-		assertNotNull(kafkaMessageBinding.getType());
-		assertEquals("kafka", kafkaMessageBinding.getType());
+		assertNotNull(kafkaMessageBinding.getBindingType());
+		assertEquals("kafka", kafkaMessageBinding.getBindingType());
 
 		assertNotNull(kafkaMessageBinding.getKey());
 		assertNotNull(kafkaMessageBinding.getKey().getType());
@@ -292,8 +292,8 @@ public class TestComponentsFragments extends AsyncApiV2ParserTestBase {
 		assertTrue(operationBindings.get("foo") instanceof KafkaOperationBinding010);
 		KafkaOperationBinding010 kafkaOperationBinding = (KafkaOperationBinding010) operationBindings.get("foo");
 
-		assertNotNull(kafkaOperationBinding.getType());
-		assertEquals("kafka", kafkaOperationBinding.getType());
+		assertNotNull(kafkaOperationBinding.getBindingType());
+		assertEquals("kafka", kafkaOperationBinding.getBindingType());
 
 		assertNotNull(kafkaOperationBinding.getClientId());
 		assertNotNull(kafkaOperationBinding.getClientId().getType());
@@ -461,8 +461,8 @@ public class TestComponentsFragments extends AsyncApiV2ParserTestBase {
 		assertTrue(serverBindings.get("foo") instanceof KafkaServerBinding010);
 		KafkaServerBinding010 kafkaServerBinding = (KafkaServerBinding010) serverBindings.get("foo");
 
-		assertNotNull(kafkaServerBinding.getType());
-		assertEquals("kafka", kafkaServerBinding.getType());
+		assertNotNull(kafkaServerBinding.getBindingType());
+		assertEquals("kafka", kafkaServerBinding.getBindingType());
 
 		assertNotNull(kafkaServerBinding.getExtensions());
 		assertEquals(2, kafkaServerBinding.getExtensions().size());
@@ -524,8 +524,8 @@ public class TestComponentsFragments extends AsyncApiV2ParserTestBase {
 		assertNotNull(messageTrait.getBindings().get("kafka"));
 		assertTrue(messageTrait.getBindings().get("kafka") instanceof KafkaMessageBinding010);
 		KafkaMessageBinding010 kafkaMessageBinding = (KafkaMessageBinding010) messageTrait.getBindings().get("kafka");
-		assertNotNull(kafkaMessageBinding.getType());
-		assertEquals("kafka", kafkaMessageBinding.getType());
+		assertNotNull(kafkaMessageBinding.getBindingType());
+		assertEquals("kafka", kafkaMessageBinding.getBindingType());
 		assertNotNull(kafkaMessageBinding.getKey());
 		assertNotNull(kafkaMessageBinding.getKey().getType());
 		assertEquals(Fields.STRING.value, kafkaMessageBinding.getKey().getType());

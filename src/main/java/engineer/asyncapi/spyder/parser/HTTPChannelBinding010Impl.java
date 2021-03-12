@@ -18,14 +18,14 @@ package engineer.asyncapi.spyder.parser;
 import engineer.asyncapi.spyder.model.Extensions;
 import engineer.asyncapi.spyder.model.Schema;
 import engineer.asyncapi.spyder.model.bindings.BindingType;
-import engineer.asyncapi.spyder.model.bindings.KafkaOperationBinding010;
+import engineer.asyncapi.spyder.model.bindings.HTTPChannelBinding010;
 
 /**
  * 
  * @author johncatlin
  *
  */
-final class KafkaOperationBinding010Impl implements KafkaOperationBinding010 {
+final class HTTPChannelBinding010Impl implements HTTPChannelBinding010 {
 
 	/**
 	 * 
@@ -34,15 +34,10 @@ final class KafkaOperationBinding010Impl implements KafkaOperationBinding010 {
 	 */
 	static final class Builder {
 
-		private KafkaOperationBinding010Impl binding = new KafkaOperationBinding010Impl();
+		private HTTPChannelBinding010Impl binding = new HTTPChannelBinding010Impl();
 
-		public final KafkaOperationBinding010 build() {
+		public final HTTPChannelBinding010Impl build() {
 			return binding;
-		}
-
-		public final Builder clientId(final Schema schema2) {
-			binding.clientId = schema2;
-			return this;
 		}
 
 		final Builder extensions(final Extensions extensions) {
@@ -50,26 +45,42 @@ final class KafkaOperationBinding010Impl implements KafkaOperationBinding010 {
 			return this;
 		}
 
-		public final Builder groupId(final Schema schema2) {
-			binding.groupId = schema2;
+		final Builder method(final String method) {
+			binding.method = method;
+			return this;
+		}
+
+		final Builder type(final String type) {
+			binding.channelType = type;
+			return this;
+		}
+
+		final Builder query(final Schema query) {
+			binding.query = query;
 			return this;
 		}
 	}
 
 	static final String BINDING_VERSION = "0.1.0";
-	static final String TYPE = BindingType.KAFKA.value;
+	static final String TYPE = BindingType.HTTP.value;
 
-	private Schema clientId = null;
+	private String channelType;
 	private Extensions extensions = null;
-	private Schema groupId = null;
+	private String method;
+	private Schema query;
 
-	private KafkaOperationBinding010Impl() {
+	private HTTPChannelBinding010Impl() {
 		/* Use the builder for construction. */
 	}
 
 	@Override
-	public final Schema getClientId() {
-		return this.clientId;
+	public final String getBindingVersion() {
+		return BINDING_VERSION;
+	}
+
+	@Override
+	public String getChannelType() {
+		return this.channelType;
 	}
 
 	@Override
@@ -78,8 +89,13 @@ final class KafkaOperationBinding010Impl implements KafkaOperationBinding010 {
 	}
 
 	@Override
-	public final Schema getGroupId() {
-		return this.groupId;
+	public String getMethod() {
+		return this.method;
+	}
+
+	@Override
+	public Schema getQuery() {
+		return this.query;
 	}
 
 	@Override
@@ -92,8 +108,4 @@ final class KafkaOperationBinding010Impl implements KafkaOperationBinding010 {
 		return ToStringFormatter.toString(this);
 	}
 
-	@Override
-	public final String getBindingVersion() {
-		return BINDING_VERSION;
-	}
 }

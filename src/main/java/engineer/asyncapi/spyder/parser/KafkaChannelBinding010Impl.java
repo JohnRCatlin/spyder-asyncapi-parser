@@ -62,7 +62,7 @@ final class KafkaChannelBinding010Impl implements KafkaChannelBinding010 {
 		return this.extensions;
 	}
 
-	public final String getType() {
+	public final String getBindingType() {
 		return TYPE;
 	}
 	

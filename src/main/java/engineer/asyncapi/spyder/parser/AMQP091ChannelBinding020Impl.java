@@ -181,7 +181,7 @@ final class AMQP091ChannelBinding020Impl implements AMQP091ChannelBinding020 {
 	}
 
 	@Override
-	public final String getType() {
+	public final String getBindingType() {
 		return TYPE;
 	}
 

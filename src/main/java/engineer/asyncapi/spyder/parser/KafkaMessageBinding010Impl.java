@@ -77,7 +77,7 @@ final class KafkaMessageBinding010Impl implements KafkaMessageBinding010 {
 	}
 
 	@Override
-	public final String getType() {
+	public final String getBindingType() {
 		return TYPE;
 	}
 

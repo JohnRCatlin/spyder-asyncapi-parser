@@ -40,7 +40,7 @@ public interface AMQP091OperationBinding020 extends AMQP091OperationBinding {
 
 	String getReplyTo();
 
-	String getType();
+	String getBindingType();
 
 	String getUserId();
 
