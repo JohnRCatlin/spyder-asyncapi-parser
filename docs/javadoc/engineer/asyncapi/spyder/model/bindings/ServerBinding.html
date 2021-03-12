@@ -15,7 +15,7 @@
 <script type="text/javascript" src="../../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var data = {"i0":6};
+<script type="text/javascript">var data = {"i0":6,"i1":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "alt-color";
 var rowColor = "row-color";
@@ -82,7 +82,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <dl class="notes">
 <dt>All Known Subinterfaces:</dt>
-<dd><code><a href="AMQP091ServerBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">AMQP091ServerBinding</a></code>, <code><a href="AMQP091ServerBinding020.html" title="interface in engineer.asyncapi.spyder.model.bindings">AMQP091ServerBinding020</a></code>, <code><a href="KafkaServerBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">KafkaServerBinding</a></code>, <code><a href="KafkaServerBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">KafkaServerBinding010</a></code></dd>
+<dd><code><a href="AMQP091ServerBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">AMQP091ServerBinding</a></code>, <code><a href="AMQP091ServerBinding020.html" title="interface in engineer.asyncapi.spyder.model.bindings">AMQP091ServerBinding020</a></code>, <code><a href="AMQP1ServerBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">AMQP1ServerBinding</a></code>, <code><a href="AMQP1ServerBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">AMQP1ServerBinding010</a></code>, <code><a href="HTTPServerBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">HTTPServerBinding</a></code>, <code><a href="HTTPServerBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">HTTPServerBinding010</a></code>, <code><a href="JMSServerBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">JMSServerBinding</a></code>, <code><a href="JMSServerBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">JMSServerBinding010</a></code>, <code><a href="KafkaServerBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">KafkaServerBinding</a></code>, <code><a href="KafkaServerBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">KafkaServerBinding010</a></code>, <code><a href="MercureServerBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">MercureServerBinding</a></code>, <code><a href="MercureServerBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">MercureServerBinding010</a></code>, <code><a href="MQTT5ServerBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">MQTT5ServerBinding</a></code>, <code><a href="MQTT5ServerBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">MQTT5ServerBinding010</a></code>, <code><a href="MQTTServerBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">MQTTServerBinding</a></code>, <code><a href="MQTTServerBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">MQTTServerBinding010</a></code>, <code><a href="NATSServerBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">NATSServerBinding</a></code>, <code><a href="NATSServerBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">NATSServerBinding010</a></code>, <code><a href="RedisServerBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">RedisServerBinding</a></code>, <code><a href="RedisServerBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">RedisServerBinding010</a></code>, <code><a href="SNSServerBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">SNSServerBinding</a></code>, <code><a href="SNSServerBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">SNSServerBinding010</a></code>, <code><a href="SQSServerBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">SQSServerBinding</a></code>, <code><a href="SQSServerBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">SQSServerBinding010</a></code>, <code><a href="STOMPServerBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">STOMPServerBinding</a></code>, <code><a href="STOMPServerBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">STOMPServerBinding010</a></code>, <code><a href="WebSocketsServerBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">WebSocketsServerBinding</a></code>, <code><a href="WebSocketsServerBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">WebSocketsServerBinding010</a></code></dd>
 </dl>
 <hr>
 <pre>public interface <span class="type-name-label">ServerBinding</span>
@@ -107,6 +107,11 @@ extends <a href="../Binding.html" title="interface in engineer.asyncapi.spyder.m
 </thead>
 <tbody>
 <tr class="alt-color" id="i0">
+<td class="col-first"><code>java.lang.String</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getBindingVersion()">getBindingVersion</a></span>()</code></th>
+<td class="col-last">&nbsp;</td>
+</tr>
+<tr class="row-color" id="i1">
 <td class="col-first"><code><a href="../Extensions.html" title="interface in engineer.asyncapi.spyder.model">Extensions</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getExtensions()">getExtensions</a></span>()</code></th>
 <td class="col-last">&nbsp;</td>
@@ -129,6 +134,12 @@ extends <a href="../Binding.html" title="interface in engineer.asyncapi.spyder.m
 <section class="method-details" id="method.detail">
 <h2>Method Details</h2>
 <ul class="member-list">
+<li>
+<section class="detail" id="getBindingVersion()">
+<h3>getBindingVersion</h3>
+<div class="member-signature"><span class="return-type">java.lang.String</span>&nbsp;<span class="member-name">getBindingVersion</span>()</div>
+</section>
+</li>
 <li>
 <section class="detail" id="getExtensions()">
 <h3>getExtensions</h3>

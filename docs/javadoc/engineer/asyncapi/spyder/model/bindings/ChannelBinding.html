@@ -15,7 +15,7 @@
 <script type="text/javascript" src="../../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var data = {"i0":6};
+<script type="text/javascript">var data = {"i0":6,"i1":6};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
 var altColor = "alt-color";
 var rowColor = "row-color";
@@ -82,7 +82,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <dl class="notes">
 <dt>All Known Subinterfaces:</dt>
-<dd><code><a href="AMQP091ChannelBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">AMQP091ChannelBinding</a></code>, <code><a href="AMQP091ChannelBinding020.html" title="interface in engineer.asyncapi.spyder.model.bindings">AMQP091ChannelBinding020</a></code>, <code><a href="KafkaChannelBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">KafkaChannelBinding</a></code>, <code><a href="KafkaChannelBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">KafkaChannelBinding010</a></code></dd>
+<dd><code><a href="AMQP091ChannelBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">AMQP091ChannelBinding</a></code>, <code><a href="AMQP091ChannelBinding020.html" title="interface in engineer.asyncapi.spyder.model.bindings">AMQP091ChannelBinding020</a></code>, <code><a href="AMQP1ChannelBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">AMQP1ChannelBinding</a></code>, <code><a href="AMQP1ChannelBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">AMQP1ChannelBinding010</a></code>, <code><a href="HTTPChannelBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">HTTPChannelBinding</a></code>, <code><a href="HTTPChannelBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">HTTPChannelBinding010</a></code>, <code><a href="JMSChannelBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">JMSChannelBinding</a></code>, <code><a href="JMSChannelBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">JMSChannelBinding010</a></code>, <code><a href="KafkaChannelBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">KafkaChannelBinding</a></code>, <code><a href="KafkaChannelBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">KafkaChannelBinding010</a></code>, <code><a href="MercureChannelBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">MercureChannelBinding</a></code>, <code><a href="MercureChannelBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">MercureChannelBinding010</a></code>, <code><a href="MQTT5ChannelBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">MQTT5ChannelBinding</a></code>, <code><a href="MQTT5ChannelBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">MQTT5ChannelBinding010</a></code>, <code><a href="MQTTChannelBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">MQTTChannelBinding</a></code>, <code><a href="MQTTChannelBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">MQTTChannelBinding010</a></code>, <code><a href="NATSChannelBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">NATSChannelBinding</a></code>, <code><a href="NATSChannelBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">NATSChannelBinding010</a></code>, <code><a href="RedisChannelBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">RedisChannelBinding</a></code>, <code><a href="RedisChannelBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">RedisChannelBinding010</a></code>, <code><a href="SNSChannelBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">SNSChannelBinding</a></code>, <code><a href="SNSChannelBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">SNSChannelBinding010</a></code>, <code><a href="SQSChannelBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">SQSChannelBinding</a></code>, <code><a href="SQSChannelBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">SQSChannelBinding010</a></code>, <code><a href="STOMPChannelBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">STOMPChannelBinding</a></code>, <code><a href="STOMPChannelBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">STOMPChannelBinding010</a></code>, <code><a href="WebSocketsChannelBinding.html" title="interface in engineer.asyncapi.spyder.model.bindings">WebSocketsChannelBinding</a></code>, <code><a href="WebSocketsChannelBinding010.html" title="interface in engineer.asyncapi.spyder.model.bindings">WebSocketsChannelBinding010</a></code></dd>
 </dl>
 <hr>
 <pre>public interface <span class="type-name-label">ChannelBinding</span>
@@ -107,6 +107,11 @@ extends <a href="../Binding.html" title="interface in engineer.asyncapi.spyder.m
 </thead>
 <tbody>
 <tr class="alt-color" id="i0">
+<td class="col-first"><code>java.lang.String</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getBindingVersion()">getBindingVersion</a></span>()</code></th>
+<td class="col-last">&nbsp;</td>
+</tr>
+<tr class="row-color" id="i1">
 <td class="col-first"><code><a href="../Extensions.html" title="interface in engineer.asyncapi.spyder.model">Extensions</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getExtensions()">getExtensions</a></span>()</code></th>
 <td class="col-last">&nbsp;</td>
@@ -133,6 +138,12 @@ extends <a href="../Binding.html" title="interface in engineer.asyncapi.spyder.m
 <section class="detail" id="getExtensions()">
 <h3>getExtensions</h3>
 <div class="member-signature"><span class="return-type"><a href="../Extensions.html" title="interface in engineer.asyncapi.spyder.model">Extensions</a></span>&nbsp;<span class="member-name">getExtensions</span>()</div>
+</section>
+</li>
+<li>
+<section class="detail" id="getBindingVersion()">
+<h3>getBindingVersion</h3>
+<div class="member-signature"><span class="return-type">java.lang.String</span>&nbsp;<span class="member-name">getBindingVersion</span>()</div>
 </section>
 </li>
 </ul>
