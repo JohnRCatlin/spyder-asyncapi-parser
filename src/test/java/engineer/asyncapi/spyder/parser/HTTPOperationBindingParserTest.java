@@ -30,9 +30,9 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-import engineer.asyncapi.spyder.model.bindings.HTTPChannelBinding010;
+import engineer.asyncapi.spyder.model.bindings.HTTPOperationBinding010;
 
-public class HTTPChannelBindingParserTest {
+public class HTTPOperationBindingParserTest {
 
 	private static final String rawModel;
 
@@ -70,7 +70,7 @@ public class HTTPChannelBindingParserTest {
 	@Test
 	public void shouldParse() {
 		// when
-		HTTPChannelBinding010 parsed = (HTTPChannelBinding010) HTTPChannelBindingParser.parse((ObjectNode) rootNode);
+		HTTPOperationBinding010 parsed = (HTTPOperationBinding010) HTTPOperationBindingParser.parse((ObjectNode) rootNode);
 
 		// then
 		assertNotNull(parsed);

@@ -34,7 +34,7 @@ final class HTTPMessageBindingParser extends AsyncAPICommonObjectParser {
 			return null;
 		}
 		final String bindingVersion = parseBindingVersion(node);
-		if (null == bindingVersion || bindingVersion.equals(HTTPChannelBinding010Impl.BINDING_VERSION)) {
+		if (null == bindingVersion || bindingVersion.equals(HTTPOperationBinding010Impl.BINDING_VERSION)) {
 			binding = parseBindingV010(node);
 		}
 		return binding;

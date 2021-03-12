@@ -18,7 +18,7 @@ package engineer.asyncapi.spyder.parser;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import engineer.asyncapi.spyder.model.Schema;
-import engineer.asyncapi.spyder.model.bindings.HTTPChannelBinding;
+import engineer.asyncapi.spyder.model.bindings.HTTPOperationBinding;
 import engineer.asyncapi.spyder.model.fields.Fields;
 
 /**
@@ -26,22 +26,22 @@ import engineer.asyncapi.spyder.model.fields.Fields;
  * @author johncatlin
  *
  */
-final class HTTPChannelBindingParser extends AsyncAPICommonObjectParser {
+final class HTTPOperationBindingParser extends AsyncAPICommonObjectParser {
 
-	static final HTTPChannelBinding parse(final ObjectNode node) {
-		HTTPChannelBinding binding = null;
+	static final HTTPOperationBinding parse(final ObjectNode node) {
+		HTTPOperationBinding binding = null;
 		if (node == null) {
 			return null;
 		}
 		final String bindingVersion = parseBindingVersion(node);
-		if (null == bindingVersion || bindingVersion.equals(HTTPChannelBinding010Impl.BINDING_VERSION)) {
+		if (null == bindingVersion || bindingVersion.equals(HTTPOperationBinding010Impl.BINDING_VERSION)) {
 			binding = parseBindingV010(node);
 		}
 		return binding;
 	}
 
-	private static final HTTPChannelBinding parseBindingV010(final ObjectNode node) {
-		final HTTPChannelBinding010Impl.Builder builder = new HTTPChannelBinding010Impl.Builder();
+	private static final HTTPOperationBinding parseBindingV010(final ObjectNode node) {
+		final HTTPOperationBinding010Impl.Builder builder = new HTTPOperationBinding010Impl.Builder();
 		builder.extensions(parseExtensions(node));
 		builder.query(parseQuery(node));
 		builder.method(parseMethod(node));
@@ -68,7 +68,7 @@ final class HTTPChannelBindingParser extends AsyncAPICommonObjectParser {
 		return SchemaParser.parse(query);
 	}
 	
-	private HTTPChannelBindingParser() {
+	private HTTPOperationBindingParser() {
 		/* this static utility should not be instantiated */
 	}
 }

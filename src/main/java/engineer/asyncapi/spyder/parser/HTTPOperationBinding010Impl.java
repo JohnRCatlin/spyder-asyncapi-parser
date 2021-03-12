@@ -18,14 +18,14 @@ package engineer.asyncapi.spyder.parser;
 import engineer.asyncapi.spyder.model.Extensions;
 import engineer.asyncapi.spyder.model.Schema;
 import engineer.asyncapi.spyder.model.bindings.BindingType;
-import engineer.asyncapi.spyder.model.bindings.HTTPChannelBinding010;
+import engineer.asyncapi.spyder.model.bindings.HTTPOperationBinding010;
 
 /**
  * 
  * @author johncatlin
  *
  */
-final class HTTPChannelBinding010Impl implements HTTPChannelBinding010 {
+final class HTTPOperationBinding010Impl implements HTTPOperationBinding010 {
 
 	/**
 	 * 
@@ -34,9 +34,9 @@ final class HTTPChannelBinding010Impl implements HTTPChannelBinding010 {
 	 */
 	static final class Builder {
 
-		private HTTPChannelBinding010Impl binding = new HTTPChannelBinding010Impl();
+		private HTTPOperationBinding010Impl binding = new HTTPOperationBinding010Impl();
 
-		public final HTTPChannelBinding010Impl build() {
+		public final HTTPOperationBinding010Impl build() {
 			return binding;
 		}
 
@@ -69,7 +69,7 @@ final class HTTPChannelBinding010Impl implements HTTPChannelBinding010 {
 	private String method;
 	private Schema query;
 
-	private HTTPChannelBinding010Impl() {
+	private HTTPOperationBinding010Impl() {
 		/* Use the builder for construction. */
 	}
 

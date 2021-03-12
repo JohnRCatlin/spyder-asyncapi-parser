@@ -27,11 +27,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-import engineer.asyncapi.spyder.model.bindings.AMQP091ChannelBinding020;
-import engineer.asyncapi.spyder.model.bindings.ChannelBindings;
-import engineer.asyncapi.spyder.model.bindings.KafkaChannelBinding010;
+import engineer.asyncapi.spyder.model.bindings.AMQP091ServerBinding020;
+import engineer.asyncapi.spyder.model.bindings.KafkaServerBinding010;
+import engineer.asyncapi.spyder.model.bindings.ServerBindings;
 
-public class ChannelBindingParserTest {
+public class ServerBindingParserTest {
 
 	@Test
 	public void shouldParseAmqpBinding() throws JsonMappingException, JsonProcessingException {
@@ -45,12 +45,12 @@ public class ChannelBindingParserTest {
 		final JsonNode rootNode = mapper.readTree(rawModel);
 
 		// when
-		ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
+		ServerBindings parsed = ServerBindingsParser.parse((ObjectNode) rootNode);
 
 		// then
 		assertNotNull(parsed);
 		assertTrue(parsed.containsKey("amqp"));
-		assertTrue(parsed.get("amqp") instanceof AMQP091ChannelBinding020);
+		assertTrue(parsed.get("amqp") instanceof AMQP091ServerBinding020);
 	}
 
 	@Test
@@ -65,12 +65,12 @@ public class ChannelBindingParserTest {
 		final JsonNode rootNode = mapper.readTree(rawModel);
 
 		// when
-		ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
+		ServerBindings parsed = ServerBindingsParser.parse((ObjectNode) rootNode);
 
 		// then
 		assertNotNull(parsed);
 		assertTrue(parsed.containsKey("kafka"));
-		assertTrue(parsed.get("kafka") instanceof KafkaChannelBinding010);
+		assertTrue(parsed.get("kafka") instanceof KafkaServerBinding010);
 	}
 
 	@After
