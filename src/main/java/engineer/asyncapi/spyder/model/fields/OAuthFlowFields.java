@@ -34,7 +34,7 @@ enum OAuthFlowFields {
 	public final boolean required;
 	public final String value;
 
-	OAuthFlowFields(String value, boolean required) {
+	OAuthFlowFields(final String value, final boolean required) {
 		this.value = value;
 		this.required = required;
 	}

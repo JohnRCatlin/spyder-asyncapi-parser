@@ -54,7 +54,7 @@ final class CorrelationIdImpl implements CorrelationId {
 			return this;
 		}
 
-		public final Builder ref(String ref) {
+		public final Builder ref(final String ref) {
 			correlationId.ref = (ref != null && RefUtility.isRelative(ref)) ? REF_BASE + ref : ref;
 			return this;
 		}
@@ -63,7 +63,6 @@ final class CorrelationIdImpl implements CorrelationId {
 	private String description = null;
 	private Extensions extensions = null;
 	private String location = null;
-
 	private String ref = null;
 
 	private CorrelationIdImpl() {
@@ -71,27 +70,27 @@ final class CorrelationIdImpl implements CorrelationId {
 	}
 
 	@Override
-	public String getDescription() {
+	public final String getDescription() {
 		return this.description;
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public String getLocation() {
+	public final String getLocation() {
 		return this.location;
 	}
 
 	@Override
-	public String getRef() {
+	public final String getRef() {
 		return this.ref;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 }

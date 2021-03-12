@@ -30,7 +30,7 @@ enum TagFields {
 	public final String field;
 	public final boolean required;
 
-	TagFields(String field, boolean required) {
+	TagFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

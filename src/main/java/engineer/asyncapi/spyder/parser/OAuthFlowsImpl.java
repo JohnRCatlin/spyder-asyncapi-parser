@@ -86,32 +86,32 @@ final class OAuthFlowsImpl implements OAuthFlows {
 	}
 
 	@Override
-	public OAuthFlow getAuthorizationCode() {
+	public final OAuthFlow getAuthorizationCode() {
 		return this.authorizationCode;
 	}
 
 	@Override
-	public OAuthFlow getClientCredentials() {
+	public final OAuthFlow getClientCredentials() {
 		return this.clientCredentials;
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public OAuthFlow getImplicit() {
+	public final OAuthFlow getImplicit() {
 		return this.implicit;
 	}
 
 	@Override
-	public OAuthFlow getPassword() {
+	public final OAuthFlow getPassword() {
 		return this.password;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 

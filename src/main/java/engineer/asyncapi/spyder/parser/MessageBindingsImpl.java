@@ -33,57 +33,57 @@ class MessageBindingsImpl implements MessageBindings {
 	private Map<String, MessageBinding> delegate = new LinkedHashMap<>();
 
 	@Override
-	public void clear() {
+	public final void clear() {
 		delegate.clear();
 	}
 
 	@Override
-	public boolean containsKey(Object key) {
+	public final boolean containsKey(final Object key) {
 		return delegate.containsKey(key);
 	}
 
 	@Override
-	public boolean containsValue(Object value) {
+	public final boolean containsValue(final Object value) {
 		return delegate.containsValue(value);
 	}
 
 	@Override
-	public Set<Entry<String, MessageBinding>> entrySet() {
+	public final Set<Entry<String, MessageBinding>> entrySet() {
 		return delegate.entrySet();
 	}
 
 	@Override
-	public MessageBinding get(Object key) {
+	public final MessageBinding get(final Object key) {
 		return delegate.get(key);
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public final boolean isEmpty() {
 		return delegate.isEmpty();
 	}
 
 	@Override
-	public Set<String> keySet() {
+	public final Set<String> keySet() {
 		return delegate.keySet();
 	}
 
 	@Override
-	public MessageBinding put(String key, MessageBinding value) {
+	public final MessageBinding put(final String key, final MessageBinding value) {
 		return delegate.put(key, value);
 	}
 
 	@Override
-	public void putAll(Map<? extends String, ? extends MessageBinding> m) {
+	public final void putAll(final Map<? extends String, ? extends MessageBinding> m) {
 		delegate.putAll(m);
 	}
 
 	@Override
-	public MessageBinding remove(Object key) {
+	public final MessageBinding remove(final Object key) {
 		return delegate.remove(key);
 	}
 
 	@Override
-	public int size() {
+	public final int size() {
 		return delegate.size();
 	}
 
@@ -91,9 +91,9 @@ class MessageBindingsImpl implements MessageBindings {
 	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
-	
+
 	@Override
-	public Collection<MessageBinding> values() {
+	public final Collection<MessageBinding> values() {
 		return delegate.values();
 	}
 

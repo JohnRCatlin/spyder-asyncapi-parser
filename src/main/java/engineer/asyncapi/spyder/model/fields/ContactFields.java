@@ -30,7 +30,7 @@ enum ContactFields {
 	public final String field;
 	public final boolean required;
 
-	ContactFields(String field, boolean required) {
+	ContactFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

@@ -34,117 +34,117 @@ class TagsImpl implements Tags {
 	private List<Tag> delegate = new ArrayList<>();
 
 	@Override
-	public void add(int index, Tag element) {
+	public final void add(final int index, final Tag element) {
 		delegate.add(index, element);
 	}
 
 	@Override
-	public boolean add(Tag e) {
+	public final boolean add(final Tag e) {
 		return delegate.add(e);
 	}
 
 	@Override
-	public boolean addAll(Collection<? extends Tag> c) {
+	public final boolean addAll(final Collection<? extends Tag> c) {
 		return delegate.addAll(c);
 	}
 
 	@Override
-	public boolean addAll(int index, Collection<? extends Tag> c) {
+	public final boolean addAll(final int index, final Collection<? extends Tag> c) {
 		return delegate.addAll(index, c);
 	}
 
 	@Override
-	public void clear() {
+	public final void clear() {
 		delegate.clear();
 	}
 
 	@Override
-	public boolean contains(Object o) {
+	public final boolean contains(final Object o) {
 		return delegate.contains(o);
 	}
 
 	@Override
-	public boolean containsAll(Collection<?> c) {
+	public final boolean containsAll(final Collection<?> c) {
 		return delegate.containsAll(c);
 	}
 
 	@Override
-	public Tag get(int index) {
+	public final Tag get(final int index) {
 		return delegate.get(index);
 	}
 
 	@Override
-	public int indexOf(Object o) {
+	public final int indexOf(final Object o) {
 		return delegate.indexOf(o);
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public final boolean isEmpty() {
 		return delegate.isEmpty();
 	}
 
 	@Override
-	public Iterator<Tag> iterator() {
+	public final Iterator<Tag> iterator() {
 		return delegate.iterator();
 	}
 
 	@Override
-	public int lastIndexOf(Object o) {
+	public final int lastIndexOf(final Object o) {
 		return delegate.lastIndexOf(o);
 	}
 
 	@Override
-	public ListIterator<Tag> listIterator() {
+	public final ListIterator<Tag> listIterator() {
 		return delegate.listIterator();
 	}
 
 	@Override
-	public ListIterator<Tag> listIterator(int index) {
+	public final ListIterator<Tag> listIterator(final int index) {
 		return delegate.listIterator(index);
 	}
 
 	@Override
-	public Tag remove(int index) {
+	public final Tag remove(final int index) {
 		return delegate.remove(index);
 	}
 
 	@Override
-	public boolean remove(Object o) {
+	public final boolean remove(final Object o) {
 		return delegate.remove(o);
 	}
 
 	@Override
-	public boolean removeAll(Collection<?> c) {
+	public final boolean removeAll(final Collection<?> c) {
 		return delegate.removeAll(c);
 	}
 
 	@Override
-	public boolean retainAll(Collection<?> c) {
+	public final boolean retainAll(final Collection<?> c) {
 		return delegate.retainAll(c);
 	}
 
 	@Override
-	public Tag set(int index, Tag element) {
+	public final Tag set(final int index, final Tag element) {
 		return delegate.set(index, element);
 	}
 
 	@Override
-	public int size() {
+	public final int size() {
 		return delegate.size();
 	}
 
 	@Override
-	public List<Tag> subList(int fromIndex, int toIndex) {
+	public final List<Tag> subList(final int fromIndex, final int toIndex) {
 		return delegate.subList(fromIndex, toIndex);
 	}
 
 	@Override
-	public Object[] toArray() {
+	public final Object[] toArray() {
 		return delegate.toArray();
 	}
 
 	@Override
-	public <T> T[] toArray(T[] a) {
+	public final <T> T[] toArray(final T[] a) {
 		return delegate.toArray(a);
 	}
 

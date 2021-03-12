@@ -141,7 +141,7 @@ public enum Fields {
 
 	public final String value;
 
-	Fields(String value) {
+	Fields(final String value) {
 		this.value = value;
 	}
 }

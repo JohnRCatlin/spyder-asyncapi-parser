@@ -34,117 +34,117 @@ class MessageTriatsListImpl implements MessageTraitsList {
 	private final List<MessageTrait> delegate = new ArrayList<>();
 
 	@Override
-	public void add(int index, MessageTrait element) {
+	public final void add(final int index, final MessageTrait element) {
 		delegate.add(index, element);
 	}
 
 	@Override
-	public boolean add(MessageTrait e) {
+	public final boolean add(final MessageTrait e) {
 		return delegate.add(e);
 	}
 
 	@Override
-	public boolean addAll(Collection<? extends MessageTrait> c) {
+	public final boolean addAll(final Collection<? extends MessageTrait> c) {
 		return delegate.addAll(c);
 	}
 
 	@Override
-	public boolean addAll(int index, Collection<? extends MessageTrait> c) {
+	public final boolean addAll(final int index, final Collection<? extends MessageTrait> c) {
 		return delegate.addAll(index, c);
 	}
 
 	@Override
-	public void clear() {
+	public final void clear() {
 		delegate.clear();
 	}
 
 	@Override
-	public boolean contains(Object o) {
+	public final boolean contains(final Object o) {
 		return delegate.contains(o);
 	}
 
 	@Override
-	public boolean containsAll(Collection<?> c) {
+	public final boolean containsAll(final Collection<?> c) {
 		return delegate.containsAll(c);
 	}
 
 	@Override
-	public MessageTrait get(int index) {
+	public final MessageTrait get(final int index) {
 		return delegate.get(index);
 	}
 
 	@Override
-	public int indexOf(Object o) {
+	public final int indexOf(final Object o) {
 		return delegate.indexOf(o);
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public final boolean isEmpty() {
 		return delegate.isEmpty();
 	}
 
 	@Override
-	public Iterator<MessageTrait> iterator() {
+	public final Iterator<MessageTrait> iterator() {
 		return delegate.iterator();
 	}
 
 	@Override
-	public int lastIndexOf(Object o) {
+	public final int lastIndexOf(final Object o) {
 		return delegate.lastIndexOf(o);
 	}
 
 	@Override
-	public ListIterator<MessageTrait> listIterator() {
+	public final ListIterator<MessageTrait> listIterator() {
 		return delegate.listIterator();
 	}
 
 	@Override
-	public ListIterator<MessageTrait> listIterator(int index) {
+	public final ListIterator<MessageTrait> listIterator(final int index) {
 		return delegate.listIterator(index);
 	}
 
 	@Override
-	public MessageTrait remove(int index) {
+	public final MessageTrait remove(final int index) {
 		return delegate.remove(index);
 	}
 
 	@Override
-	public boolean remove(Object o) {
+	public final boolean remove(final Object o) {
 		return delegate.remove(o);
 	}
 
 	@Override
-	public boolean removeAll(Collection<?> c) {
+	public final boolean removeAll(final Collection<?> c) {
 		return delegate.removeAll(c);
 	}
 
 	@Override
-	public boolean retainAll(Collection<?> c) {
+	public final boolean retainAll(final Collection<?> c) {
 		return delegate.retainAll(c);
 	}
 
 	@Override
-	public MessageTrait set(int index, MessageTrait element) {
+	public final MessageTrait set(final int index, final MessageTrait element) {
 		return delegate.set(index, element);
 	}
 
 	@Override
-	public int size() {
+	public final int size() {
 		return delegate.size();
 	}
 
 	@Override
-	public List<MessageTrait> subList(int fromIndex, int toIndex) {
+	public final List<MessageTrait> subList(final int fromIndex, final int toIndex) {
 		return delegate.subList(fromIndex, toIndex);
 	}
 
 	@Override
-	public Object[] toArray() {
+	public final Object[] toArray() {
 		return delegate.toArray();
 	}
 
 	@Override
-	public <T> T[] toArray(T[] a) {
+	public final <T> T[] toArray(final T[] a) {
 		return delegate.toArray(a);
 	}
 

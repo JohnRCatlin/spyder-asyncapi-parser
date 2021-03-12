@@ -32,7 +32,6 @@ final class URLReader {
 		try (InputStream inputStream = new URL(url).openStream()) {
 			return IOUtils.toString(inputStream, StandardCharsets.UTF_8);
 		} catch (Exception e) {
-			e.printStackTrace();
 			return null;
 		}
 	}

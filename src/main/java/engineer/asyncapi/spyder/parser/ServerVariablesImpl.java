@@ -33,57 +33,57 @@ class ServerVariablesImpl implements ServerVariables {
 	private final Map<String, ServerVariable> delegate = new LinkedHashMap<>();
 
 	@Override
-	public void clear() {
+	public final void clear() {
 		delegate.clear();
 	}
 
 	@Override
-	public boolean containsKey(Object key) {
+	public final boolean containsKey(final Object key) {
 		return delegate.containsKey(key);
 	}
 
 	@Override
-	public boolean containsValue(Object value) {
+	public final boolean containsValue(final Object value) {
 		return delegate.containsValue(value);
 	}
 
 	@Override
-	public Set<Entry<String, ServerVariable>> entrySet() {
+	public final Set<Entry<String, ServerVariable>> entrySet() {
 		return delegate.entrySet();
 	}
 
 	@Override
-	public ServerVariable get(Object key) {
+	public final ServerVariable get(final Object key) {
 		return delegate.get(key);
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public final boolean isEmpty() {
 		return delegate.isEmpty();
 	}
 
 	@Override
-	public Set<String> keySet() {
+	public final Set<String> keySet() {
 		return delegate.keySet();
 	}
 
 	@Override
-	public ServerVariable put(String key, ServerVariable value) {
+	public final ServerVariable put(final String key, final ServerVariable value) {
 		return delegate.put(key, value);
 	}
 
 	@Override
-	public void putAll(Map<? extends String, ? extends ServerVariable> m) {
+	public final void putAll(final Map<? extends String, ? extends ServerVariable> m) {
 		delegate.putAll(m);
 	}
 
 	@Override
-	public ServerVariable remove(Object key) {
+	public final ServerVariable remove(final Object key) {
 		return delegate.remove(key);
 	}
 
 	@Override
-	public int size() {
+	public final int size() {
 		return delegate.size();
 	}
 
@@ -93,7 +93,7 @@ class ServerVariablesImpl implements ServerVariables {
 	}
 
 	@Override
-	public Collection<ServerVariable> values() {
+	public final Collection<ServerVariable> values() {
 		return delegate.values();
 	}
 

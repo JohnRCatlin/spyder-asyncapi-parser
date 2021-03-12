@@ -29,7 +29,7 @@ enum CorrelationIDFields {
 	public final String field;
 	public final boolean required;
 
-	CorrelationIDFields(String field, boolean required) {
+	CorrelationIDFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

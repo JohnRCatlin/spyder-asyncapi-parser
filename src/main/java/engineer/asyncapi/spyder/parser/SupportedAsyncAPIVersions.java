@@ -26,7 +26,7 @@ public enum SupportedAsyncAPIVersions {
 
 	public final String value;
 
-	SupportedAsyncAPIVersions(String value) {
+	SupportedAsyncAPIVersions(final String value) {
 		this.value = value;
 	}
 

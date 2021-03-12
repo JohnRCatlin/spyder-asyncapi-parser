@@ -28,7 +28,7 @@ enum MessageBindingsFields {
 	public final String field;
 	public final boolean required;
 
-	MessageBindingsFields(String field, boolean required) {
+	MessageBindingsFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

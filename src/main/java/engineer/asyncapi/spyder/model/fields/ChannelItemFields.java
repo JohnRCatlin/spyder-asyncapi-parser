@@ -33,7 +33,7 @@ enum ChannelItemFields {
 	public final String field;
 	public final boolean required;
 
-	ChannelItemFields(String field, boolean required) {
+	ChannelItemFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

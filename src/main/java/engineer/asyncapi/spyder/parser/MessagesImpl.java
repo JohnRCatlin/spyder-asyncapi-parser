@@ -38,52 +38,52 @@ final class MessagesImpl implements Messages {
 	}
 
 	@Override
-	public boolean containsKey(Object key) {
+	public boolean containsKey(final Object key) {
 		return delegate.containsKey(key);
 	}
 
 	@Override
-	public boolean containsValue(Object value) {
+	public boolean containsValue(final Object value) {
 		return delegate.containsValue(value);
 	}
 
 	@Override
-	public Set<Entry<String, Message>> entrySet() {
+	public final Set<Entry<String, Message>> entrySet() {
 		return delegate.entrySet();
 	}
 
 	@Override
-	public Message get(Object key) {
+	public final Message get(final Object key) {
 		return delegate.get(key);
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public final boolean isEmpty() {
 		return delegate.isEmpty();
 	}
 
 	@Override
-	public Set<String> keySet() {
+	public final Set<String> keySet() {
 		return delegate.keySet();
 	}
 
 	@Override
-	public Message put(String key, Message value) {
+	public final Message put(final String key, final Message value) {
 		return delegate.put(key, value);
 	}
 
 	@Override
-	public void putAll(Map<? extends String, ? extends Message> m) {
+	public final void putAll(final Map<? extends String, ? extends Message> m) {
 		delegate.putAll(m);
 	}
 
 	@Override
-	public Message remove(Object key) {
+	public final Message remove(final Object key) {
 		return delegate.remove(key);
 	}
 
 	@Override
-	public int size() {
+	public final int size() {
 		return delegate.size();
 	}
 
@@ -93,7 +93,7 @@ final class MessagesImpl implements Messages {
 	}
 	
 	@Override
-	public Collection<Message> values() {
+	public final Collection<Message> values() {
 		return delegate.values();
 	}
 }

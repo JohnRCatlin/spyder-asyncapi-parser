@@ -60,12 +60,12 @@ final class KafkaServerBinding010Impl implements KafkaServerBinding010 {
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public String getType() {
+	public final String getType() {
 		return TYPE;
 	}
 

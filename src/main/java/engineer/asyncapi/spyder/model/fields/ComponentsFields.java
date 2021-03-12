@@ -38,7 +38,7 @@ enum ComponentsFields {
 	public final String field;
 	public final boolean required;
 
-	ComponentsFields(String field, boolean required) {
+	ComponentsFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

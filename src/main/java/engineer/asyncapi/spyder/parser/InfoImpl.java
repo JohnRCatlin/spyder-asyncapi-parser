@@ -75,13 +75,13 @@ final class InfoImpl implements Info {
 			return this;
 		}
 	}
+
 	private Contact contact = null;
 	private String description = null;
 	private Extensions extensions = null;
 	private License license = null;
 	private String termsOfService = null;
 	private String title = null;
-
 	private String version = null;
 
 	private InfoImpl() {
@@ -89,42 +89,42 @@ final class InfoImpl implements Info {
 	}
 
 	@Override
-	public Contact getContact() {
+	public final Contact getContact() {
 		return this.contact;
 	}
 
 	@Override
-	public String getDescription() {
+	public final String getDescription() {
 		return this.description;
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public License getLicense() {
+	public final License getLicense() {
 		return this.license;
 	}
 
 	@Override
-	public String getTermsOfService() {
+	public final String getTermsOfService() {
 		return this.termsOfService;
 	}
 
 	@Override
-	public String getTitle() {
+	public final String getTitle() {
 		return this.title;
 	}
 
 	@Override
-	public String getVersion() {
+	public final String getVersion() {
 		return this.version;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 }

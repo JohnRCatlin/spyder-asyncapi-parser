@@ -62,7 +62,7 @@ final class ExampleImpl implements Example {
 			return this;
 		}
 
-		public final Builder ref(String ref) {
+		public final Builder ref(final String ref) {
 			example.ref = (ref != null && RefUtility.isRelative(ref)) ? REF_BASE + ref : ref;
 			return this;
 		}
@@ -72,17 +72,19 @@ final class ExampleImpl implements Example {
 			return this;
 		}
 
+		//object type smell
 		public final Builder value(final Object value) {
 			example.value = value;
 			return this;
 		}
 	}
+
 	private String description = null;
 	private Extensions extensions = null;
 	private String externalValue = null;
 	private String ref = null;
 	private String summary = null;
-
+	//object type smell
 	private Object value = null;
 
 	private ExampleImpl() {
@@ -90,37 +92,37 @@ final class ExampleImpl implements Example {
 	}
 
 	@Override
-	public String getDescription() {
+	public final String getDescription() {
 		return this.description;
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public String getExternalValue() {
+	public final String getExternalValue() {
 		return this.externalValue;
 	}
 
 	@Override
-	public String getRef() {
+	public final String getRef() {
 		return this.ref;
 	}
 
 	@Override
-	public String getSummary() {
+	public final String getSummary() {
 		return this.summary;
 	}
 
 	@Override
-	public Object getValue() {
+	public final Object getValue() {
 		return this.value;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 }

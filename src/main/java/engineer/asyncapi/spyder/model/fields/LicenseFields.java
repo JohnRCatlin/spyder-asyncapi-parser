@@ -29,7 +29,7 @@ enum LicenseFields {
 	public final String field;
 	public final boolean required;
 
-	LicenseFields(String field, boolean required) {
+	LicenseFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

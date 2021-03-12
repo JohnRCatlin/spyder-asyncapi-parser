@@ -40,7 +40,7 @@ enum MessageFields {
 	public final String field;
 	public final boolean required;
 
-	MessageFields(String field, boolean required) {
+	MessageFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

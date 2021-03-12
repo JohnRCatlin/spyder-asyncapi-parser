@@ -30,7 +30,7 @@ enum ParameterFields {
 	public final String field;
 	public final boolean required;
 
-	ParameterFields(String field, boolean required) {
+	ParameterFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

@@ -90,7 +90,6 @@ final class OperationTraitImpl implements OperationTrait {
 	private String operationId = null;
 	private String ref = null;
 	private String summary = null;
-
 	private Tags tags = null;
 
 	private OperationTraitImpl() {
@@ -98,47 +97,47 @@ final class OperationTraitImpl implements OperationTrait {
 	}
 
 	@Override
-	public OperationBinding getBindings() {
+	public final OperationBinding getBindings() {
 		return this.bindings;
 	}
 
 	@Override
-	public String getDescription() {
+	public final String getDescription() {
 		return this.description;
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public ExternalDocs getExternalDocs() {
+	public final ExternalDocs getExternalDocs() {
 		return this.externalDocs;
 	}
 
 	@Override
-	public String getOperationId() {
+	public final String getOperationId() {
 		return this.operationId;
 	}
 
 	@Override
-	public String getRef() {
+	public final String getRef() {
 		return this.ref;
 	}
 
 	@Override
-	public String getSummary() {
+	public final String getSummary() {
 		return this.summary;
 	}
 
 	@Override
-	public Tags getTags() {
+	public final Tags getTags() {
 		return this.tags;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 }

@@ -31,7 +31,7 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
  */
 final class ObjectMapperFactory {
 
-	private static ObjectMapper create(final JsonFactory jsonFactory) {
+	private static final ObjectMapper create(final JsonFactory jsonFactory) {
 		final ObjectMapper mapper = new ObjectMapper(jsonFactory);
 		mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
 		mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
@@ -40,12 +40,12 @@ final class ObjectMapperFactory {
 		return mapper;
 	}
 
-	public static ObjectMapper forJson() {
+	public static final ObjectMapper forJson() {
 		JsonFactory factory = new JsonFactoryBuilder().enable(StreamReadFeature.STRICT_DUPLICATE_DETECTION).build();
 		return create(factory);
 	}
 
-	public static ObjectMapper forYaml() {
+	public static final ObjectMapper forYaml() {
 		JsonFactory factory = YAMLFactory.builder().enable(StreamReadFeature.STRICT_DUPLICATE_DETECTION).build();
 		return create(factory);
 	}

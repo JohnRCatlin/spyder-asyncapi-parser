@@ -33,57 +33,57 @@ class ChannelsImpl implements Channels {
 	private final Map<String, Channel> delegate = new LinkedHashMap<>();
 
 	@Override
-	public void clear() {
+	public final void clear() {
 		delegate.clear();
 	}
 
 	@Override
-	public boolean containsKey(Object key) {
+	public final boolean containsKey(final Object key) {
 		return delegate.containsKey(key);
 	}
 
 	@Override
-	public boolean containsValue(Object value) {
+	public final boolean containsValue(final Object value) {
 		return delegate.containsValue(value);
 	}
 
 	@Override
-	public Set<Entry<String, Channel>> entrySet() {
+	public final Set<Entry<String, Channel>> entrySet() {
 		return delegate.entrySet();
 	}
 
 	@Override
-	public Channel get(Object key) {
+	public final Channel get(final Object key) {
 		return delegate.get(key);
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public final boolean isEmpty() {
 		return delegate.isEmpty();
 	}
 
 	@Override
-	public Set<String> keySet() {
+	public final Set<String> keySet() {
 		return delegate.keySet();
 	}
 
 	@Override
-	public Channel put(String key, Channel value) {
+	public final Channel put(final String key, final Channel value) {
 		return delegate.put(key, value);
 	}
 
 	@Override
-	public void putAll(Map<? extends String, ? extends Channel> m) {
+	public final void putAll(final Map<? extends String, ? extends Channel> m) {
 		delegate.putAll(m);
 	}
 
 	@Override
-	public Channel remove(Object key) {
+	public final Channel remove(final Object key) {
 		return delegate.remove(key);
 	}
 
 	@Override
-	public int size() {
+	public final int size() {
 		return delegate.size();
 	}
 
@@ -93,7 +93,7 @@ class ChannelsImpl implements Channels {
 	}
 	
 	@Override
-	public Collection<Channel> values() {
+	public final Collection<Channel> values() {
 		return delegate.values();
 	}
 }

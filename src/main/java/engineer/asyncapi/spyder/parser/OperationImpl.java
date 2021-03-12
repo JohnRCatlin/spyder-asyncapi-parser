@@ -106,52 +106,52 @@ final class OperationImpl implements Operation {
 	}
 
 	@Override
-	public OperationBindings getBindings() {
+	public final OperationBindings getBindings() {
 		return this.bindings;
 	}
 
 	@Override
-	public String getDescription() {
+	public final String getDescription() {
 		return this.description;
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public ExternalDocs getExternalDocs() {
+	public final ExternalDocs getExternalDocs() {
 		return this.externalDocs;
 	}
 
 	@Override
-	public Message getMessage() {
+	public final Message getMessage() {
 		return message;
 	}
 
 	@Override
-	public String getOperationId() {
+	public final String getOperationId() {
 		return this.operationId;
 	}
 
 	@Override
-	public String getSummary() {
+	public final String getSummary() {
 		return this.summary;
 	}
 
 	@Override
-	public List<Tag> getTags() {
+	public final List<Tag> getTags() {
 		return this.tags;
 	}
 
 	@Override
-	public List<OperationTrait> getTraits() {
+	public final List<OperationTrait> getTraits() {
 		return this.traits;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 

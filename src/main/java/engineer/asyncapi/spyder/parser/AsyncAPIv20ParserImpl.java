@@ -138,7 +138,7 @@ class AsyncAPIv20ParserImpl extends AsyncAPICommonObjectParser implements AsyncA
 	}
 
 	@Override
-	public AsyncAPI parseFrom(String urlOrFileOrRawString) {
+	public final AsyncAPI parseFrom(final String urlOrFileOrRawString) {
 		AsyncAPI result = null;
 		if (null != (result = parseFromString(urlOrFileOrRawString))) {
 			return result;
@@ -153,7 +153,7 @@ class AsyncAPIv20ParserImpl extends AsyncAPICommonObjectParser implements AsyncA
 	}
 
 	@Override
-	public AsyncAPI parseFromFile(String fileLocation) {
+	public final AsyncAPI parseFromFile(final String fileLocation) {
 		try {
 			final FileReader reader = new FileReader();
 			final String rawModel = reader.fromLocation(fileLocation);
@@ -164,7 +164,7 @@ class AsyncAPIv20ParserImpl extends AsyncAPICommonObjectParser implements AsyncA
 	}
 
 	@Override
-	public AsyncAPI parseFromString(String documentContents) {
+	public final AsyncAPI parseFromString(final String documentContents) {
 		try {
 			final ObjectMapper mapper = mapperInstance(documentContents);
 			final JsonNode rootNode = mapper.readTree(documentContents);
@@ -175,7 +175,7 @@ class AsyncAPIv20ParserImpl extends AsyncAPICommonObjectParser implements AsyncA
 	}
 
 	@Override
-	public AsyncAPI parseFromUrl(String url) {
+	public final AsyncAPI parseFromUrl(final String url) {
 		try {
 			final URLReader reader = new URLReader();
 			final String rawModel = reader.fromLocation(url);

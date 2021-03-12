@@ -68,27 +68,27 @@ final class KafkaOperationBinding010Impl implements KafkaOperationBinding010 {
 	}
 
 	@Override
-	public Schema getClientId() {
+	public final Schema getClientId() {
 		return this.clientId;
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public Schema getGroupId() {
+	public final Schema getGroupId() {
 		return this.groupId;
 	}
 
 	@Override
-	public String getType() {
+	public final String getType() {
 		return TYPE;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 

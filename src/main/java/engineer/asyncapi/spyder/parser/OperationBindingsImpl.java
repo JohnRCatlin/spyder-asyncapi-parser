@@ -38,52 +38,52 @@ final class OperationBindingsImpl implements OperationBindings {
 	}
 
 	@Override
-	public boolean containsKey(Object key) {
+	public final boolean containsKey(final Object key) {
 		return delegate.containsKey(key);
 	}
 
 	@Override
-	public boolean containsValue(Object value) {
+	public final boolean containsValue(final Object value) {
 		return delegate.containsValue(value);
 	}
 
 	@Override
-	public Set<Entry<String, OperationBinding>> entrySet() {
+	public final Set<Entry<String, OperationBinding>> entrySet() {
 		return delegate.entrySet();
 	}
 
 	@Override
-	public OperationBinding get(Object key) {
+	public final OperationBinding get(final Object key) {
 		return delegate.get(key);
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public final boolean isEmpty() {
 		return delegate.isEmpty();
 	}
 
 	@Override
-	public Set<String> keySet() {
+	public final Set<String> keySet() {
 		return delegate.keySet();
 	}
 
 	@Override
-	public OperationBinding put(String key, OperationBinding value) {
+	public final OperationBinding put(final String key, final OperationBinding value) {
 		return delegate.put(key, value);
 	}
 
 	@Override
-	public void putAll(Map<? extends String, ? extends OperationBinding> m) {
+	public final void putAll(final Map<? extends String, ? extends OperationBinding> m) {
 		delegate.putAll(m);
 	}
 
 	@Override
-	public OperationBinding remove(Object key) {
+	public final OperationBinding remove(final Object key) {
 		return delegate.remove(key);
 	}
 
 	@Override
-	public int size() {
+	public final int size() {
 		return delegate.size();
 	}
 
@@ -93,7 +93,7 @@ final class OperationBindingsImpl implements OperationBindings {
 	}
 
 	@Override
-	public Collection<OperationBinding> values() {
+	public final Collection<OperationBinding> values() {
 		return delegate.values();
 	}
 }

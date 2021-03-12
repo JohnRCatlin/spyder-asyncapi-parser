@@ -56,7 +56,6 @@ final class LicenseImpl implements License {
 
 	private Extensions extensions = null;
 	private String name = null;
-
 	private String url = null;
 
 	private LicenseImpl() {
@@ -64,22 +63,22 @@ final class LicenseImpl implements License {
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public String getName() {
+	public final String getName() {
 		return this.name;
 	}
 
 	@Override
-	public String getUrl() {
+	public final String getUrl() {
 		return this.url;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 }

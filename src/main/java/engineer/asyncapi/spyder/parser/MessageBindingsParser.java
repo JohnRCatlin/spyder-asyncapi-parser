@@ -58,11 +58,11 @@ final class MessageBindingsParser extends AsyncAPICommonObjectParser {
 		return messageBindings;
 	}
 
-	static MessageBinding parse(final String name, final JsonNode node) {
+	static final MessageBinding parse(final String name, final JsonNode node) {
 		return parse(name, (ObjectNode) node);
 	}
 
-	static MessageBinding parse(final String type, final ObjectNode node) {
+	static final MessageBinding parse(final String type, final ObjectNode node) {
 		switch (BindingType.getType(type)) {
 		case KAFKA:
 			return KafkaMessageBindingParser.parse(node);

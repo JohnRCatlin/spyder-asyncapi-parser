@@ -33,7 +33,7 @@ enum InfoFields {
 	public final boolean required;
 	public final String value;
 
-	InfoFields(String value, boolean required) {
+	InfoFields(final String value, final boolean required) {
 		this.value = value;
 		this.required = required;
 	}

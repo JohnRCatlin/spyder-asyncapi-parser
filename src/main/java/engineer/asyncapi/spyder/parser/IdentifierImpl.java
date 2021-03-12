@@ -50,12 +50,12 @@ final class IdentifierImpl implements Identifier {
 	}
 
 	@Override
-	public String getId() {
+	public final String getId() {
 		return this.id;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 }

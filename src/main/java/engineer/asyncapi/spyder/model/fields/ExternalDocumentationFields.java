@@ -29,7 +29,7 @@ enum ExternalDocumentationFields {
 	public final String field;
 	public final boolean required;
 
-	ExternalDocumentationFields(String field, boolean required) {
+	ExternalDocumentationFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

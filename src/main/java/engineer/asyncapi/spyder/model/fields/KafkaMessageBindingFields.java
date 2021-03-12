@@ -28,7 +28,7 @@ enum KafkaMessageBindingFields {
 	public final String field;
 	public final boolean required;
 
-	KafkaMessageBindingFields(String field, boolean required) {
+	KafkaMessageBindingFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

@@ -33,57 +33,57 @@ final class OperationTraitsImpl implements OperationTraits {
 	private final Map<String, OperationTrait> delegate = new LinkedHashMap<>();
 
 	@Override
-	public void clear() {
+	public final void clear() {
 		delegate.clear();
 	}
 
 	@Override
-	public boolean containsKey(Object key) {
+	public final boolean containsKey(final Object key) {
 		return delegate.containsKey(key);
 	}
 
 	@Override
-	public boolean containsValue(Object value) {
+	public final boolean containsValue(final Object value) {
 		return delegate.containsValue(value);
 	}
 
 	@Override
-	public Set<Entry<String, OperationTrait>> entrySet() {
+	public final Set<Entry<String, OperationTrait>> entrySet() {
 		return delegate.entrySet();
 	}
 
 	@Override
-	public OperationTrait get(Object key) {
+	public final OperationTrait get(final Object key) {
 		return delegate.get(key);
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public final boolean isEmpty() {
 		return delegate.isEmpty();
 	}
 
 	@Override
-	public Set<String> keySet() {
+	public final Set<String> keySet() {
 		return delegate.keySet();
 	}
 
 	@Override
-	public OperationTrait put(String key, OperationTrait value) {
+	public final OperationTrait put(final String key, final OperationTrait value) {
 		return delegate.put(key, value);
 	}
 
 	@Override
-	public void putAll(Map<? extends String, ? extends OperationTrait> m) {
+	public final void putAll(Map<? extends String, ? extends OperationTrait> m) {
 		delegate.putAll(m);
 	}
 
 	@Override
-	public OperationTrait remove(Object key) {
+	public final OperationTrait remove(final Object key) {
 		return delegate.remove(key);
 	}
 
 	@Override
-	public int size() {
+	public final int size() {
 		return delegate.size();
 	}
 
@@ -93,7 +93,7 @@ final class OperationTraitsImpl implements OperationTraits {
 	}
 
 	@Override
-	public Collection<OperationTrait> values() {
+	public final Collection<OperationTrait> values() {
 		return delegate.values();
 	}
 }

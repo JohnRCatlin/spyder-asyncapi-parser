@@ -80,7 +80,6 @@ final class OAuthFlowImpl implements OAuthFlow {
 	private Extensions extensions = null;
 	private String refreshUrl = null;
 	private OAuthScopes scopes = null;
-
 	private String tokenUrl = null;
 
 	private OAuthFlowImpl() {
@@ -88,32 +87,32 @@ final class OAuthFlowImpl implements OAuthFlow {
 	}
 
 	@Override
-	public String getAuthorizationUrl() {
+	public final String getAuthorizationUrl() {
 		return this.authorizationUrl;
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public String getRefreshUrl() {
+	public final String getRefreshUrl() {
 		return this.refreshUrl;
 	}
 
 	@Override
-	public OAuthScopes getScopes() {
+	public final OAuthScopes getScopes() {
 		return this.scopes;
 	}
 
 	@Override
-	public String getTokenUrl() {
+	public final String getTokenUrl() {
 		return this.tokenUrl;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 

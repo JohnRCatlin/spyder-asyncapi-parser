@@ -191,7 +191,7 @@ class SchemaImpl implements Schema {
 			return this;
 		}
 
-		final Builder theDefault(String theDefault) {
+		final Builder theDefault(final String theDefault) {
 			schema.theDefault = theDefault;
 			return this;
 		}
@@ -267,202 +267,202 @@ class SchemaImpl implements Schema {
 	}
 
 	@Override
-	public Boolean getAdditionalItems() {
+	public final Boolean getAdditionalItems() {
 		return this.additionalItems;
 	}
 
 	@Override
-	public Boolean getAdditionalProperties() {
+	public final Boolean getAdditionalProperties() {
 		return this.additionalProperties;
 	}
 
 	@Override
-	public List<String> getAllOf() {
+	public final List<String> getAllOf() {
 		return this.allOf;
 	}
 
 	@Override
-	public List<String> getAnyOf() {
+	public final List<String> getAnyOf() {
 		return this.anyOf;
 	}
 
 	@Override
-	public Boolean getConst() {
+	public final Boolean getConst() {
 		return this.theConst;
 	}
 
 	@Override
-	public Schema getContains() {
+	public final Schema getContains() {
 		return this.contains;
 	}
 
 	@Override
-	public String getDefault() {
+	public final String getDefault() {
 		return this.theDefault;
 	}
 
 	@Override
-	public String getDescription() {
+	public final String getDescription() {
 		return this.description;
 	}
 
 	@Override
-	public String getDiscriminator() {
+	public final String getDiscriminator() {
 		return this.discriminator;
 	}
 
 	@Override
-	public List<String> getEnum() {
+	public final List<String> getEnum() {
 		return this.theEnum;
 	}
 
 	@Override
-	public Example getExample() {
+	public final Example getExample() {
 		return this.example;
 	}
 
 	@Override
-	public Examples getExamples() {
+	public final Examples getExamples() {
 		return this.examples;
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public ExternalDocs getExternalDocs() {
+	public final ExternalDocs getExternalDocs() {
 		return this.externalDocs;
 	}
 
 	@Override
-	public String getFormat() {
+	public final String getFormat() {
 		return this.format;
 	}
 
 	@Override
-	public Schema getItems() {
+	public final Schema getItems() {
 		return this.items;
 	}
 
 	@Override
-	public BigDecimal getMaximum() {
+	public final BigDecimal getMaximum() {
 		return this.maximum;
 	}
 
 	@Override
-	public Integer getMaxItems() {
+	public final Integer getMaxItems() {
 		return this.maxItems;
 	}
 
 	@Override
-	public Integer getMaxLength() {
+	public final Integer getMaxLength() {
 		return this.maxLength;
 	}
 
 	@Override
-	public Integer getMaxProperties() {
+	public final Integer getMaxProperties() {
 		return this.maxProperties;
 	}
 
 	@Override
-	public BigDecimal getMinimum() {
+	public final BigDecimal getMinimum() {
 		return this.minimum;
 	}
 
 	@Override
-	public Integer getMinItems() {
+	public final Integer getMinItems() {
 		return this.minItems;
 	}
 
 	@Override
-	public Integer getMinLength() {
+	public final Integer getMinLength() {
 		return this.minLength;
 	}
 
 	@Override
-	public Integer getMinProperties() {
+	public final Integer getMinProperties() {
 		return this.minProperties;
 	}
 
 	@Override
-	public BigDecimal getMultipleOf() {
+	public final BigDecimal getMultipleOf() {
 		return multipleOf;
 	}
 
 	@Override
-	public List<String> getNot() {
+	public final List<String> getNot() {
 		return this.not;
 	}
 
 	@Override
-	public List<String> getOneOf() {
+	public final List<String> getOneOf() {
 		return this.oneOf;
 	}
 
 	@Override
-	public String getPattern() {
+	public final String getPattern() {
 		return this.pattern;
 	}
 
 	@Override
-	public Map<String, Schema> getProperties() {
+	public final Map<String, Schema> getProperties() {
 		return this.properties;
 	}
 
 	@Override
-	public Set<String> getPropertyNames() {
+	public final Set<String> getPropertyNames() {
 		return (null == this.properties) ? null : this.properties.keySet();
 	}
 
 	@Override
-	public Boolean getReadOnly() {
+	public final Boolean getReadOnly() {
 		return this.readOnly;
 	}
 
 	@Override
-	public String getRef() {
+	public final String getRef() {
 		return this.ref;
 	}
 
 	@Override
-	public List<String> getRequiredProperties() {
+	public final List<String> getRequiredProperties() {
 		return this.required;
 	}
 
 	@Override
-	public String getTitle() {
+	public final String getTitle() {
 		return this.title;
 	}
 
 	@Override
-	public String getType() {
+	public final String getType() {
 		return this.type;
 	}
 
 	@Override
-	public Boolean getUniqueItems() {
+	public final Boolean getUniqueItems() {
 		return this.uniqueItems;
 	}
 
 	@Override
-	public Boolean getWriteOnly() {
+	public final Boolean getWriteOnly() {
 		return this.writeOnly;
 	}
 
 	@Override
-	public Boolean isDeprecated() {
+	public final Boolean isDeprecated() {
 		return this.deprecated;
 	}
 
 	@Override
-	public Boolean isExclusiveMaximum() {
+	public final Boolean isExclusiveMaximum() {
 		return this.exclusiveMaximum;
 	}
 
 	@Override
-	public Boolean isExclusiveMinimum() {
+	public final Boolean isExclusiveMinimum() {
 		return this.exclusiveMinimum;
 	}
 

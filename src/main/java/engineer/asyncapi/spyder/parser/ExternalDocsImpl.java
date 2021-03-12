@@ -53,44 +53,32 @@ final class ExternalDocsImpl implements ExternalDocs {
 			return this;
 		}
 	}
+
 	private String description = null;
 	private Extensions extensions = null;
-
 	private String url = null;
 
 	private ExternalDocsImpl() {
 		/* Use the builder for construction. */
 	}
 
-	/**
-	 * 
-	 * @return
-	 */
 	@Override
-	public String getDescription() {
+	public final String getDescription() {
 		return this.description;
 	}
 
-	/**
-	 * 
-	 * @return
-	 */
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
-	/**
-	 * 
-	 * @return
-	 */
 	@Override
-	public String getUrl() {
+	public final String getUrl() {
 		return this.url;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 }

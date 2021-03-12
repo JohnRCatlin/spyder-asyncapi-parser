@@ -29,7 +29,7 @@ enum SchemaFields {
 	DEPRECATED("deprecated", false),
 	DESCRIPTION("description", false),
 	DISCRIMINATOR("discriminator", false),
-	ENUM("_enum", false),
+	ENUM("enum", false),
 	EXAMPLE("example", false),
 	EXCLUSIVE_MAXIMUM("exclusiveMaximum", false),
 	EXCLUSIVE_MINIMUM("exclusiveMinimum", false),
@@ -62,7 +62,7 @@ enum SchemaFields {
 	public final String field;
 	public final boolean required;
 
-	SchemaFields(String field, boolean required) {
+	SchemaFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

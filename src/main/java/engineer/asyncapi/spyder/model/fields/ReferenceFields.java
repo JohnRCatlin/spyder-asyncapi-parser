@@ -27,7 +27,7 @@ enum ReferenceFields {
 	public final String field;
 	public final boolean required;
 
-	ReferenceFields(String field, boolean required) {
+	ReferenceFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

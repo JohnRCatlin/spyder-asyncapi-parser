@@ -25,7 +25,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  */
 final class ToStringFormatter {
 
-	public static final String toString(Object object) {
+	public static final String toString(final Object object) {
 		return ReflectionToStringBuilder.toString(object, ToStringStyle.MULTI_LINE_STYLE, true, true);
 	}
 

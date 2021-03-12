@@ -68,7 +68,6 @@ public class TestSchema2Fragments extends AsyncApiV2ParserTestBase {
 		try {
 			rootNode = mapper.readTree(rawModel);
 		} catch (JsonProcessingException e) {
-			e.printStackTrace();
 		}
 		componentsNode = rootNode.get("components");
 		schemasNode = componentsNode.get("schemas");
@@ -217,9 +216,9 @@ public class TestSchema2Fragments extends AsyncApiV2ParserTestBase {
 		assertEquals("Whether to turn on or off the light.", command.getDescription());
 
 		assertNotNull(command.getEnum());
-		final List<String> _enum = command.getEnum();
-		assertTrue(_enum.contains("on"));
-		assertTrue(_enum.contains("off"));
+		final List<String> theEnum = command.getEnum();
+		assertTrue(theEnum.contains("on"));
+		assertTrue(theEnum.contains("off"));
 
 		final Schema sentAt = schema.getProperties().get("sentAt");
 		assertEquals("#/components/schemas/sentAt", sentAt.getRef());

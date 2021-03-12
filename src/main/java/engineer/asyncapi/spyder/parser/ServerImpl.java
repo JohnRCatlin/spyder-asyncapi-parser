@@ -99,7 +99,6 @@ final class ServerImpl implements Server {
 	private String protocolVersion = null;
 	private Security security = null;
 	private String url = null;
-
 	private Map<String, ServerVariable> variables = null;
 
 	private ServerImpl() {
@@ -107,47 +106,47 @@ final class ServerImpl implements Server {
 	}
 
 	@Override
-	public ServerBindings getBindings() {
+	public final ServerBindings getBindings() {
 		return this.bindings;
 	}
 
 	@Override
-	public String getDescription() {
+	public final String getDescription() {
 		return this.description;
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public String getProtocol() {
+	public final String getProtocol() {
 		return this.protocol;
 	}
 
 	@Override
-	public String getProtocolVersion() {
+	public final String getProtocolVersion() {
 		return this.protocolVersion;
 	}
 
 	@Override
-	public Security getSecurity() {
+	public final Security getSecurity() {
 		return this.security;
 	}
 
 	@Override
-	public String getUrl() {
+	public final String getUrl() {
 		return this.url;
 	}
 
 	@Override
-	public Map<String, ServerVariable> getVariables() {
+	public final Map<String, ServerVariable> getVariables() {
 		return this.variables;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 }

@@ -63,7 +63,7 @@ final class ParameterImpl implements Parameter {
 			return this;
 		}
 
-		final Builder ref(String ref) {
+		final Builder ref(final String ref) {
 			parameter.ref = (ref != null && RefUtility.isRelative(ref)) ? REF_BASE + ref : ref;
 			return this;
 		}
@@ -78,7 +78,6 @@ final class ParameterImpl implements Parameter {
 	private Extensions extensions = null;
 	private String location = null;
 	private String ref = null;
-
 	private Schema schema = null;
 
 	private ParameterImpl() {
@@ -86,32 +85,32 @@ final class ParameterImpl implements Parameter {
 	}
 
 	@Override
-	public String getDescription() {
+	public final String getDescription() {
 		return this.description;
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public String getLocation() {
+	public final String getLocation() {
 		return this.location;
 	}
 
 	@Override
-	public String getRef() {
+	public final String getRef() {
 		return this.ref;
 	}
 
 	@Override
-	public Schema getSchema() {
+	public final Schema getSchema() {
 		return this.schema;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 }

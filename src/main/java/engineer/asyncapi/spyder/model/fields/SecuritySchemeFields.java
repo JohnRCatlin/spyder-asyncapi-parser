@@ -35,7 +35,7 @@ enum SecuritySchemeFields {
 	public final String field;
 	public final boolean required;
 
-	SecuritySchemeFields(String field, boolean required) {
+	SecuritySchemeFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

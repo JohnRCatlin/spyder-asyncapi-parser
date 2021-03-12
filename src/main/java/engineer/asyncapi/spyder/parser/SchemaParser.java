@@ -196,7 +196,7 @@ final class SchemaParser extends AsyncAPICommonObjectParser {
 		return bigDecimalFrom(Fields.MULTIPLE_OF.value, node);
 	}
 
-	static final List<String> parseNot(ObjectNode node) {
+	static final List<String> parseNot(final ObjectNode node) {
 		if (null == node) {
 			return null;
 		}
@@ -214,7 +214,7 @@ final class SchemaParser extends AsyncAPICommonObjectParser {
 		return null;
 	}
 
-	static final List<String> parseOneOf(ObjectNode node) {
+	static final List<String> parseOneOf(final ObjectNode node) {
 		if (null == node) {
 			return null;
 		}

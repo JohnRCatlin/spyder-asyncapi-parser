@@ -33,62 +33,62 @@ class ServersImpl implements Servers {
 	private final Map<String, Server> delegate = new LinkedHashMap<>();
 
 	@Override
-	public void clear() {
+	public final void clear() {
 		delegate.clear();
 	}
 
 	@Override
-	public boolean containsKey(Object key) {
+	public final boolean containsKey(final Object key) {
 		return delegate.containsKey(key);
 	}
 
 	@Override
-	public boolean containsValue(Object value) {
+	public final boolean containsValue(final Object value) {
 		return delegate.containsValue(value);
 	}
 
 	@Override
-	public Set<Entry<String, Server>> entrySet() {
+	public final Set<Entry<String, Server>> entrySet() {
 		return delegate.entrySet();
 	}
 
 	@Override
-	public Server get(Object key) {
+	public final Server get(final Object key) {
 		return delegate.get(key);
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public final boolean isEmpty() {
 		return delegate.isEmpty();
 	}
 
 	@Override
-	public Set<String> keySet() {
+	public final Set<String> keySet() {
 		return delegate.keySet();
 	}
 
 	@Override
-	public Server put(String key, Server value) {
+	public final Server put(final String key, final Server value) {
 		return delegate.put(key, value);
 	}
 
 	@Override
-	public void putAll(Map<? extends String, ? extends Server> m) {
+	public final void putAll(final Map<? extends String, ? extends Server> m) {
 		delegate.putAll(m);
 	}
 
 	@Override
-	public Server remove(Object key) {
+	public final Server remove(final Object key) {
 		return delegate.remove(key);
 	}
 
 	@Override
-	public int size() {
+	public final int size() {
 		return delegate.size();
 	}
 
 	@Override
-	public Collection<Server> values() {
+	public final Collection<Server> values() {
 		return delegate.values();
 	}
 

@@ -119,57 +119,57 @@ final class SecuritySchemeImpl implements SecurityScheme {
 	}
 
 	@Override
-	public String getBearerFormat() {
+	public final String getBearerFormat() {
 		return this.bearerFormat;
 	}
 
 	@Override
-	public String getDescription() {
+	public final String getDescription() {
 		return this.description;
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public OAuthFlows getFlows() {
+	public final OAuthFlows getFlows() {
 		return this.flows;
 	}
 
 	@Override
-	public String getIn() {
+	public final String getIn() {
 		return this.in;
 	}
 
 	@Override
-	public String getName() {
+	public final String getName() {
 		return this.name;
 	}
 
 	@Override
-	public String getOpenIdConnectUrl() {
+	public final String getOpenIdConnectUrl() {
 		return this.openIdConnectUrl;
 	}
 
 	@Override
-	public String getRef() {
+	public final String getRef() {
 		return this.ref;
 	}
 
 	@Override
-	public String getScheme() {
+	public final String getScheme() {
 		return this.scheme;
 	}
 
 	@Override
-	public String getType() {
+	public final String getType() {
 		return this.type;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 }

@@ -56,11 +56,11 @@ final class ServerVariableImpl implements ServerVariable {
 			return this;
 		}
 
-		final Builder enumItem(final String _enumItem) {
+		final Builder enumItem(final String enumItem) {
 			if (variable.theEnum == null) {
 				variable.theEnum = new ArrayList<>();
 			}
-			variable.theEnum.add(_enumItem);
+			variable.theEnum.add(enumItem);
 			return this;
 		}
 
@@ -81,7 +81,6 @@ final class ServerVariableImpl implements ServerVariable {
 	private String theDefault = null;
 	private List<String> theEnum = null;
 	private String description = null;
-
 	private Extensions extensions = null;
 
 	private ServerVariableImpl() {
@@ -89,32 +88,32 @@ final class ServerVariableImpl implements ServerVariable {
 	}
 
 	@Override
-	public String getDefault() {
+	public final String getDefault() {
 		return this.theDefault;
 	}
 
 	@Override
-	public String getDescription() {
+	public final String getDescription() {
 		return this.description;
 	}
 
 	@Override
-	public List<String> getEnum() {
+	public final List<String> getEnum() {
 		return this.theEnum;
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public void setEnum(final List<String> theEnum) {
+	public final void setEnum(final List<String> theEnum) {
 		this.theEnum = theEnum;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 	

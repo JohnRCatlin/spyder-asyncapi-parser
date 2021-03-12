@@ -69,7 +69,7 @@ final class KafkaOperationBindingParser extends AsyncAPICommonObjectParser {
 	 * "clientId":{"type":"string","enum":["myClientId"]}, "bindingVersion":"0.1.0"
 	 * }</code>
 	 */
-	private static Schema parseClientIdLongForm(final ObjectNode node) {
+	private static final Schema parseClientIdLongForm(final ObjectNode node) {
 		final SchemaImpl.Builder builder = new SchemaImpl.Builder();
 		ObjectNode objectNode = objectNodeFrom(Fields.CLIENT_ID.value, node);
 		if (null != objectNode) {
@@ -85,7 +85,7 @@ final class KafkaOperationBindingParser extends AsyncAPICommonObjectParser {
 	/*
 	 * string object, or form ... <code> {"clientId":"my-app-id"}</code>
 	 */
-	private static Schema parseClientIdShortForm(final ObjectNode node) {
+	private static final Schema parseClientIdShortForm(final ObjectNode node) {
 		final SchemaImpl.Builder builder = new SchemaImpl.Builder();
 		List<String> values = new ArrayList<>();
 		String s = stringFrom(Fields.CLIENT_ID.value, node);
@@ -115,7 +115,7 @@ final class KafkaOperationBindingParser extends AsyncAPICommonObjectParser {
 	 * "clientId":{"type":"string","enum":["myClientId"]}, "bindingVersion":"0.1.0"
 	 * } </code>
 	 */
-	private static Schema parseGroupIdLongForm(final ObjectNode node) {
+	private static final Schema parseGroupIdLongForm(final ObjectNode node) {
 		final SchemaImpl.Builder builder = new SchemaImpl.Builder();
 		ObjectNode objectNode = objectNodeFrom(Fields.GROUP_ID.value, node);
 		if (null != objectNode) {
@@ -133,7 +133,7 @@ final class KafkaOperationBindingParser extends AsyncAPICommonObjectParser {
 	 * 
 	 * <code>{"groupId":"my-app-id"}</code>
 	 */
-	private static Schema parseGroupIdShortForm(final ObjectNode node) {
+	private static final Schema parseGroupIdShortForm(final ObjectNode node) {
 		final SchemaImpl.Builder builder = new SchemaImpl.Builder();
 		List<String> values = new ArrayList<>();
 		String s = stringFrom(Fields.GROUP_ID.value, node);

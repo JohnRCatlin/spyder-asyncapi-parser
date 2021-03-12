@@ -38,7 +38,7 @@ final class KafkaServerBindingParser extends AsyncAPICommonObjectParser {
 		return binding;
 	}
 
-	private static KafkaServerBinding parseBindingV010(ObjectNode node) {
+	private static final KafkaServerBinding parseBindingV010(final ObjectNode node) {
 		final KafkaServerBinding010Impl.Builder builder = new KafkaServerBinding010Impl.Builder();
 		builder.extensions(parseExtensions(node));
 		return builder.build();

@@ -25,7 +25,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
  */
 final class ExampleParser extends AsyncAPICommonObjectParser {
 
-	//smell ... object type!
+	//object type smell
 	static final Object parse(final String nodeKey, final ObjectNode node) {
 		if (null == node) {
 			return null;

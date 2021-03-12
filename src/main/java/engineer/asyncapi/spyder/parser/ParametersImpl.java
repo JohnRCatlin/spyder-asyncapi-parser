@@ -33,57 +33,57 @@ class ParametersImpl implements Parameters {
 	private final Map<String, Parameter> delegate = new LinkedHashMap<>();
 
 	@Override
-	public void clear() {
+	public final void clear() {
 		delegate.clear();
 	}
 
 	@Override
-	public boolean containsKey(Object key) {
+	public final boolean containsKey(final Object key) {
 		return delegate.containsKey(key);
 	}
 
 	@Override
-	public boolean containsValue(Object value) {
+	public final boolean containsValue(final Object value) {
 		return delegate.containsValue(value);
 	}
 
 	@Override
-	public Set<Entry<String, Parameter>> entrySet() {
+	public final Set<Entry<String, Parameter>> entrySet() {
 		return delegate.entrySet();
 	}
 
 	@Override
-	public Parameter get(Object key) {
+	public final Parameter get(final Object key) {
 		return delegate.get(key);
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public final boolean isEmpty() {
 		return delegate.isEmpty();
 	}
 
 	@Override
-	public Set<String> keySet() {
+	public final Set<String> keySet() {
 		return delegate.keySet();
 	}
 
 	@Override
-	public Parameter put(String key, Parameter value) {
+	public final Parameter put(final String key, final Parameter value) {
 		return delegate.put(key, value);
 	}
 
 	@Override
-	public void putAll(Map<? extends String, ? extends Parameter> m) {
+	public final void putAll(final Map<? extends String, ? extends Parameter> m) {
 		delegate.putAll(m);
 	}
 
 	@Override
-	public Parameter remove(Object key) {
+	public final Parameter remove(final Object key) {
 		return delegate.remove(key);
 	}
 
 	@Override
-	public int size() {
+	public final int size() {
 		return delegate.size();
 	}
 
@@ -93,7 +93,7 @@ class ParametersImpl implements Parameters {
 	}
 
 	@Override
-	public Collection<Parameter> values() {
+	public final Collection<Parameter> values() {
 		return delegate.values();
 	}
 }

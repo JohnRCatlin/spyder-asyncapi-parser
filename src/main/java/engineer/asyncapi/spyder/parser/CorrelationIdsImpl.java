@@ -33,57 +33,57 @@ class CorrelationIdsImpl implements CorrelationIds {
 	private Map<String, CorrelationId> delegate = new LinkedHashMap<>();
 
 	@Override
-	public void clear() {
+	public final void clear() {
 		delegate.clear();
 	}
 
 	@Override
-	public boolean containsKey(Object key) {
+	public final boolean containsKey(final Object key) {
 		return delegate.containsKey(key);
 	}
 
 	@Override
-	public boolean containsValue(Object value) {
+	public final boolean containsValue(final Object value) {
 		return delegate.containsValue(value);
 	}
 
 	@Override
-	public Set<Entry<String, CorrelationId>> entrySet() {
+	public final Set<Entry<String, CorrelationId>> entrySet() {
 		return delegate.entrySet();
 	}
 
 	@Override
-	public CorrelationId get(Object key) {
+	public final CorrelationId get(final Object key) {
 		return delegate.get(key);
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public final boolean isEmpty() {
 		return delegate.isEmpty();
 	}
 
 	@Override
-	public Set<String> keySet() {
+	public final Set<String> keySet() {
 		return delegate.keySet();
 	}
 
 	@Override
-	public CorrelationId put(String key, CorrelationId value) {
+	public final CorrelationId put(final String key, final CorrelationId value) {
 		return delegate.put(key, value);
 	}
 
 	@Override
-	public void putAll(Map<? extends String, ? extends CorrelationId> m) {
+	public final void putAll(final Map<? extends String, ? extends CorrelationId> m) {
 		delegate.putAll(m);
 	}
 
 	@Override
-	public CorrelationId remove(Object key) {
+	public final CorrelationId remove(final Object key) {
 		return delegate.remove(key);
 	}
 
 	@Override
-	public int size() {
+	public final int size() {
 		return delegate.size();
 	}
 
@@ -93,7 +93,7 @@ class CorrelationIdsImpl implements CorrelationIds {
 	}
 	
 	@Override
-	public Collection<CorrelationId> values() {
+	public final Collection<CorrelationId> values() {
 		return delegate.values();
 	}
 

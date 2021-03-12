@@ -36,7 +36,7 @@ enum AsyncAPIFields {
 	public final String field;
 	public final boolean required;
 
-	AsyncAPIFields(String field, boolean required) {
+	AsyncAPIFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

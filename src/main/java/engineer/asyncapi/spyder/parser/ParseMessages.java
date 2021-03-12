@@ -31,7 +31,7 @@ enum ParseMessages {
 
 	public final String message;
 
-	ParseMessages(String message) {
+	ParseMessages(final String message) {
 		this.message = message;
 	}
 

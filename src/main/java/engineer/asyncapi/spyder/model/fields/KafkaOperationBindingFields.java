@@ -29,7 +29,7 @@ enum KafkaOperationBindingFields {
 	public final String field;
 	public final boolean required;
 
-	KafkaOperationBindingFields(String field, boolean required) {
+	KafkaOperationBindingFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

@@ -67,127 +67,127 @@ final class SecurityRequirementImpl implements SecurityRequirement {
 	}
 
 	@Override
-	public void add(int index, String element) {
+	public final void add(final int index, final String element) {
 		delegate.add(index, element);
 	}
 
 	@Override
-	public boolean add(String e) {
+	public final boolean add(final String e) {
 		return delegate.add(e);
 	}
 
 	@Override
-	public boolean addAll(Collection<? extends String> c) {
+	public final boolean addAll(final Collection<? extends String> c) {
 		return delegate.addAll(c);
 	}
 
 	@Override
-	public boolean addAll(int index, Collection<? extends String> c) {
+	public final boolean addAll(final int index, final Collection<? extends String> c) {
 		return delegate.addAll(index, c);
 	}
 
 	@Override
-	public void clear() {
+	public final void clear() {
 		delegate.clear();
 	}
 
 	@Override
-	public boolean contains(Object o) {
+	public final boolean contains(final Object o) {
 		return delegate.contains(o);
 	}
 
 	@Override
-	public boolean containsAll(Collection<?> c) {
+	public final boolean containsAll(final Collection<?> c) {
 		return delegate.containsAll(c);
 	}
 
 	@Override
-	public String get(int index) {
+	public final String get(final int index) {
 		return delegate.get(index);
 	}
 
 	@Override
-	public String getName() {
+	public final String getName() {
 		return this.name;
 	}
 
 	@Override
-	public int indexOf(Object o) {
+	public final int indexOf(final Object o) {
 		return delegate.indexOf(o);
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public final boolean isEmpty() {
 		return delegate.isEmpty();
 	}
 
 	@Override
-	public Iterator<String> iterator() {
+	public final Iterator<String> iterator() {
 		return delegate.iterator();
 	}
 
 	@Override
-	public int lastIndexOf(Object o) {
+	public final int lastIndexOf(final Object o) {
 		return delegate.lastIndexOf(o);
 	}
 
 	@Override
-	public ListIterator<String> listIterator() {
+	public final ListIterator<String> listIterator() {
 		return delegate.listIterator();
 	}
 
 	@Override
-	public ListIterator<String> listIterator(int index) {
+	public final ListIterator<String> listIterator(final int index) {
 		return delegate.listIterator(index);
 	}
 
 	@Override
-	public String remove(int index) {
+	public final String remove(final int index) {
 		return delegate.remove(index);
 	}
 
 	@Override
-	public boolean remove(Object o) {
+	public final boolean remove(final Object o) {
 		return delegate.remove(o);
 	}
 
 	@Override
-	public boolean removeAll(Collection<?> c) {
+	public final boolean removeAll(final Collection<?> c) {
 		return delegate.removeAll(c);
 	}
 
 	@Override
-	public boolean retainAll(Collection<?> c) {
+	public final boolean retainAll(final Collection<?> c) {
 		return delegate.retainAll(c);
 	}
 
 	@Override
-	public String set(int index, String element) {
+	public final String set(final int index, final String element) {
 		return delegate.set(index, element);
 	}
 
 	@Override
-	public int size() {
+	public final int size() {
 		return delegate.size();
 	}
 
 	@Override
-	public List<String> subList(int fromIndex, int toIndex) {
+	public final List<String> subList(final int fromIndex, final int toIndex) {
 		return delegate.subList(fromIndex, toIndex);
 	}
 
 	@Override
-	public Object[] toArray() {
+	public final Object[] toArray() {
 		return delegate.toArray();
 	}
 
 	@Override
-	public <T> T[] toArray(T[] a) {
+	public final <T> T[] toArray(T[] a) {
 		return delegate.toArray(a);
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 }

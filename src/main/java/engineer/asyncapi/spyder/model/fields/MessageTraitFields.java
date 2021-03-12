@@ -39,7 +39,7 @@ enum MessageTraitFields {
 	public final String field;
 	public final boolean required;
 
-	MessageTraitFields(String field, boolean required) {
+	MessageTraitFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

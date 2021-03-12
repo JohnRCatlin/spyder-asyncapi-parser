@@ -27,7 +27,7 @@ enum ServerBindingFields {
 	public final String field;
 	public final boolean required;
 
-	ServerBindingFields(String field, boolean required) {
+	ServerBindingFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

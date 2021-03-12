@@ -67,22 +67,22 @@ final class KafkaMessageBinding010Impl implements KafkaMessageBinding010 {
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public Schema getKey() {
+	public final Schema getKey() {
 		return this.key;
 	}
 
 	@Override
-	public String getType() {
+	public final String getType() {
 		return TYPE;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 

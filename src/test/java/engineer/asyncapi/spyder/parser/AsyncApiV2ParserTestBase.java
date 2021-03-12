@@ -76,7 +76,6 @@ public class AsyncApiV2ParserTestBase {
 		try (InputStream modelInputStream = new FileInputStream(file)) {
 			modelRawString = IOUtils.toString(modelInputStream, Charset.defaultCharset()).trim();
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw e;
 		}
 

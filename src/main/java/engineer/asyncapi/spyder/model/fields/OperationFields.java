@@ -35,7 +35,7 @@ enum OperationFields {
 	public final String field;
 	public final boolean required;
 
-	OperationFields(String field, boolean required) {
+	OperationFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

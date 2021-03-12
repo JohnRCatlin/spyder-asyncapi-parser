@@ -28,7 +28,7 @@ enum ChannelBindingsFields {
 	public final String field;
 	public final boolean required;
 
-	ChannelBindingsFields(String field, boolean required) {
+	ChannelBindingsFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

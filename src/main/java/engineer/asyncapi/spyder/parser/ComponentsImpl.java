@@ -141,7 +141,7 @@ final class ComponentsImpl implements Components {
 		/* Use the builder for construction. */
 	}
 
-	public Components addSchemas(final String key, final Schema schemasItem) {
+	public final Components addSchemas(final String key, final Schema schemasItem) {
 		if (this.schemas == null) {
 			this.schemas = new SchemasImpl();
 		}
@@ -149,7 +149,7 @@ final class ComponentsImpl implements Components {
 		return this;
 	}
 
-	public Components addSecuritySchemes(final String key, final SecurityScheme securitySchemesItem) {
+	public final Components addSecuritySchemes(final String key, final SecurityScheme securitySchemesItem) {
 		if (this.securitySchemes == null) {
 			this.securitySchemes = new SecuritySchemesImpl();
 		}
@@ -158,67 +158,67 @@ final class ComponentsImpl implements Components {
 	}
 
 	@Override
-	public ChannelBindings getChannelBindings() {
+	public final ChannelBindings getChannelBindings() {
 		return this.channelBindings;
 	}
 
 	@Override
-	public CorrelationIds getCorrelationIds() {
+	public final CorrelationIds getCorrelationIds() {
 		return this.correlationIds;
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public MessageBindings getMessageBindings() {
+	public final MessageBindings getMessageBindings() {
 		return this.messageBindings;
 	}
 
 	@Override
-	public Messages getMessages() {
+	public final Messages getMessages() {
 		return this.messages;
 	}
 
 	@Override
-	public MessageTraits getMessageTraits() {
+	public final MessageTraits getMessageTraits() {
 		return this.messageTraits;
 	}
 
 	@Override
-	public OperationBindings getOperationBindings() {
+	public final OperationBindings getOperationBindings() {
 		return this.operationBindings;
 	}
 
 	@Override
-	public OperationTraits getOperationTraits() {
+	public final OperationTraits getOperationTraits() {
 		return this.operationTraits;
 	}
 
 	@Override
-	public Parameters getParameters() {
+	public final Parameters getParameters() {
 		return this.parameters;
 	}
 
 	@Override
-	public Schemas getSchemas() {
+	public final Schemas getSchemas() {
 		return this.schemas;
 	}
 
 	@Override
-	public SecuritySchemes getSecuritySchemes() {
+	public final SecuritySchemes getSecuritySchemes() {
 		return this.securitySchemes;
 	}
 
 	@Override
-	public ServerBindings getServerBindings() {
+	public final ServerBindings getServerBindings() {
 		return this.serverBindings;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 

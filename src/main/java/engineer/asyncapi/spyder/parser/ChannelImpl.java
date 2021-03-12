@@ -67,7 +67,7 @@ class ChannelImpl implements Channel {
 			return this;
 		}
 
-		public final Builder ref(String ref) {
+		public final Builder ref(final String ref) {
 			channel.ref = (ref != null && RefUtility.isRelative(ref)) ? REF_BASE + ref : ref;
 			return this;
 		}
@@ -92,37 +92,37 @@ class ChannelImpl implements Channel {
 	}
 
 	@Override
-	public ChannelBindings getBindings() {
+	public final ChannelBindings getBindings() {
 		return this.bindings;
 	}
 
 	@Override
-	public String getDescription() {
+	public final String getDescription() {
 		return this.description;
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public Parameters getParameters() {
+	public final Parameters getParameters() {
 		return parameters;
 	}
 
 	@Override
-	public Operation getPublish() {
+	public final Operation getPublish() {
 		return this.publish;
 	}
 
 	@Override
-	public String getRef() {
+	public final String getRef() {
 		return ref;
 	}
 
 	@Override
-	public Operation getSubscribe() {
+	public final Operation getSubscribe() {
 		return this.subscribe;
 	}
 

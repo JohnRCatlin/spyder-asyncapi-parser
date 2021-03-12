@@ -34,7 +34,7 @@ enum ServerFields {
 	public final String field;
 	public final boolean required;
 
-	ServerFields(String field, boolean required) {
+	ServerFields(final String field, final boolean required) {
 		this.field = field;
 		this.required = required;
 	}

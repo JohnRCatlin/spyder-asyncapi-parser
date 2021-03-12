@@ -56,67 +56,67 @@ final class OAuthScopesImpl implements OAuthScopes {
 	}
 
 	@Override
-	public void clear() {
+	public final void clear() {
 		delegate.clear();
 	}
 
 	@Override
-	public boolean containsKey(Object key) {
+	public final boolean containsKey(final Object key) {
 		return delegate.containsKey(key);
 	}
 
 	@Override
-	public boolean containsValue(Object value) {
+	public final boolean containsValue(final Object value) {
 		return delegate.containsValue(value);
 	}
 
 	@Override
-	public Set<Entry<String, String>> entrySet() {
+	public final Set<Entry<String, String>> entrySet() {
 		return delegate.entrySet();
 	}
 
 	@Override
-	public String get(Object key) {
+	public final String get(final Object key) {
 		return delegate.get(key);
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public final boolean isEmpty() {
 		return delegate.isEmpty();
 	}
 
 	@Override
-	public Set<String> keySet() {
+	public final Set<String> keySet() {
 		return delegate.keySet();
 	}
 
 	@Override
-	public String put(String key, String value) {
+	public final String put(final String key, final String value) {
 		return delegate.put(key, value);
 	}
 
 	@Override
-	public void putAll(Map<? extends String, ? extends String> m) {
+	public final void putAll(final Map<? extends String, ? extends String> m) {
 		delegate.putAll(m);
 	}
 
 	@Override
-	public String remove(Object key) {
+	public final String remove(final Object key) {
 		return delegate.remove(key);
 	}
 
 	@Override
-	public int size() {
+	public final int size() {
 		return delegate.size();
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 
 	@Override
-	public Collection<String> values() {
+	public final Collection<String> values() {
 		return delegate.values();
 	}
 }

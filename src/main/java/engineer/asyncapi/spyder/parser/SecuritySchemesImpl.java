@@ -33,57 +33,57 @@ final class SecuritySchemesImpl implements SecuritySchemes {
 	private Map<String, SecurityScheme> delegate = new LinkedHashMap<>();
 
 	@Override
-	public void clear() {
+	public final void clear() {
 		delegate.clear();
 	}
 
 	@Override
-	public boolean containsKey(Object key) {
+	public final boolean containsKey(final Object key) {
 		return delegate.containsKey(key);
 	}
 
 	@Override
-	public boolean containsValue(Object value) {
+	public final boolean containsValue(final Object value) {
 		return delegate.containsValue(value);
 	}
 
 	@Override
-	public Set<Entry<String, SecurityScheme>> entrySet() {
+	public final Set<Entry<String, SecurityScheme>> entrySet() {
 		return delegate.entrySet();
 	}
 
 	@Override
-	public SecurityScheme get(Object key) {
+	public final SecurityScheme get(final Object key) {
 		return delegate.get(key);
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public final boolean isEmpty() {
 		return delegate.isEmpty();
 	}
 
 	@Override
-	public Set<String> keySet() {
+	public final Set<String> keySet() {
 		return delegate.keySet();
 	}
 
 	@Override
-	public SecurityScheme put(String key, SecurityScheme value) {
+	public final SecurityScheme put(final String key, final SecurityScheme value) {
 		return delegate.put(key, value);
 	}
 
 	@Override
-	public void putAll(Map<? extends String, ? extends SecurityScheme> m) {
+	public final void putAll(Map<? extends String, ? extends SecurityScheme> m) {
 		delegate.putAll(m);
 	}
 
 	@Override
-	public SecurityScheme remove(Object key) {
+	public final SecurityScheme remove(final Object key) {
 		return delegate.remove(key);
 	}
 
 	@Override
-	public int size() {
+	public final int size() {
 		return delegate.size();
 	}
 
@@ -93,7 +93,7 @@ final class SecuritySchemesImpl implements SecuritySchemes {
 	}
 
 	@Override
-	public Collection<SecurityScheme> values() {
+	public final Collection<SecurityScheme> values() {
 		return delegate.values();
 	}
 }

@@ -71,7 +71,6 @@ final class TagImpl implements Tag {
 	private String description = null;
 	private Extensions extensions = null;
 	private ExternalDocs externalDocs = null;
-
 	private String name = null;
 
 	private TagImpl() {
@@ -79,27 +78,27 @@ final class TagImpl implements Tag {
 	}
 
 	@Override
-	public String getDescription() {
+	public final String getDescription() {
 		return this.description;
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public ExternalDocs getExternalDocs() {
+	public final ExternalDocs getExternalDocs() {
 		return this.externalDocs;
 	}
 
 	@Override
-	public String getName() {
+	public final String getName() {
 		return this.name;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 }

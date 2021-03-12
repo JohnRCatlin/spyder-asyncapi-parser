@@ -54,7 +54,7 @@ final class ChannelBindingsParser extends AsyncAPICommonObjectParser {
 		return bindings;
 	}
 
-	static ChannelBinding parse(final String type, final ObjectNode node) {
+	static final ChannelBinding parse(final String type, final ObjectNode node) {
 		switch (BindingType.getType(type)) {
 		case KAFKA:
 			return KafkaChannelBindingParser.parse(node);

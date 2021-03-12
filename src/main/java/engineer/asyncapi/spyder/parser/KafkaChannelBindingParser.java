@@ -38,7 +38,7 @@ final class KafkaChannelBindingParser extends AsyncAPICommonObjectParser {
 		return binding;
 	}
 
-	private static KafkaChannelBinding parseBindingV010(ObjectNode node) {
+	private static final KafkaChannelBinding parseBindingV010(final ObjectNode node) {
 		final KafkaChannelBinding010Impl.Builder builder = new KafkaChannelBinding010Impl.Builder();
 		builder.extensions(parseExtensions(node));
 		return builder.build();

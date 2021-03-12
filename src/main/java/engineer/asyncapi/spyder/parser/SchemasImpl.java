@@ -38,57 +38,57 @@ final class SchemasImpl implements Schemas {
 	}
 
 	@Override
-	public boolean containsKey(Object key) {
+	public final boolean containsKey(final Object key) {
 		return delegate.containsKey(key);
 	}
 
 	@Override
-	public boolean containsValue(Object value) {
+	public final boolean containsValue(final Object value) {
 		return delegate.containsValue(value);
 	}
 
 	@Override
-	public Set<Entry<String, Schema>> entrySet() {
+	public final Set<Entry<String, Schema>> entrySet() {
 		return delegate.entrySet();
 	}
 
 	@Override
-	public Schema get(Object key) {
+	public final Schema get(final Object key) {
 		return delegate.get(key);
 	}
 
 	@Override
-	public boolean isEmpty() {
+	public final boolean isEmpty() {
 		return delegate.isEmpty();
 	}
 
 	@Override
-	public Set<String> keySet() {
+	public final Set<String> keySet() {
 		return delegate.keySet();
 	}
 
 	@Override
-	public Schema put(String key, Schema value) {
+	public final Schema put(final String key, final Schema value) {
 		return delegate.put(key, value);
 	}
 
 	@Override
-	public void putAll(Map<? extends String, ? extends Schema> m) {
+	public final void putAll(final Map<? extends String, ? extends Schema> m) {
 		delegate.putAll(m);
 	}
 
 	@Override
-	public Schema remove(Object key) {
+	public final Schema remove(final Object key) {
 		return delegate.remove(key);
 	}
 
 	@Override
-	public int size() {
+	public final int size() {
 		return delegate.size();
 	}
 
 	@Override
-	public Collection<Schema> values() {
+	public final Collection<Schema> values() {
 		return delegate.values();
 	}
 

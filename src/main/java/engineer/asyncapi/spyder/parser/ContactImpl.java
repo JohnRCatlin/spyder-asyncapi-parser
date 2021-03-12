@@ -38,7 +38,7 @@ final class ContactImpl implements Contact {
 			return contact;
 		}
 
-		public Builder email(final String email) {
+		public final Builder email(final String email) {
 			contact.email = email;
 			return this;
 		}
@@ -56,12 +56,12 @@ final class ContactImpl implements Contact {
 			return this;
 		}
 
-		public Builder name(final String name) {
+		public final Builder name(final String name) {
 			contact.name = name;
 			return this;
 		}
 
-		public Builder url(final String url) {
+		public final Builder url(final String url) {
 			contact.url = url;
 			return this;
 		}
@@ -70,7 +70,6 @@ final class ContactImpl implements Contact {
 	private String email = null;
 	private Extensions extensions = null;
 	private String name = null;
-
 	private String url = null;
 
 	private ContactImpl() {
@@ -78,27 +77,27 @@ final class ContactImpl implements Contact {
 	}
 
 	@Override
-	public String getEmail() {
+	public final String getEmail() {
 		return email;
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public String getName() {
+	public final String getName() {
 		return name;
 	}
 
 	@Override
-	public String getUrl() {
+	public final String getUrl() {
 		return url;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 }

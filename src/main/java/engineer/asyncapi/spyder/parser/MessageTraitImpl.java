@@ -90,7 +90,7 @@ class MessageTraitImpl implements MessageTrait {
 			return this;
 		}
 
-		final Builder ref(String ref) {
+		final Builder ref(final String ref) {
 			trait.ref = (ref != null && RefUtility.isRelative(ref)) ? REF_BASE + ref : ref;
 			return this;
 		}
@@ -130,7 +130,6 @@ class MessageTraitImpl implements MessageTrait {
 	private String schemaFormat = null;
 	private String summary = null;
 	private Tags tags = null;
-
 	private String title = null;
 
 	private MessageTraitImpl() {
@@ -138,77 +137,77 @@ class MessageTraitImpl implements MessageTrait {
 	}
 
 	@Override
-	public MessageBindings getBindings() {
+	public final MessageBindings getBindings() {
 		return this.bindings;
 	}
 
 	@Override
-	public String getContentType() {
+	public final String getContentType() {
 		return this.contentType;
 	}
 
 	@Override
-	public CorrelationId getCorrelationId() {
+	public final CorrelationId getCorrelationId() {
 		return this.correlationId;
 	}
 
 	@Override
-	public String getDescription() {
+	public final String getDescription() {
 		return this.description;
 	}
 
 	@Override
-	public Examples getExamples() {
+	public final Examples getExamples() {
 		return this.examples;
 	}
 
 	@Override
-	public Extensions getExtensions() {
+	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public ExternalDocs getExternalDocs() {
+	public final ExternalDocs getExternalDocs() {
 		return this.externalDocs;
 	}
 
 	@Override
-	public Schema getHeaders() {
+	public final Schema getHeaders() {
 		return this.headers;
 	}
 
 	@Override
-	public String getName() {
+	public final String getName() {
 		return this.name;
 	}
 
 	@Override
-	public String getRef() {
+	public final String getRef() {
 		return this.ref;
 	}
 
 	@Override
-	public String getSchemaFormat() {
+	public final String getSchemaFormat() {
 		return this.schemaFormat;
 	}
 
 	@Override
-	public String getSummary() {
+	public final String getSummary() {
 		return this.summary;
 	}
 
 	@Override
-	public Tags getTags() {
+	public final Tags getTags() {
 		return this.tags;
 	}
 
 	@Override
-	public String getTitle() {
+	public final String getTitle() {
 		return this.title;
 	}
 
 	@Override
-	public String toString() {
+	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}
 
