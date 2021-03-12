@@ -71,6 +71,7 @@ final class MessageBindingsParser extends AsyncAPICommonObjectParser {
 		case HTTP:
 		case WEBSOCKETS:
 		case AMQP1:
+		case IBMMQ:
 		case MQTT:
 		case MQTT5:
 		case NATS:

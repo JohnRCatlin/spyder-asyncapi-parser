@@ -25,6 +25,7 @@ public enum BindingType {
 	AMQP("amqp"),
 	AMQP1("amqp1"),
 	HTTP("http"),
+	IBMMQ("ibmmq"),
 	JMS("jms"),
 	KAFKA("kafka"),
 	MERCURE("mercure"),

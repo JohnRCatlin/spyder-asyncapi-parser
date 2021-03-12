@@ -50,6 +50,7 @@ final class OperationBindingParser extends AsyncAPICommonObjectParser {
 		case WEBSOCKETS:
 		case AMQP1:
 		case MQTT:
+		case IBMMQ:
 		case MQTT5:
 		case NATS:
 		case JMS:

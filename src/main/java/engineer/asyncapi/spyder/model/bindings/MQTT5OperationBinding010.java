@@ -16,6 +16,7 @@ limitations under the License.
 package engineer.asyncapi.spyder.model.bindings;
 
 /**
+ * Not yet defined by the AsyncAPI spec; reserved for future use.
  * 
  * @author johncatlin
  *

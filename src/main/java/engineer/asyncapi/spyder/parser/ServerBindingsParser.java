@@ -66,6 +66,7 @@ final class ServerBindingsParser extends AsyncAPICommonObjectParser {
 		case MQTT:
 		case MQTT5:
 		case NATS:
+		case IBMMQ:
 		case JMS:
 		case SNS:
 		case SQS:
