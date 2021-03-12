@@ -39,12 +39,12 @@ final class AMQP091ChannelBinding020Impl implements AMQP091ChannelBinding020 {
 			return binding;
 		}
 
-		public final Builder exchangeAutoDelete(final boolean exchangeAutoDelete) {
+		public final Builder exchangeAutoDelete(final Boolean exchangeAutoDelete) {
 			binding.exchangeAutoDelete = exchangeAutoDelete;
 			return this;
 		}
 
-		public final Builder exchangeDurable(final boolean exchangeDurable) {
+		public final Builder exchangeDurable(final Boolean exchangeDurable) {
 			binding.exchangeDurable = exchangeDurable;
 			return this;
 		}
@@ -74,17 +74,17 @@ final class AMQP091ChannelBinding020Impl implements AMQP091ChannelBinding020 {
 			return this;
 		}
 
-		public final Builder queueAutoDelete(final boolean queueAutoDelete) {
+		public final Builder queueAutoDelete(final Boolean queueAutoDelete) {
 			binding.queueAutoDelete = queueAutoDelete;
 			return this;
 		}
 
-		public final Builder queueDurable(final boolean queueDurable) {
+		public final Builder queueDurable(final Boolean queueDurable) {
 			binding.queueDurable = queueDurable;
 			return this;
 		}
 
-		public final Builder queueExclusive(final boolean queueExclusive) {
+		public final Builder queueExclusive(final Boolean queueExclusive) {
 			binding.queueExclusive = queueExclusive;
 			return this;
 		}
@@ -99,7 +99,7 @@ final class AMQP091ChannelBinding020Impl implements AMQP091ChannelBinding020 {
 			return this;
 		}
 
-		public final Builder routingKey(final boolean routingKey) {
+		public final Builder routingKey(final Boolean routingKey) {
 			binding.routingKey = routingKey;
 			return this;
 		}
@@ -109,9 +109,9 @@ final class AMQP091ChannelBinding020Impl implements AMQP091ChannelBinding020 {
 	static final String BINDING_VERSION = "0.2.0";
 	static final String TYPE = BindingType.AMQP.value;
 
-	private boolean exchangeAutoDelete;
+	private Boolean exchangeAutoDelete;
 
-	private boolean exchangeDurable;
+	private Boolean exchangeDurable;
 
 	private String exchangeName;
 
@@ -123,17 +123,17 @@ final class AMQP091ChannelBinding020Impl implements AMQP091ChannelBinding020 {
 
 	private String is;
 
-	private boolean queueAutoDelete;
+	private Boolean queueAutoDelete;
 
-	private boolean queueDurable;
+	private Boolean queueDurable;
 
-	private boolean queueExclusive;
+	private Boolean queueExclusive;
 
 	private String queueName;
 
 	private String queueVHost;
 
-	private boolean routingKey;// queue:
+	private Boolean routingKey;// queue:
 
 	private AMQP091ChannelBinding020Impl() {
 		/* Use the builder for construction. */
