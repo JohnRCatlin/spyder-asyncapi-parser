@@ -24,8 +24,6 @@ public interface AMQP091ChannelBinding020 extends AMQP091ChannelBinding {
 
 	String getIs();
 
-	String getBindingVersion();
-
 	String getExchangeName();
 
 	String getExchangeType();

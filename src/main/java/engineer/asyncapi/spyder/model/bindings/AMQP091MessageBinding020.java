@@ -26,6 +26,4 @@ public interface AMQP091MessageBinding020 extends AMQP091MessageBinding {
 
 	String getMessageType();
 
-	String getBindingVersion();
-
 }

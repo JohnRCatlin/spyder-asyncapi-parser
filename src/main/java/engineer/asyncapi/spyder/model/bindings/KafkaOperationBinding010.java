@@ -24,8 +24,6 @@ import engineer.asyncapi.spyder.model.Schema;
  */
 public interface KafkaOperationBinding010 extends KafkaOperationBinding {
 
-	String getBindingVersion();
-
 	Schema getClientId();
 
 	Schema getGroupId();

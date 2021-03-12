@@ -27,4 +27,6 @@ public interface ChannelBinding extends Binding {
 
 	public Extensions getExtensions();
 	
+	String getBindingVersion();
+
 }

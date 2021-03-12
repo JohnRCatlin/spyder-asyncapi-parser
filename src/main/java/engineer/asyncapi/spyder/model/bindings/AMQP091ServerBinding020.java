@@ -22,6 +22,4 @@ package engineer.asyncapi.spyder.model.bindings;
  */
 public interface AMQP091ServerBinding020 extends AMQP091ServerBinding {
 
-	String getBindingVersion();
-
 }

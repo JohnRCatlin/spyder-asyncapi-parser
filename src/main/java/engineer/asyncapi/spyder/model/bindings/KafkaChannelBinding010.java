@@ -22,6 +22,4 @@ package engineer.asyncapi.spyder.model.bindings;
  */
 public interface KafkaChannelBinding010 extends KafkaChannelBinding {
 
-	String getBindingVersion();
-
 }

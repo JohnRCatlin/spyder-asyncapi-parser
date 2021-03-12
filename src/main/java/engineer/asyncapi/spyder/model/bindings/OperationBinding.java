@@ -25,6 +25,8 @@ import engineer.asyncapi.spyder.model.Extensions;
  */
 public interface OperationBinding extends Binding {
 
+	String getBindingVersion();
+	
 	Extensions getExtensions();
 
 }

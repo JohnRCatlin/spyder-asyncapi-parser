@@ -24,8 +24,6 @@ import engineer.asyncapi.spyder.model.Schema;
  */
 public interface KafkaMessageBinding010 extends KafkaMessageBinding {
 
-	String getBindingVersion();
-
 	Schema getKey();
 
 }

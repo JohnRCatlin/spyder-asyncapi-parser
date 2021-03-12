@@ -28,8 +28,6 @@ public interface AMQP091OperationBinding020 extends AMQP091OperationBinding {
 
 	List<String> getBcc();
 
-	String getBindingVersion();
-
 	List<String> getCc();
 
 	int getDeliveryMode();
