@@ -29,6 +29,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import engineer.asyncapi.spyder.model.bindings.AMQP091ServerBinding020;
 import engineer.asyncapi.spyder.model.bindings.KafkaServerBinding010;
+import engineer.asyncapi.spyder.model.bindings.MQTTServerBinding010;
 import engineer.asyncapi.spyder.model.bindings.ServerBindings;
 
 public class ServerBindingParserTest {
@@ -151,6 +152,66 @@ public class ServerBindingParserTest {
 		assertNotNull(parsed);
 		assertTrue(parsed.containsKey("kafka"));
 		assertTrue(parsed.get("kafka") instanceof KafkaServerBinding010);
+	}
+
+	@Test
+	public void MQTTBinding() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("mqtt:\n");
+		sb.append("  bindingVersion: '0.1.0'\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		ServerBindings parsed = ServerBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("mqtt"));
+		assertTrue(parsed.get("mqtt") instanceof MQTTServerBinding010);
+	}
+
+	@Test
+	public void MQTTBindingNoVersion() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("mqtt:\n");
+		sb.append("  random: foo\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		ServerBindings parsed = ServerBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("mqtt"));
+		assertTrue(parsed.get("mqtt") instanceof MQTTServerBinding010);
+	}
+
+	@Test
+	public void MQTTBindingUnsupportedVersion() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("mqtt:\n");
+		sb.append("  bindingVersion: '9.9.9'\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		ServerBindings parsed = ServerBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("mqtt"));
+		assertTrue(parsed.get("mqtt") instanceof MQTTServerBinding010);
 	}
 
 	@After

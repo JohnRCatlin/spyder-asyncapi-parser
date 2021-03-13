@@ -8,6 +8,10 @@ def ver = '1.0.alpha-SNAPSHOT'
 def artifact = "spyder.parser"
 sourceCompatibility = '1.8'
 
+def getDate() {
+    return new Date().format('yyyy/MM/dd HH-mm-ss')
+}
+
 task javadocs(type: Javadoc) {
 	source = sourceSets.main.allJava
 }
@@ -22,7 +26,7 @@ repositories {
 
 javadoc {
     options.overview = "src/main/java/overview.html"
-    options.docTitle = "Spyder AsyncAPI Parser (${ver})"
+    options.docTitle = "Spyder AsyncAPI Parser (${ver} ${getDate()})"
     destinationDir = project.file("docs/javadoc")
 
     failOnError = false

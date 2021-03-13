@@ -37,7 +37,7 @@ public enum BindingType {
 	SQS("sqs"),
 	STOMP("stomp"),
 	UNDEFINE("undefine"),
-	WEBSOCKETS("ws");
+	WEBSOCKETS("websockets");
 
 	public static final BindingType getType(final String value) {
 		return (null == value) ? BindingType.UNDEFINE : BindingType.valueOf(value.toUpperCase());

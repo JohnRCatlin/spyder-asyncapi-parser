@@ -16,10 +16,15 @@ limitations under the License.
 package engineer.asyncapi.spyder.model.bindings;
 
 /**
+ * .
  * 
  * @author johncatlin
  *
  */
 public interface MQTTOperationBinding010 extends MQTTOperationBinding {
+
+	Integer getQos();
+
+	Boolean getRetain();
 
 }

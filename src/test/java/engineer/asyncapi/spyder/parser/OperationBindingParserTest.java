@@ -30,6 +30,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import engineer.asyncapi.spyder.model.bindings.AMQP091OperationBinding020;
 import engineer.asyncapi.spyder.model.bindings.HTTPOperationBinding010;
 import engineer.asyncapi.spyder.model.bindings.KafkaOperationBinding010;
+import engineer.asyncapi.spyder.model.bindings.MQTTOperationBinding010;
 import engineer.asyncapi.spyder.model.bindings.OperationBindings;
 
 public class OperationBindingParserTest {
@@ -53,7 +54,7 @@ public class OperationBindingParserTest {
 		assertTrue(parsed.containsKey("amqp"));
 		assertTrue(parsed.get("amqp") instanceof AMQP091OperationBinding020);
 	}
-	
+
 	@Test
 	public void amqpBindingNoVersion() throws JsonMappingException, JsonProcessingException {
 		// given
@@ -73,8 +74,7 @@ public class OperationBindingParserTest {
 		assertTrue(parsed.containsKey("amqp"));
 		assertTrue(parsed.get("amqp") instanceof AMQP091OperationBinding020);
 	}
-	
-	
+
 	@Test
 	public void amqpBindingUnsupportedVersion() throws JsonMappingException, JsonProcessingException {
 		// given
@@ -116,6 +116,66 @@ public class OperationBindingParserTest {
 	}
 
 	@Test
+	public void HTTPBindingNoVersion() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("http:\n");
+		sb.append("  ramdom: foo\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		OperationBindings parsed = OperationBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("http"));
+		assertTrue(parsed.get("http") instanceof HTTPOperationBinding010);
+	}
+
+	@Test
+	public void HTTPBindingUnsupportedVersion() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("http:\n");
+		sb.append("  bindingVersion: '9.9.9'\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		OperationBindings parsed = OperationBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("http"));
+		assertTrue(parsed.get("http") instanceof HTTPOperationBinding010);
+	}
+
+	@Test
+	public void HTTTPBinding() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("http:\n");
+		sb.append("  bindingVersion: '0.1.0'\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		OperationBindings parsed = OperationBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("http"));
+		assertTrue(parsed.get("http") instanceof HTTPOperationBinding010);
+	}
+
+	@Test
 	public void kafakBinding() throws JsonMappingException, JsonProcessingException {
 		// given
 		final StringBuilder sb = new StringBuilder();
@@ -134,7 +194,7 @@ public class OperationBindingParserTest {
 		assertTrue(parsed.containsKey("kafka"));
 		assertTrue(parsed.get("kafka") instanceof KafkaOperationBinding010);
 	}
-	
+
 	@Test
 	public void kafakBindingNoVersion() throws JsonMappingException, JsonProcessingException {
 		// given
@@ -154,7 +214,7 @@ public class OperationBindingParserTest {
 		assertTrue(parsed.containsKey("kafka"));
 		assertTrue(parsed.get("kafka") instanceof KafkaOperationBinding010);
 	}
-	
+
 	@Test
 	public void kafakBindingUnsupportedVersion() throws JsonMappingException, JsonProcessingException {
 		// given
@@ -173,6 +233,66 @@ public class OperationBindingParserTest {
 		assertNotNull(parsed);
 		assertTrue(parsed.containsKey("kafka"));
 		assertTrue(parsed.get("kafka") instanceof KafkaOperationBinding010);
+	}
+
+	@Test
+	public void MATTBinding() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("mqtt:\n");
+		sb.append("  bindingVersion: '0.1.0'\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		OperationBindings parsed = OperationBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("mqtt"));
+		assertTrue(parsed.get("mqtt") instanceof MQTTOperationBinding010);
+	}
+
+	@Test
+	public void MQTTBindingNoVersion() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("mqtt:\n");
+		sb.append("  ramdom: foo\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		OperationBindings parsed = OperationBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("mqtt"));
+		assertTrue(parsed.get("mqtt") instanceof MQTTOperationBinding010);
+	}
+
+	@Test
+	public void MQTTBindingUnsupportedVersion() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("mqtt:\n");
+		sb.append("  bindingVersion: '9.9.9'\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		OperationBindings parsed = OperationBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("mqtt"));
+		assertTrue(parsed.get("mqtt") instanceof MQTTOperationBinding010);
 	}
 
 	@After

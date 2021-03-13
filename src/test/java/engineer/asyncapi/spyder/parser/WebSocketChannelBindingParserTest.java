@@ -81,6 +81,8 @@ public class WebSocketChannelBindingParserTest {
 		// then
 		assertNotNull(parsed);
 
+		assertEquals("websockets", parsed.getBindingType());
+
 		assertNotNull(parsed.getHeaders());
 		assertEquals("object", parsed.getHeaders().getType());
 		assertEquals(1, parsed.getHeaders().getProperties().size());

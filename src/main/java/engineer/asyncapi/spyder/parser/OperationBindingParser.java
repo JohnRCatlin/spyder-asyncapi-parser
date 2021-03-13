@@ -48,9 +48,10 @@ final class OperationBindingParser extends AsyncAPICommonObjectParser {
 			return AMQP091OperationBindingParser.parse(node);
 		case HTTP:
 			return HTTPOperationBindingParser.parse(node);
+		case MQTT:
+			return MQTTOperationBindingParser.parse(node);
 		case WEBSOCKETS:
 		case AMQP1:
-		case MQTT:
 		case IBMMQ:
 		case MQTT5:
 		case NATS:

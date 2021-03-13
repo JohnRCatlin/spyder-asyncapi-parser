@@ -74,6 +74,7 @@ public class HTTPOperationBindingParserTest {
 
 		// then
 		assertNotNull(parsed);
+		assertEquals("http", parsed.getBindingType());
 		assertEquals("GET", parsed.getMethod());
 		assertEquals("request", parsed.getChannelType());
 		assertNotNull(parsed.getQuery());

@@ -65,6 +65,7 @@ public class HTTPMessageBindingParserTest {
 
 		// then
 		assertNotNull(parsed);
+		assertEquals("http", parsed.getBindingType());
 		assertNotNull(parsed.getHeaders());
 		assertEquals("object", parsed.getHeaders().getType());
 		assertEquals(1, parsed.getHeaders().getProperties().size());

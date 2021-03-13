@@ -26,23 +26,20 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-import engineer.asyncapi.spyder.model.bindings.AMQP091MessageBinding020;
+import engineer.asyncapi.spyder.model.bindings.MQTTOperationBinding010;
 
-public class AMQP091MessageBindingParserTest {
+public class MQTTOperationBindingParserTest {
 
-	private static final String bindingVersion = "0.2.0";
-	private static final String contentEncoding = "application/json";
-	private static final String messageType = "user.signup";
 	private static final String rawModel;
 
 	// given
 	static {
 		StringBuilder sb = new StringBuilder();
-		sb.append("{\n");
-		sb.append("  contentEncoding: " + contentEncoding + ",\n");
-		sb.append("  messageType: " + messageType + ",\n");
-		sb.append("  bindingVersion: " + bindingVersion + ",\n");
-		sb.append("}");
+		sb.append("qos: 2\n");
+		sb.append("retain: false\n");
+		sb.append("bindingVersion: '0.1.0'\n");
+		sb.append("extensions:\n");
+		sb.append("  x-1: foo\n");
 		rawModel = sb.toString();
 	}
 
@@ -59,14 +56,20 @@ public class AMQP091MessageBindingParserTest {
 	@Test
 	public void shouldParse() {
 		// when
-		AMQP091MessageBinding020 parsed = (AMQP091MessageBinding020) AMQP091MessageBindingParser
-				.parse((ObjectNode) rootNode);
+		MQTTOperationBinding010 parsed = (MQTTOperationBinding010) MQTTOperationBindingParser.parse((ObjectNode) rootNode);
 
 		// then
 		assertNotNull(parsed);
-		assertEquals(contentEncoding, parsed.getContentEncoding());
-		assertEquals(messageType, parsed.getMessageType());
-		assertEquals(bindingVersion, parsed.getBindingVersion());
+
+		assertEquals("mqtt", parsed.getBindingType());
+
+		assertEquals(Integer.valueOf(2), parsed.getQos());
+		assertEquals(false, parsed.getRetain());
+
+		assertEquals(1, parsed.getExtensions().size());
+		assertEquals("foo", parsed.getExtensions().get("x-1"));
+
+		assertEquals("0.1.0", parsed.getBindingVersion());
 	}
 
 	@After

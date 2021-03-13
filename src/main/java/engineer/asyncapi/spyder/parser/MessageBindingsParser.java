@@ -70,10 +70,11 @@ final class MessageBindingsParser extends AsyncAPICommonObjectParser {
 			return AMQP091MessageBindingParser.parse(node);
 		case HTTP:
 			return HTTPMessageBindingParser.parse(node);
+		case MQTT:
+			return MQTTMessageBindingParser.parse(node);
 		case WEBSOCKETS:
 		case AMQP1:
 		case IBMMQ:
-		case MQTT:
 		case MQTT5:
 		case NATS:
 		case JMS:

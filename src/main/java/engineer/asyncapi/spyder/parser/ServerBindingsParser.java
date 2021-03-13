@@ -60,10 +60,11 @@ final class ServerBindingsParser extends AsyncAPICommonObjectParser {
 			return KafkaServerBindingParser.parse(node);
 		case AMQP:
 			return AMQP091ServerBindingParser.parse(node);
+		case MQTT:
+			return MQTTServerBindingParser.parse(node);
 		case HTTP:
 		case WEBSOCKETS:
 		case AMQP1:
-		case MQTT:
 		case MQTT5:
 		case NATS:
 		case IBMMQ:

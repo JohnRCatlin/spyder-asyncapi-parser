@@ -16,10 +16,25 @@ limitations under the License.
 package engineer.asyncapi.spyder.model.bindings;
 
 /**
+ * .
  * 
  * @author johncatlin
  *
  */
 public interface MQTTServerBinding010 extends MQTTServerBinding {
+
+	Boolean getCleanSession();
+
+	String getClientId();
+
+	Integer getKeepAlive();
+
+	String getLastWillMessage();
+
+	Integer getLastWillQos();
+
+	Boolean getLastWillRetain();
+
+	String getLastWillTopic();
 
 }

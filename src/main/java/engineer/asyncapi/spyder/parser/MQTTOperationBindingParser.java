@@ -17,8 +17,7 @@ package engineer.asyncapi.spyder.parser;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-import engineer.asyncapi.spyder.model.Schema;
-import engineer.asyncapi.spyder.model.bindings.HTTPOperationBinding;
+import engineer.asyncapi.spyder.model.bindings.MQTTOperationBinding;
 import engineer.asyncapi.spyder.model.fields.Fields;
 
 /**
@@ -26,12 +25,12 @@ import engineer.asyncapi.spyder.model.fields.Fields;
  * @author johncatlin
  *
  */
-final class HTTPOperationBindingParser extends AsyncAPICommonObjectParser {
+final class MQTTOperationBindingParser extends AsyncAPICommonObjectParser {
 
-	static final HTTPOperationBinding parse(final ObjectNode node) {
+	static final MQTTOperationBinding parse(final ObjectNode node) {
 		try {
 			final String bindingVersion = parseBindingVersion(node);
-			if (null == bindingVersion || bindingVersion.equals(HTTPOperationBinding010Impl.BINDING_VERSION)) {
+			if (null == bindingVersion || bindingVersion.equals(MQTTOperationBinding010Impl.BINDING_VERSION)) {
 				return parseBindingV010(node);
 			}
 			// use latest
@@ -41,35 +40,23 @@ final class HTTPOperationBindingParser extends AsyncAPICommonObjectParser {
 		}
 	}
 
-	private static final HTTPOperationBinding parseBindingV010(final ObjectNode node) {
-		final HTTPOperationBinding010Impl.Builder builder = new HTTPOperationBinding010Impl.Builder();
+	private static final MQTTOperationBinding parseBindingV010(final ObjectNode node) {
+		final MQTTOperationBinding010Impl.Builder builder = new MQTTOperationBinding010Impl.Builder();
 		builder.extensions(parseExtensions(node));
-		builder.query(parseQuery(node));
-		builder.method(parseMethod(node));
-		builder.type(parseType(node));
+		builder.qos(parseQos(node));
+		builder.retain(parseRetain(node));
 		return builder.build();
 	}
 
-	private static String parseType(ObjectNode node) {
-		return valueOfKeyOrNull(Fields.TYPE.value, node);
+	private static Integer parseQos(ObjectNode node) {
+		return integerFrom(Fields.QOS.value, node);
 	}
 
-	private static String parseMethod(ObjectNode node) {
-		return valueOfKeyOrNull(Fields.METHOD.value, node);
+	private static Boolean parseRetain(ObjectNode node) {
+		return booleanFrom(Fields.RETAIN.value, node);
 	}
 
-	private static Schema parseQuery(ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		final ObjectNode query = objectNodeFrom(Fields.QUERY.value, node);
-		if (null == query) {
-			return null;
-		}
-		return SchemaParser.parse(query);
-	}
-
-	private HTTPOperationBindingParser() {
+	private MQTTOperationBindingParser() {
 		/* this static utility should not be instantiated */
 	}
 }
