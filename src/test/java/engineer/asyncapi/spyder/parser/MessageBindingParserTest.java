@@ -35,7 +35,7 @@ import engineer.asyncapi.spyder.model.bindings.MessageBindings;
 public class MessageBindingParserTest {
 
 	@Test
-	public void shouldParseAmqpBinding() throws JsonMappingException, JsonProcessingException {
+	public void amqpBinding() throws JsonMappingException, JsonProcessingException {
 		// given
 		final StringBuilder sb = new StringBuilder();
 		sb.append("amqp:\n");
@@ -55,7 +55,47 @@ public class MessageBindingParserTest {
 	}
 
 	@Test
-	public void shouldParseHTMLBinding() throws JsonMappingException, JsonProcessingException {
+	public void amqpBindingNoVersion() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("amqp:\n");
+		sb.append("  random: foo\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		MessageBindings parsed = MessageBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("amqp"));
+		assertTrue(parsed.get("amqp") instanceof AMQP091MessageBinding020);
+	}
+
+	@Test
+	public void amqpBindingUnsupportedVersion() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("amqp:\n");
+		sb.append("  bindingVersion: '9.9.9'\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		MessageBindings parsed = MessageBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("amqp"));
+		assertTrue(parsed.get("amqp") instanceof AMQP091MessageBinding020);
+	}
+
+	@Test
+	public void HTMLBinding() throws JsonMappingException, JsonProcessingException {
 		// given
 		final StringBuilder sb = new StringBuilder();
 		sb.append("http:\n");
@@ -75,11 +115,91 @@ public class MessageBindingParserTest {
 	}
 
 	@Test
-	public void shouldParseKafkaBinding() throws JsonMappingException, JsonProcessingException {
+	public void HTMLBindingNoVersion() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("http:\n");
+		sb.append("  random: foo\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		MessageBindings parsed = MessageBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("http"));
+		assertTrue(parsed.get("http") instanceof HTTPMessageBinding010);
+	}
+
+	@Test
+	public void HTMLBindingUnsupportedVersion() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("http:\n");
+		sb.append("  bindingVersion: '9.9.9'\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		MessageBindings parsed = MessageBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("http"));
+		assertTrue(parsed.get("http") instanceof HTTPMessageBinding010);
+	}
+
+	@Test
+	public void kafkaBinding() throws JsonMappingException, JsonProcessingException {
 		// given
 		final StringBuilder sb = new StringBuilder();
 		sb.append("kafka:\n");
 		sb.append("  bindingVersion: '0.1.0'\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		MessageBindings parsed = MessageBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("kafka"));
+		assertTrue(parsed.get("kafka") instanceof KafkaMessageBinding010);
+	}
+
+	@Test
+	public void kafkaBindingNoVersion() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("kafka:\n");
+		sb.append("  random: foo\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		MessageBindings parsed = MessageBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("kafka"));
+		assertTrue(parsed.get("kafka") instanceof KafkaMessageBinding010);
+	}
+
+	@Test
+	public void kafkaBindingUnsupportedVersion() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("kafka:\n");
+		sb.append("  bindingVersion: '9.9.9'\n");
 		final String rawModel = sb.toString();
 
 		final ObjectMapper mapper = ObjectMapperFactory.forYaml();

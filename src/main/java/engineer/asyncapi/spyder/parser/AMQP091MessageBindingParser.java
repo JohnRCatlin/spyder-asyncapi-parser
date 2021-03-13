@@ -34,10 +34,11 @@ final class AMQP091MessageBindingParser extends AsyncAPICommonObjectParser {
 			if (null == bindingVersion || bindingVersion.equals(AMQP091MessageBinding020Impl.BINDING_VERSION)) {
 				return parseBindingV020(node);
 			}
+			// use latest
+			return parseBindingV020(node);
 		} catch (Exception e) {
 			return null;
 		}
-		return null;
 	}
 
 	private static final String parseContentEncoding(final ObjectNode node) {

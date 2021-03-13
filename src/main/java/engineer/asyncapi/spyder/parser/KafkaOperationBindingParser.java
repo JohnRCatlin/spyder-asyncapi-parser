@@ -33,15 +33,16 @@ import engineer.asyncapi.spyder.model.fields.Fields;
 final class KafkaOperationBindingParser extends AsyncAPICommonObjectParser {
 
 	static final KafkaOperationBinding parse(final ObjectNode node) {
-		KafkaOperationBinding binding = null;
-		if (node == null) {
+		try {
+			final String bindingVersion = parseBindingVersion(node);
+			if (null == bindingVersion || bindingVersion.equals(KafkaOperationBinding010Impl.BINDING_VERSION)) {
+				return parseBindingV010(node);
+			}
+			// use latest
+			return parseBindingV010(node);
+		} catch (Exception e) {
 			return null;
 		}
-		final String bindingVersion = parseBindingVersion(node);
-		if (null == bindingVersion || bindingVersion.equals(KafkaOperationBinding010Impl.BINDING_VERSION)) {
-			binding = parseBindingV010(node);
-		}
-		return binding;
 	}
 
 	private static final KafkaOperationBinding010 parseBindingV010(final ObjectNode node) {

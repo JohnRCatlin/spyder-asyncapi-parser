@@ -60,8 +60,9 @@ final class ChannelBindingsParser extends AsyncAPICommonObjectParser {
 			return KafkaChannelBindingParser.parse(node);
 		case AMQP:
 			return AMQP091ChannelBindingParser.parse(node);
-		case HTTP:
 		case WEBSOCKETS:
+			return WebSocketsChannelBindingParser.parse(node);
+		case HTTP:
 		case AMQP1:
 		case IBMMQ:
 		case MQTT:

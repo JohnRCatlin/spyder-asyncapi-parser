@@ -27,6 +27,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import engineer.asyncapi.spyder.model.bindings.AMQP091MessageBinding020;
+import engineer.asyncapi.spyder.parser.AMQP091MessageBindingParser;
+import engineer.asyncapi.spyder.parser.ObjectMapperFactory;
 
 public class AMQP091MessageBindingParserTest {
 

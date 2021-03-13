@@ -18,6 +18,7 @@ package engineer.asyncapi.spyder.model.bindings;
 import engineer.asyncapi.spyder.model.Schema;
 
 /**
+ * .
  * 
  * @author johncatlin
  *
