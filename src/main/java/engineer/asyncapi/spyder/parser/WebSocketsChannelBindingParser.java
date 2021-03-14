@@ -50,22 +50,7 @@ final class WebSocketsChannelBindingParser extends AsyncAPICommonObjectParser {
 		return builder.build();
 	}
 
-	private static Schema parseHeaders(ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		final ObjectNode query = objectNodeFrom(Fields.HEADERS.value, node);
-		if (null == query) {
-			return null;
-		}
-		return SchemaParser.parse(query);
-	}
-
-	private static String parseMethod(ObjectNode node) {
-		return valueOfKeyOrNull(Fields.METHOD.value, node);
-	}
-
-	private static Schema parseQuery(ObjectNode node) {
+	private static Schema parseQuery(final ObjectNode node) {
 		if (null == node) {
 			return null;
 		}

@@ -29,6 +29,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import engineer.asyncapi.spyder.model.bindings.AMQP091ChannelBinding020;
 import engineer.asyncapi.spyder.model.bindings.ChannelBindings;
+import engineer.asyncapi.spyder.model.bindings.IBMMQChannelBinding010;
 import engineer.asyncapi.spyder.model.bindings.KafkaChannelBinding010;
 import engineer.asyncapi.spyder.model.bindings.WebSocketsChannelBinding010;
 
@@ -95,6 +96,66 @@ public class ChannelBindingParserTest {
 	}
 
 	@Test
+	public void IBMMQBinding() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("ibmmq:\n");
+		sb.append("  bindingVersion: '0.1.0'\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("ibmmq"));
+		assertTrue(parsed.get("ibmmq") instanceof IBMMQChannelBinding010);
+	}
+
+	@Test
+	public void IBMMQBindingNoVersion() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("ibmmq:\n");
+		sb.append("  random: foo\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("ibmmq"));
+		assertTrue(parsed.get("ibmmq") instanceof IBMMQChannelBinding010);
+	}
+
+	@Test
+	public void IBMMQBindingUnsupportedVersion() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("ibmmq:\n");
+		sb.append("  bindingVersion: '9.9.9'\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("ibmmq"));
+		assertTrue(parsed.get("ibmmq") instanceof IBMMQChannelBinding010);
+	}
+
+	@Test
 	public void kafakBinding() throws JsonMappingException, JsonProcessingException {
 		// given
 		final StringBuilder sb = new StringBuilder();
@@ -157,7 +218,7 @@ public class ChannelBindingParserTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
+	
 	@Test
 	public void webSocketsBinding() throws JsonMappingException, JsonProcessingException {
 		// given

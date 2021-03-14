@@ -48,11 +48,11 @@ final class MQTTOperationBindingParser extends AsyncAPICommonObjectParser {
 		return builder.build();
 	}
 
-	private static Integer parseQos(ObjectNode node) {
+	private static final Integer parseQos(final ObjectNode node) {
 		return integerFrom(Fields.QOS.value, node);
 	}
 
-	private static Boolean parseRetain(ObjectNode node) {
+	private static final Boolean parseRetain(final ObjectNode node) {
 		return booleanFrom(Fields.RETAIN.value, node);
 	}
 

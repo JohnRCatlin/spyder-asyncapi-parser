@@ -16,16 +16,15 @@ limitations under the License.
 package engineer.asyncapi.spyder.parser;
 
 import engineer.asyncapi.spyder.model.Extensions;
-import engineer.asyncapi.spyder.model.Schema;
 import engineer.asyncapi.spyder.model.bindings.BindingType;
-import engineer.asyncapi.spyder.model.bindings.WebSocketsChannelBinding010;
+import engineer.asyncapi.spyder.model.bindings.IBMMQMessageBinding010;
 
 /**
  * 
  * @author johncatlin
  *
  */
-final class WebSocketsChannelBinding010Impl implements WebSocketsChannelBinding010 {
+final class IBMMQMessageBinding010Impl implements IBMMQMessageBinding010 {
 
 	/**
 	 * 
@@ -34,10 +33,20 @@ final class WebSocketsChannelBinding010Impl implements WebSocketsChannelBinding0
 	 */
 	static final class Builder {
 
-		private WebSocketsChannelBinding010Impl binding = new WebSocketsChannelBinding010Impl();
+		private IBMMQMessageBinding010Impl binding = new IBMMQMessageBinding010Impl();
 
-		public final WebSocketsChannelBinding010Impl build() {
+		public final IBMMQMessageBinding010Impl build() {
 			return binding;
+		}
+
+		final Builder description(final String description) {
+			binding.description = description;
+			return this;
+		}
+
+		final Builder expiry(final Integer expiry) {
+			binding.expiry = expiry;
+			return this;
 		}
 
 		final Builder extensions(final Extensions extensions) {
@@ -45,37 +54,34 @@ final class WebSocketsChannelBinding010Impl implements WebSocketsChannelBinding0
 			return this;
 		}
 
-		final Builder headers(final Schema headers) {
+		final Builder headers(final String headers) {
 			binding.headers = headers;
 			return this;
 		}
 
-		final Builder method(final String method) {
-			binding.method = method;
+		final Builder type(final String type) {
+			binding.type = type;
 			return this;
 		}
 
-		final Builder query(final Schema query) {
-			binding.query = query;
-			return this;
-		}
 	}
 
+	static final String BINDING_TYPE = BindingType.IBMMQ.value;
 	static final String BINDING_VERSION = "0.1.0";
-	static final String TYPE = BindingType.WEBSOCKETS.value;
 
+	private String description = null;
+	private Integer expiry = null;
 	private Extensions extensions = null;
-	private Schema headers;
-	private String method;
-	private Schema query;
+	private String headers = null;
+	private String type = null;
 
-	private WebSocketsChannelBinding010Impl() {
+	private IBMMQMessageBinding010Impl() {
 		/* Use the builder for construction. */
 	}
 
 	@Override
 	public final String getBindingType() {
-		return TYPE;
+		return BINDING_TYPE;
 	}
 
 	@Override
@@ -84,23 +90,28 @@ final class WebSocketsChannelBinding010Impl implements WebSocketsChannelBinding0
 	}
 
 	@Override
+	public final String getDescription() {
+		return this.description;
+	}
+
+	@Override
+	public final Integer getExpiry() {
+		return this.expiry;
+	}
+
+	@Override
 	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public final Schema getHeaders() {
+	public final String getHeaders() {
 		return this.headers;
 	}
 
 	@Override
-	public final String getMethod() {
-		return this.method;
-	}
-
-	@Override
-	public final Schema getQuery() {
-		return this.query;
+	public final String getType() {
+		return this.type;
 	}
 
 	@Override

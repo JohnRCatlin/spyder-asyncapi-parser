@@ -16,16 +16,15 @@ limitations under the License.
 package engineer.asyncapi.spyder.parser;
 
 import engineer.asyncapi.spyder.model.Extensions;
-import engineer.asyncapi.spyder.model.Schema;
 import engineer.asyncapi.spyder.model.bindings.BindingType;
-import engineer.asyncapi.spyder.model.bindings.WebSocketsChannelBinding010;
+import engineer.asyncapi.spyder.model.bindings.IBMMQServerBinding010;
 
 /**
  * 
  * @author johncatlin
  *
  */
-final class WebSocketsChannelBinding010Impl implements WebSocketsChannelBinding010 {
+final class IBMMQServerBinding010Impl implements IBMMQServerBinding010 {
 
 	/**
 	 * 
@@ -34,10 +33,20 @@ final class WebSocketsChannelBinding010Impl implements WebSocketsChannelBinding0
 	 */
 	static final class Builder {
 
-		private WebSocketsChannelBinding010Impl binding = new WebSocketsChannelBinding010Impl();
+		private IBMMQServerBinding010Impl binding = new IBMMQServerBinding010Impl();
 
-		public final WebSocketsChannelBinding010Impl build() {
+		public final IBMMQServerBinding010Impl build() {
 			return binding;
+		}
+
+		final Builder ccdtQueueManagerName(final String ccdtQueueManagerName) {
+			binding.ccdtQueueManagerName = ccdtQueueManagerName;
+			return this;
+		}
+
+		final Builder cipherSpec(final String cipherSpec) {
+			binding.cipherSpec = cipherSpec;
+			return this;
 		}
 
 		final Builder extensions(final Extensions extensions) {
@@ -45,31 +54,33 @@ final class WebSocketsChannelBinding010Impl implements WebSocketsChannelBinding0
 			return this;
 		}
 
-		final Builder headers(final Schema headers) {
-			binding.headers = headers;
+		public Builder groupId(final String groupId) {
+			binding.groupId = groupId;
 			return this;
 		}
 
-		final Builder method(final String method) {
-			binding.method = method;
+		final Builder heartBeatInterval(final Integer heartBeatInterval) {
+			binding.heartBeatInterval = heartBeatInterval;
 			return this;
 		}
 
-		final Builder query(final Schema query) {
-			binding.query = query;
+		final Builder multiEndpointServer(final Boolean multiEndpointServer) {
+			binding.multiEndpointServer = multiEndpointServer;
 			return this;
 		}
 	}
 
 	static final String BINDING_VERSION = "0.1.0";
-	static final String TYPE = BindingType.WEBSOCKETS.value;
+	static final String TYPE = BindingType.IBMMQ.value;
 
+	private String ccdtQueueManagerName = null;
+	private String cipherSpec = null;
 	private Extensions extensions = null;
-	private Schema headers;
-	private String method;
-	private Schema query;
+	private String groupId = null;
+	private Integer heartBeatInterval = null;
+	private Boolean multiEndpointServer = null;
 
-	private WebSocketsChannelBinding010Impl() {
+	private IBMMQServerBinding010Impl() {
 		/* Use the builder for construction. */
 	}
 
@@ -84,23 +95,33 @@ final class WebSocketsChannelBinding010Impl implements WebSocketsChannelBinding0
 	}
 
 	@Override
+	public final String getCcdtQueueManagerName() {
+		return this.ccdtQueueManagerName;
+	}
+
+	@Override
+	public final String getCipherSpec() {
+		return this.cipherSpec;
+	}
+
+	@Override
 	public final Extensions getExtensions() {
 		return this.extensions;
 	}
 
 	@Override
-	public final Schema getHeaders() {
-		return this.headers;
+	public final String getGroupId() {
+		return this.groupId;
 	}
 
 	@Override
-	public final String getMethod() {
-		return this.method;
+	public final Integer getHeartBeatInterval() {
+		return this.heartBeatInterval;
 	}
 
 	@Override
-	public final Schema getQuery() {
-		return this.query;
+	public final Boolean getMultiEndpointServer() {
+		return this.multiEndpointServer;
 	}
 
 	@Override

@@ -28,6 +28,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import engineer.asyncapi.spyder.model.bindings.AMQP091ServerBinding020;
+import engineer.asyncapi.spyder.model.bindings.IBMMQServerBinding010;
 import engineer.asyncapi.spyder.model.bindings.KafkaServerBinding010;
 import engineer.asyncapi.spyder.model.bindings.MQTTServerBinding010;
 import engineer.asyncapi.spyder.model.bindings.ServerBindings;
@@ -92,6 +93,66 @@ public class ServerBindingParserTest {
 		assertNotNull(parsed);
 		assertTrue(parsed.containsKey("amqp"));
 		assertTrue(parsed.get("amqp") instanceof AMQP091ServerBinding020);
+	}
+
+	@Test
+	public void IBMMQBinding() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("ibmmq:\n");
+		sb.append("  bindingVersion: '0.1.0'\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		ServerBindings parsed = ServerBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("ibmmq"));
+		assertTrue(parsed.get("ibmmq") instanceof IBMMQServerBinding010);
+	}
+
+	@Test
+	public void IBMMQBindingNoVersion() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("ibmmq:\n");
+		sb.append("  random: foo\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		ServerBindings parsed = ServerBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("ibmmq"));
+		assertTrue(parsed.get("ibmmq") instanceof IBMMQServerBinding010);
+	}
+
+	@Test
+	public void IBMMQBindingUnsupportedVersion() throws JsonMappingException, JsonProcessingException {
+		// given
+		final StringBuilder sb = new StringBuilder();
+		sb.append("ibmmq:\n");
+		sb.append("  bindingVersion: '9.9.9'\n");
+		final String rawModel = sb.toString();
+
+		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+		final JsonNode rootNode = mapper.readTree(rawModel);
+
+		// when
+		ServerBindings parsed = ServerBindingsParser.parse((ObjectNode) rootNode);
+
+		// then
+		assertNotNull(parsed);
+		assertTrue(parsed.containsKey("ibmmq"));
+		assertTrue(parsed.get("ibmmq") instanceof IBMMQServerBinding010);
 	}
 
 	@Test
@@ -217,5 +278,4 @@ public class ServerBindingParserTest {
 	@After
 	public void tearDown() throws Exception {
 	}
-
 }

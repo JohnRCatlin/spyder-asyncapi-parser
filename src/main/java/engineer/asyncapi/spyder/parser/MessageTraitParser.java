@@ -21,7 +21,6 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import engineer.asyncapi.spyder.model.CorrelationId;
 import engineer.asyncapi.spyder.model.MessageTrait;
-import engineer.asyncapi.spyder.model.Schema;
 import engineer.asyncapi.spyder.model.bindings.MessageBindings;
 import engineer.asyncapi.spyder.model.fields.Fields;
 
@@ -65,17 +64,6 @@ final class MessageTraitParser extends AsyncAPICommonObjectParser {
 		final ObjectNode correlationIdObject = objectNodeFrom(Fields.CORRELATION_ID.value, node);
 		if (correlationIdObject != null) {
 			return CorrelationIdParser.parse(correlationIdObject);
-		}
-		return null;
-	}
-
-	static final Schema parseHeaders(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		final ObjectNode headersNode = objectNodeFrom(Fields.HEADERS.value, node);
-		if (headersNode != null) {
-			return SchemaParser.parse(headersNode);
 		}
 		return null;
 	}

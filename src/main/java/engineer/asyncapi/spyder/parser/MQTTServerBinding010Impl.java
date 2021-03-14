@@ -107,12 +107,12 @@ final class MQTTServerBinding010Impl implements MQTTServerBinding010 {
 	}
 
 	@Override
-	public Boolean getCleanSession() {
+	public final Boolean getCleanSession() {
 		return this.cleanSession;
 	}
 
 	@Override
-	public String getClientId() {
+	public final String getClientId() {
 		return this.clientId;
 	}
 
@@ -122,27 +122,27 @@ final class MQTTServerBinding010Impl implements MQTTServerBinding010 {
 	}
 
 	@Override
-	public Integer getKeepAlive() {
+	public final Integer getKeepAlive() {
 		return this.keepAlive;
 	}
 
 	@Override
-	public String getLastWillMessage() {
+	public final String getLastWillMessage() {
 		return this.lastWillMessage;
 	}
 
 	@Override
-	public Integer getLastWillQos() {
+	public final Integer getLastWillQos() {
 		return this.lastWillQos;
 	}
 
 	@Override
-	public Boolean getLastWillRetain() {
+	public final Boolean getLastWillRetain() {
 		return this.lastWillRetain;
 	}
 
 	@Override
-	public String getLastWillTopic() {
+	public final String getLastWillTopic() {
 		return this.lastWillTopic;
 	}
 

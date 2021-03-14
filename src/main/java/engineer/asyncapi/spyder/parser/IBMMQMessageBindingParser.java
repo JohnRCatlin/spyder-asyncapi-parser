@@ -17,19 +17,20 @@ package engineer.asyncapi.spyder.parser;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-import engineer.asyncapi.spyder.model.bindings.HTTPMessageBinding;
+import engineer.asyncapi.spyder.model.bindings.IBMMQMessageBinding;
+import engineer.asyncapi.spyder.model.fields.Fields;
 
 /**
  * 
  * @author johncatlin
  *
  */
-final class HTTPMessageBindingParser extends AsyncAPICommonObjectParser {
+final class IBMMQMessageBindingParser extends AsyncAPICommonObjectParser {
 
-	static final HTTPMessageBinding parse(final ObjectNode node) {
+	static final IBMMQMessageBinding parse(final ObjectNode node) {
 		try {
 			final String bindingVersion = parseBindingVersion(node);
-			if (null == bindingVersion || bindingVersion.equals(HTTPOperationBinding010Impl.BINDING_VERSION)) {
+			if (null == bindingVersion || bindingVersion.equals(IBMMQMessageBinding010Impl.BINDING_VERSION)) {
 				return parseBindingV010(node);
 			}
 			// use latest
@@ -39,14 +40,25 @@ final class HTTPMessageBindingParser extends AsyncAPICommonObjectParser {
 		}
 	}
 
-	private static final HTTPMessageBinding parseBindingV010(final ObjectNode node) {
-		final HTTPMessageBinding010Impl.Builder builder = new HTTPMessageBinding010Impl.Builder();
+	private static final IBMMQMessageBinding parseBindingV010(final ObjectNode node) {
+		final IBMMQMessageBinding010Impl.Builder builder = new IBMMQMessageBinding010Impl.Builder();
 		builder.extensions(parseExtensions(node));
-		builder.headers(parseHeaders(node));
+		builder.description(parseDescription(node));
+		builder.type(parseType(node));
+		builder.headers(parseIBMMQHeaders(node));
+		builder.expiry(parserExpiry(node));
 		return builder.build();
 	}
 
-	private HTTPMessageBindingParser() {
+	private static final Integer parserExpiry(final ObjectNode node) {
+		return integerFrom(Fields.EXPIRY.value, node);
+	}
+
+	private static final String parseIBMMQHeaders(final ObjectNode node) {
+		return valueOfKeyOrNull(Fields.HEADERS.value, node);
+	}
+
+	private IBMMQMessageBindingParser() {
 		/* this static utility should not be instantiated */
 	}
 }

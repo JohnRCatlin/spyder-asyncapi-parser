@@ -16,10 +16,29 @@ limitations under the License.
 package engineer.asyncapi.spyder.model.bindings;
 
 /**
+ * .
  * 
  * @author johncatlin
  *
  */
 public interface IBMMQChannelBinding extends ChannelBinding {
+
+	String getDestinationType();
+
+	Boolean getQueueExclusive();
+
+	Boolean getQueueIsPartitioned();
+
+	String getQueueObjectName();
+
+	Boolean getTopicDurablePermitted();
+
+	Boolean getTopicLastMsgRetained();
+
+	String getTopicObjectName();
+
+	String getTopicString();
+
+	Integer maxMsgLength();
 
 }

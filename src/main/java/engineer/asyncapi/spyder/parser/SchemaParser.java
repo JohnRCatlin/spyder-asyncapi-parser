@@ -277,10 +277,6 @@ final class SchemaParser extends AsyncAPICommonObjectParser {
 		return null;
 	}
 
-	static final String parseType(final ObjectNode node) {
-		return valueOfKeyOrNull(Fields.TYPE.value, node);
-	}
-
 	static final Boolean parseUniqueItems(final ObjectNode node) {
 		return booleanFrom(Fields.UNIQUE_ITEMS.value, node);
 	}

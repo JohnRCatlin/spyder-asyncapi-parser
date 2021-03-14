@@ -25,6 +25,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import engineer.asyncapi.spyder.model.Extensions;
 import engineer.asyncapi.spyder.model.ExternalDocs;
 import engineer.asyncapi.spyder.model.Parameters;
+import engineer.asyncapi.spyder.model.Schema;
 import engineer.asyncapi.spyder.model.Tags;
 import engineer.asyncapi.spyder.model.fields.Fields;
 
@@ -34,7 +35,7 @@ import engineer.asyncapi.spyder.model.fields.Fields;
  *
  */
 abstract class AsyncAPICommonObjectParser extends AsyncAPICommonFieldParser {
-	
+
 	static final List<String> parseEnum(final ObjectNode node) {
 		if (null == node) {
 			return null;
@@ -82,6 +83,17 @@ abstract class AsyncAPICommonObjectParser extends AsyncAPICommonFieldParser {
 		}
 		final ObjectNode objectNode = objectNodeFrom(Fields.EXTERNAL_DOCS.value, node);
 		return ExternalDocsParser.parse(objectNode);
+	}
+
+	static final Schema parseHeaders(final ObjectNode node) {
+		if (null == node) {
+			return null;
+		}
+		final ObjectNode query = objectNodeFrom(Fields.HEADERS.value, node);
+		if (null == query) {
+			return null;
+		}
+		return SchemaParser.parse(query);
 	}
 
 	static final Parameters parseParameters(final ObjectNode node) {

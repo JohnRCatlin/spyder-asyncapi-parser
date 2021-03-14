@@ -16,10 +16,21 @@ limitations under the License.
 package engineer.asyncapi.spyder.model.bindings;
 
 /**
+ * .
  * 
  * @author johncatlin
  *
  */
 public interface IBMMQServerBinding010 extends IBMMQServerBinding {
+
+	String getGroupId();
+
+	String getCcdtQueueManagerName();
+
+	String getCipherSpec();
+
+	Boolean getMultiEndpointServer();
+
+	Integer getHeartBeatInterval();
 
 }

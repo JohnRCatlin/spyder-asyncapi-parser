@@ -75,17 +75,6 @@ final class MessageParser extends AsyncAPICommonObjectParser {
 		return null;
 	}
 
-	static final Schema parseHeaders(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		final ObjectNode headersNode = objectNodeFrom(Fields.HEADERS.value, node);
-		if (headersNode != null) {
-			return SchemaParser.parse(headersNode);
-		}
-		return null;
-	}
-
 	static final MessageBindings parseMessageBindings(final ObjectNode node) {
 		if (null == node) {
 			return null;

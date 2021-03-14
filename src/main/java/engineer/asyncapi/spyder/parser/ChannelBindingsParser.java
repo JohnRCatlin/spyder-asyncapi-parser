@@ -62,9 +62,10 @@ final class ChannelBindingsParser extends AsyncAPICommonObjectParser {
 			return AMQP091ChannelBindingParser.parse(node);
 		case WEBSOCKETS:
 			return WebSocketsChannelBindingParser.parse(node);
+		case IBMMQ:
+			return IBMMQChannelBindingParser.parse(node);
 		case HTTP:
 		case AMQP1:
-		case IBMMQ:
 		case MQTT:
 		case MQTT5:
 		case NATS:

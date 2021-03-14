@@ -53,19 +53,19 @@ final class MQTTServerBindingParser extends AsyncAPICommonObjectParser {
 		return builder.build();
 	}
 
-	private static Boolean parseCleanSession(ObjectNode node) {
+	private static Boolean parseCleanSession(final ObjectNode node) {
 		return booleanFrom(Fields.CLEAN_SESSION.value, node);
 	}
 
-	private static String parseClientId(ObjectNode node) {
+	private static String parseClientId(final ObjectNode node) {
 		return valueOfKeyOrNull(Fields.CLIENT_ID.value, node);
 	}
 
-	private static Integer parseKeepAlive(ObjectNode node) {
+	private static Integer parseKeepAlive(final ObjectNode node) {
 		return integerFrom(Fields.KEEP_ALIVE.value, node);
 	}
 
-	private static String parseLastWillMessage(ObjectNode node) {
+	private static String parseLastWillMessage(final ObjectNode node) {
 		ObjectNode topicNode = objectNodeFrom(Fields.LAST_WILL.value, node);
 		if (null == topicNode || !isObjectNode(topicNode)) {
 			return null;
@@ -73,7 +73,7 @@ final class MQTTServerBindingParser extends AsyncAPICommonObjectParser {
 		return valueOfKeyOrNull(Fields.MESSAGE.value, topicNode);
 	}
 
-	private static Integer parseLastWillQos(ObjectNode node) {
+	private static Integer parseLastWillQos(final ObjectNode node) {
 		ObjectNode topicNode = objectNodeFrom(Fields.LAST_WILL.value, node);
 		if (null == topicNode || !isObjectNode(topicNode)) {
 			return null;
@@ -81,7 +81,7 @@ final class MQTTServerBindingParser extends AsyncAPICommonObjectParser {
 		return integerFrom(Fields.QOS.value, topicNode);
 	}
 
-	private static Boolean parseLastWillRetain(ObjectNode node) {
+	private static Boolean parseLastWillRetain(final ObjectNode node) {
 		ObjectNode topicNode = objectNodeFrom(Fields.LAST_WILL.value, node);
 		if (null == topicNode || !isObjectNode(topicNode)) {
 			return null;
@@ -89,7 +89,7 @@ final class MQTTServerBindingParser extends AsyncAPICommonObjectParser {
 		return booleanFrom(Fields.RETAIN.value, topicNode);
 	}
 
-	private static String parseLastWillTopic(ObjectNode node) {
+	private static String parseLastWillTopic(final ObjectNode node) {
 		ObjectNode topicNode = objectNodeFrom(Fields.LAST_WILL.value, node);
 		if (null == topicNode || !isObjectNode(topicNode)) {
 			return null;

@@ -50,15 +50,7 @@ final class HTTPOperationBindingParser extends AsyncAPICommonObjectParser {
 		return builder.build();
 	}
 
-	private static String parseType(ObjectNode node) {
-		return valueOfKeyOrNull(Fields.TYPE.value, node);
-	}
-
-	private static String parseMethod(ObjectNode node) {
-		return valueOfKeyOrNull(Fields.METHOD.value, node);
-	}
-
-	private static Schema parseQuery(ObjectNode node) {
+	private static final Schema parseQuery(final ObjectNode node) {
 		if (null == node) {
 			return null;
 		}

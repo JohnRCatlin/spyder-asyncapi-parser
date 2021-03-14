@@ -16,6 +16,7 @@ limitations under the License.
 package engineer.asyncapi.spyder.model.bindings;
 
 /**
+ * .
  * 
  * @author johncatlin
  *

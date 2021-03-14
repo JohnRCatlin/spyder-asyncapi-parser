@@ -98,18 +98,18 @@ class NodeClipper {
 		return node.getNodeType().equals(JsonNodeType.ARRAY);
 	}
 
-	static final boolean isBooleanNode(final JsonNode node) {
-		if (null == node) {
-			return false;
-		}
-		return node.getNodeType().equals(JsonNodeType.BOOLEAN);
-	}
-	
 	static final boolean isBigDecimalNode(final JsonNode node) {
 		if (null == node) {
 			return false;
 		}
 		return node.isBigDecimal();
+	}
+	
+	static final boolean isBooleanNode(final JsonNode node) {
+		if (null == node) {
+			return false;
+		}
+		return node.getNodeType().equals(JsonNodeType.BOOLEAN);
 	}
 
 	static final boolean isIntegerNode(final JsonNode node) {

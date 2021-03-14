@@ -82,12 +82,12 @@ final class MQTTOperationBinding010Impl implements MQTTOperationBinding010 {
 	}
 
 	@Override
-	public Integer getQos() {
+	public final Integer getQos() {
 		return this.qos;
 	}
 
 	@Override
-	public Boolean getRetain() {
+	public final Boolean getRetain() {
 		return this.retain;
 	}
 

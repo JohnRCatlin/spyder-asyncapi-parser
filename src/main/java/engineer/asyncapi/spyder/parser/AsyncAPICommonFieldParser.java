@@ -29,7 +29,7 @@ abstract class AsyncAPICommonFieldParser extends NodeClipper {
 	static final boolean hasRef(final ObjectNode node) {
 		return null != node.get(Fields.REF.value);
 	}
-	
+
 	static final String parseBindingVersion(final ObjectNode node) {
 		return valueOfKeyOrNull(Fields.BINDING_VERSION.value, node);
 	}
@@ -50,6 +50,10 @@ abstract class AsyncAPICommonFieldParser extends NodeClipper {
 		return valueOfKeyOrNull(Fields.LOCATION.value, node);
 	}
 
+	static final String parseMethod(final ObjectNode node) {
+		return valueOfKeyOrNull(Fields.METHOD.value, node);
+	}
+
 	static final String parseName(final ObjectNode node) {
 		return valueOfKeyOrNull(Fields.NAME.value, node);
 	}
@@ -68,6 +72,10 @@ abstract class AsyncAPICommonFieldParser extends NodeClipper {
 
 	static final String parseTitle(final ObjectNode node) {
 		return valueOfKeyOrNull(Fields.TITLE.value, node);
+	}
+
+	static final String parseType(final ObjectNode node) {
+		return valueOfKeyOrNull(Fields.TYPE.value, node);
 	}
 
 	static final String parseUrl(final ObjectNode node) {

@@ -72,7 +72,7 @@ final class HTTPMessageBinding010Impl implements HTTPMessageBinding010 {
 	}
 
 	@Override
-	public Schema getHeaders() {
+	public final Schema getHeaders() {
 		return this.headers;
 	}
 

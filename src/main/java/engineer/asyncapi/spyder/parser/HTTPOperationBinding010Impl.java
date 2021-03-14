@@ -50,13 +50,13 @@ final class HTTPOperationBinding010Impl implements HTTPOperationBinding010 {
 			return this;
 		}
 
-		final Builder type(final String type) {
-			binding.channelType = type;
+		final Builder query(final Schema query) {
+			binding.query = query;
 			return this;
 		}
 
-		final Builder query(final Schema query) {
-			binding.query = query;
+		final Builder type(final String type) {
+			binding.channelType = type;
 			return this;
 		}
 	}
@@ -74,12 +74,17 @@ final class HTTPOperationBinding010Impl implements HTTPOperationBinding010 {
 	}
 
 	@Override
+	public final String getBindingType() {
+		return TYPE;
+	}
+
+	@Override
 	public final String getBindingVersion() {
 		return BINDING_VERSION;
 	}
 
 	@Override
-	public String getChannelType() {
+	public final String getChannelType() {
 		return this.channelType;
 	}
 
@@ -89,18 +94,13 @@ final class HTTPOperationBinding010Impl implements HTTPOperationBinding010 {
 	}
 
 	@Override
-	public String getMethod() {
+	public final String getMethod() {
 		return this.method;
 	}
 
 	@Override
-	public Schema getQuery() {
+	public final Schema getQuery() {
 		return this.query;
-	}
-
-	@Override
-	public final String getBindingType() {
-		return TYPE;
 	}
 
 	@Override

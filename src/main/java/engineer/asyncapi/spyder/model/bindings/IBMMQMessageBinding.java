@@ -16,10 +16,19 @@ limitations under the License.
 package engineer.asyncapi.spyder.model.bindings;
 
 /**
+ * .
  * 
  * @author johncatlin
  *
  */
 public interface IBMMQMessageBinding extends MessageBinding {
+
+	String getType();
+
+	String getHeaders();
+
+	String getDescription();
+
+	Integer getExpiry();
 
 }
