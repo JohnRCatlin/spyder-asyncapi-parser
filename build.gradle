@@ -9,7 +9,7 @@ def artifact = "spyder.parser"
 sourceCompatibility = '1.8'
 
 def getDate() {
-    return new Date().format('yyyy/MM/dd HH-mm-ss')
+    return new Date().format('yyyy/MM/dd HH:mm:ss')
 }
 
 task javadocs(type: Javadoc) {
