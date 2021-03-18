@@ -27,73 +27,74 @@ import engineer.asyncapi.spyder.model.AsyncAPI;
 
 public class TestAsyncAPIV2Parser_fragment_info extends AsyncApiV2ParserTestBase {
 
-	private static AsyncAPI api;
-	private static String rawSubjectModel;
-	
-	private static final String SUBJECT_MODEL_SOURCE = "/src/test/resources/fragments/info.full.yml";
+  private static AsyncAPI api;
+  private static String rawSubjectModel;
 
-	@Test
-	public void fundamentalParseExpectation() {
-		// then
-		assertNotNull(api);
-	}
+  private static final String SUBJECT_MODEL_SOURCE = "/src/test/resources/fragments/info.full.yml";
 
-	@Test
-	public void infoDescriptionExpectations() {
-		// then
-		assertTrue(api.getInfo().getDescription().contains("description text..."));
-	}
+  @Test
+  public void fundamentalParseExpectation() {
+    // then
+    assertNotNull(api);
+  }
 
-	@Test
-	public void infoExpectations() {
-		// then
-		assertNotNull(api.getInfo());
-	}
+  @Test
+  public void infoDescriptionExpectations() {
+    // then
+    assertTrue(api.getInfo().getDescription().contains("description text..."));
+  }
 
-	@Test
-	public void infoLicenseExpectations() {
-		// then
-		assertNotNull("Apache 2.0", api.getInfo().getLicense());
-	}
+  @Test
+  public void infoExpectations() {
+    // then
+    assertNotNull(api.getInfo());
+  }
 
-	@Test
-	public void infoLicenseNameExpectations() {
-		// then
-		assertEquals("Apache 2.0", api.getInfo().getLicense().getName());
-	}
+  @Test
+  public void infoLicenseExpectations() {
+    // then
+    assertNotNull("Apache 2.0", api.getInfo().getLicense());
+  }
 
-	@Test
-	public void infoLicenseUrlExpectations() {
-		// then
-		assertEquals("https://www.apache.org/licenses/LICENSE-2.0", api.getInfo().getLicense().getUrl());
-	}
+  @Test
+  public void infoLicenseNameExpectations() {
+    // then
+    assertEquals("Apache 2.0", api.getInfo().getLicense().getName());
+  }
 
-	@Test
-	public void infoTitleExpectations() {
-		// then
-		assertEquals("example api", api.getInfo().getTitle());
-	}
+  @Test
+  public void infoLicenseUrlExpectations() {
+    // then
+    assertEquals("https://www.apache.org/licenses/LICENSE-2.0",
+        api.getInfo().getLicense().getUrl());
+  }
 
-	@Test
-	public void infoVersionExpectations() {
-		// then
-		assertEquals("1.0.0", api.getInfo().getVersion());
-	}
+  @Test
+  public void infoTitleExpectations() {
+    // then
+    assertEquals("example api", api.getInfo().getTitle());
+  }
 
-	@Before
-	public void setUp() throws Exception {
+  @Test
+  public void infoVersionExpectations() {
+    // then
+    assertEquals("1.0.0", api.getInfo().getVersion());
+  }
 
-		// given
-		rawSubjectModel = rawModelFromFile(currentWorkingDirectory() + SUBJECT_MODEL_SOURCE);
+  @Before
+  public void setUp() throws Exception {
 
-		// given
-		AsyncAPIParser parser = new AsyncAPIv20ParserImpl();
+    // given
+    rawSubjectModel = rawModelFromFile(currentWorkingDirectory() + SUBJECT_MODEL_SOURCE);
 
-		// when
-		api = parser.parseFromString(rawSubjectModel);
-	}
+    // given
+    AsyncAPIParser parser = new AsyncAPIv20ParserImpl();
 
-	@After
-	public void tearDown() throws Exception {
-	}
+    // when
+    api = parser.parseFromString(rawSubjectModel);
+  }
+
+  @After
+  public void tearDown() throws Exception {
+  }
 }

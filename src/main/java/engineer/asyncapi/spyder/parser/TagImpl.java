@@ -26,79 +26,79 @@ import engineer.asyncapi.spyder.model.Tag;
  */
 final class TagImpl implements Tag {
 
-	/**
-	 * 
-	 * @author johncatlin
-	 *
-	 */
-	static final class Builder {
+  /**
+   * 
+   * @author johncatlin
+   *
+   */
+  static final class Builder {
 
-		private TagImpl tag = new TagImpl();
+    private TagImpl tag = new TagImpl();
 
-		final Tag build() {
-			return tag;
-		}
+    final Tag build() {
+      return tag;
+    }
 
-		final Builder description(final String description) {
-			tag.description = description;
-			return this;
-		}
+    final Builder description(final String description) {
+      tag.description = description;
+      return this;
+    }
 
-		final Builder extension(final String name, final String value) {
-			if (ExtensionsParser.notValidExtension(name)) {
-				return this;
-			}
-			tag.extensions.put(name, value);
-			return this;
-		}
+    final Builder extension(final String name, final String value) {
+      if (ExtensionsParser.notValidExtension(name)) {
+        return this;
+      }
+      tag.extensions.put(name, value);
+      return this;
+    }
 
-		final Builder extensions(final Extensions extensions) {
-			tag.extensions = extensions;
-			return this;
-		}
+    final Builder extensions(final Extensions extensions) {
+      tag.extensions = extensions;
+      return this;
+    }
 
-		final Builder externalDocs(final ExternalDocs externalDocs) {
-			tag.externalDocs = externalDocs;
-			return this;
-		}
+    final Builder externalDocs(final ExternalDocs externalDocs) {
+      tag.externalDocs = externalDocs;
+      return this;
+    }
 
-		final Builder name(final String name) {
-			tag.name = name;
-			return this;
-		}
-	}
+    final Builder name(final String name) {
+      tag.name = name;
+      return this;
+    }
+  }
 
-	private String description = null;
-	private Extensions extensions = null;
-	private ExternalDocs externalDocs = null;
-	private String name = null;
+  private String description = null;
+  private Extensions extensions = null;
+  private ExternalDocs externalDocs = null;
+  private String name = null;
 
-	private TagImpl() {
-		/* Use the builder for construction. */
-	}
+  private TagImpl() {
+    /* Use the builder for construction. */
+  }
 
-	@Override
-	public final String getDescription() {
-		return this.description;
-	}
+  @Override
+  public final String getDescription() {
+    return this.description;
+  }
 
-	@Override
-	public final Extensions getExtensions() {
-		return this.extensions;
-	}
+  @Override
+  public final Extensions getExtensions() {
+    return this.extensions;
+  }
 
-	@Override
-	public final ExternalDocs getExternalDocs() {
-		return this.externalDocs;
-	}
+  @Override
+  public final ExternalDocs getExternalDocs() {
+    return this.externalDocs;
+  }
 
-	@Override
-	public final String getName() {
-		return this.name;
-	}
+  @Override
+  public final String getName() {
+    return this.name;
+  }
 
-	@Override
-	public final String toString() {
-		return ToStringFormatter.toString(this);
-	}
+  @Override
+  public final String toString() {
+    return ToStringFormatter.toString(this);
+  }
 }

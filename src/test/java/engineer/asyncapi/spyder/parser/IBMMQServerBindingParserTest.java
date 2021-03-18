@@ -30,54 +30,55 @@ import engineer.asyncapi.spyder.model.bindings.IBMMQServerBinding010;
 
 public class IBMMQServerBindingParserTest {
 
-	private static final String rawModel;
+  private static final String rawModel;
 
-	// given
-	static {
-		StringBuilder sb = new StringBuilder();
-		sb.append("groupId: PRODCLSTR1\n");
-		sb.append("cipherSpec: ANY_TLS12_OR_HIGHER\n");
-		sb.append("ccdtQueueManagerName: qm1\n");
-		sb.append("multiEndpointServer: false\n");
-		sb.append("heartBeatInterval: 300\n");
-		sb.append("bindingVersion: '0.1.0'\n");
-		sb.append("extensions:\n");
-		sb.append("  x-1: foo\n");
-		rawModel = sb.toString();
-	}
+  // given
+  static {
+    StringBuilder sb = new StringBuilder();
+    sb.append("groupId: PRODCLSTR1\n");
+    sb.append("cipherSpec: ANY_TLS12_OR_HIGHER\n");
+    sb.append("ccdtQueueManagerName: qm1\n");
+    sb.append("multiEndpointServer: false\n");
+    sb.append("heartBeatInterval: 300\n");
+    sb.append("bindingVersion: '0.1.0'\n");
+    sb.append("extensions:\n");
+    sb.append("  x-1: foo\n");
+    rawModel = sb.toString();
+  }
 
-	private ObjectMapper mapper = null;
-	private JsonNode rootNode = null;
+  private ObjectMapper mapper = null;
+  private JsonNode rootNode = null;
 
-	@Before
-	public void setUp() throws Exception {
-		// System.out.println(rawModel);
-		mapper = ObjectMapperFactory.forYaml();
-		rootNode = mapper.readTree(rawModel);
-	}
+  @Before
+  public void setUp() throws Exception {
+    // System.out.println(rawModel);
+    mapper = ObjectMapperFactory.forYaml();
+    rootNode = mapper.readTree(rawModel);
+  }
 
-	@Test
-	public void shouldParse() {
-		// when
-		IBMMQServerBinding010 parsed = (IBMMQServerBinding010) IBMMQServerBindingParser.parse((ObjectNode) rootNode);
+  @Test
+  public void shouldParse() {
+    // when
+    IBMMQServerBinding010 parsed = (IBMMQServerBinding010) IBMMQServerBindingParser
+        .parse((ObjectNode) rootNode);
 
-		// then
-		assertNotNull(parsed);
-		assertEquals("ibmmq", parsed.getBindingType());
-		assertEquals("0.1.0", parsed.getBindingVersion());
+    // then
+    assertNotNull(parsed);
+    assertEquals("ibmmq", parsed.getBindingType());
+    assertEquals("0.1.0", parsed.getBindingVersion());
 
-		assertEquals("PRODCLSTR1", parsed.getGroupId());
-		assertEquals("ANY_TLS12_OR_HIGHER", parsed.getCipherSpec());
-		assertEquals("qm1", parsed.getCcdtQueueManagerName());
-		assertEquals(false, parsed.getMultiEndpointServer());
-		assertEquals(Integer.valueOf(300), parsed.getHeartBeatInterval());
+    assertEquals("PRODCLSTR1", parsed.getGroupId());
+    assertEquals("ANY_TLS12_OR_HIGHER", parsed.getCipherSpec());
+    assertEquals("qm1", parsed.getCcdtQueueManagerName());
+    assertEquals(false, parsed.getMultiEndpointServer());
+    assertEquals(Integer.valueOf(300), parsed.getHeartBeatInterval());
 
-		assertEquals(1, parsed.getExtensions().size());
-		assertEquals("foo", parsed.getExtensions().get("x-1"));
-	}
+    assertEquals(1, parsed.getExtensions().size());
+    assertEquals("foo", parsed.getExtensions().get("x-1"));
+  }
 
-	@After
-	public void tearDown() throws Exception {
-	}
+  @After
+  public void tearDown() throws Exception {
+  }
 
 }

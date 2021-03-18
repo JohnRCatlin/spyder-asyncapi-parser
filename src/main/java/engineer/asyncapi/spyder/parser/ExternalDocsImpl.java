@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import engineer.asyncapi.spyder.model.Extensions;
@@ -25,60 +26,60 @@ import engineer.asyncapi.spyder.model.ExternalDocs;
  */
 final class ExternalDocsImpl implements ExternalDocs {
 
-	/**
-	 * 
-	 * @author johncatlin
-	 *
-	 */
-	static final class Builder {
+  /**
+   * 
+   * @author johncatlin
+   *
+   */
+  static final class Builder {
 
-		private ExternalDocsImpl externalDocumentation = new ExternalDocsImpl();
+    private ExternalDocsImpl externalDocumentation = new ExternalDocsImpl();
 
-		public final ExternalDocs build() {
-			return this.externalDocumentation;
-		}
+    public final ExternalDocs build() {
+      return this.externalDocumentation;
+    }
 
-		public final Builder description(final String description) {
-			externalDocumentation.description = description;
-			return this;
-		}
+    public final Builder description(final String description) {
+      externalDocumentation.description = description;
+      return this;
+    }
 
-		public final Builder extensions(final Extensions extensions) {
-			externalDocumentation.extensions = extensions;
-			return this;
-		}
+    public final Builder extensions(final Extensions extensions) {
+      externalDocumentation.extensions = extensions;
+      return this;
+    }
 
-		public final Builder url(final String url) {
-			externalDocumentation.url = url;
-			return this;
-		}
-	}
+    public final Builder url(final String url) {
+      externalDocumentation.url = url;
+      return this;
+    }
+  }
 
-	private String description = null;
-	private Extensions extensions = null;
-	private String url = null;
+  private String description = null;
+  private Extensions extensions = null;
+  private String url = null;
 
-	private ExternalDocsImpl() {
-		/* Use the builder for construction. */
-	}
+  private ExternalDocsImpl() {
+    /* Use the builder for construction. */
+  }
 
-	@Override
-	public final String getDescription() {
-		return this.description;
-	}
+  @Override
+  public final String getDescription() {
+    return this.description;
+  }
 
-	@Override
-	public final Extensions getExtensions() {
-		return this.extensions;
-	}
+  @Override
+  public final Extensions getExtensions() {
+    return this.extensions;
+  }
 
-	@Override
-	public final String getUrl() {
-		return this.url;
-	}
+  @Override
+  public final String getUrl() {
+    return this.url;
+  }
 
-	@Override
-	public final String toString() {
-		return ToStringFormatter.toString(this);
-	}
+  @Override
+  public final String toString() {
+    return ToStringFormatter.toString(this);
+  }
 }

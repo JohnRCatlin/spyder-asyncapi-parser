@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model.fields;
 
 /**
@@ -22,21 +23,21 @@ package engineer.asyncapi.spyder.model.fields;
  */
 enum OAuthFlowFields {
 
-	AUTHORIZATION_CODE("authorizationCode", false),
-	AUTHORIZATION_URL("authorizationUrl", false),
-	CLIENT_CREDENTIALS("clientCredentials", false),
-	IMPILICT("implicit", false),
-	PASSWORD("password", false),
-	REFRESH_URL("refreshUrl", false),
-	SCOPES("scopes", false),
-	TOKEN_URL("tokenUrl", false);
+  AUTHORIZATION_CODE("authorizationCode", false),
+  AUTHORIZATION_URL("authorizationUrl", false),
+  CLIENT_CREDENTIALS("clientCredentials", false),
+  IMPILICT("implicit", false),
+  PASSWORD("password", false),
+  REFRESH_URL("refreshUrl", false),
+  SCOPES("scopes", false),
+  TOKEN_URL("tokenUrl", false);
 
-	public final boolean required;
-	public final String value;
+  public final boolean required;
+  public final String value;
 
-	OAuthFlowFields(final String value, final boolean required) {
-		this.value = value;
-		this.required = required;
-	}
+  OAuthFlowFields(final String value, final boolean required) {
+    this.value = value;
+    this.required = required;
+  }
 
 }

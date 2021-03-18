@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model;
 
 import java.math.BigDecimal;
@@ -27,84 +28,84 @@ import java.util.Set;
  */
 public interface Schema {
 
-	Boolean getAdditionalItems();
+  Boolean getAdditionalItems();
 
-	Boolean getAdditionalProperties();
+  Boolean getAdditionalProperties();
 
-	List<String> getAllOf();
+  List<String> getAllOf();
 
-	List<String> getAnyOf();
+  List<String> getAnyOf();
 
-	Boolean getConst();
+  Boolean getConst();
 
-	Schema getContains();
+  Schema getContains();
 
-	String getDefault();
+  String getDefault();
 
-	String getDescription();
+  String getDescription();
 
-	String getDiscriminator();
+  String getDiscriminator();
 
-	List<String> getEnum();
+  List<String> getEnum();
 
-	Example getExample();
+  Example getExample();
 
-	Examples getExamples();
+  Examples getExamples();
 
-	Extensions getExtensions();
+  Extensions getExtensions();
 
-	ExternalDocs getExternalDocs();
+  ExternalDocs getExternalDocs();
 
-	String getFormat();
+  String getFormat();
 
-	Schema getItems();
+  Schema getItems();
 
-	BigDecimal getMaximum();
+  BigDecimal getMaximum();
 
-	Integer getMaxItems();
+  Integer getMaxItems();
 
-	Integer getMaxLength();
+  Integer getMaxLength();
 
-	Integer getMaxProperties();
+  Integer getMaxProperties();
 
-	BigDecimal getMinimum();
+  BigDecimal getMinimum();
 
-	Integer getMinItems();
+  Integer getMinItems();
 
-	Integer getMinLength();
+  Integer getMinLength();
 
-	Integer getMinProperties();
+  Integer getMinProperties();
 
-	BigDecimal getMultipleOf();
+  BigDecimal getMultipleOf();
 
-	List<String> getNot();
+  List<String> getNot();
 
-	List<String> getOneOf();
+  List<String> getOneOf();
 
-	String getPattern();
+  String getPattern();
 
-	Map<String, Schema> getProperties();
+  Map<String, Schema> getProperties();
 
-	Set<String> getPropertyNames();
+  Set<String> getPropertyNames();
 
-	Boolean getReadOnly();
+  Boolean getReadOnly();
 
-	String getRef();
+  String getRef();
 
-	List<String> getRequiredProperties();
+  List<String> getRequiredProperties();
 
-	String getTitle();
+  String getTitle();
 
-	String getType();
+  String getType();
 
-	Boolean getUniqueItems();
+  Boolean getUniqueItems();
 
-	Boolean getWriteOnly();
+  Boolean getWriteOnly();
 
-	Boolean isDeprecated();
+  Boolean isDeprecated();
 
-	Boolean isExclusiveMaximum();
+  Boolean isExclusiveMaximum();
 
-	Boolean isExclusiveMinimum();
+  Boolean isExclusiveMinimum();
 
 }

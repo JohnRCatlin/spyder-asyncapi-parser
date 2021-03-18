@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import com.fasterxml.jackson.databind.JsonNode;
@@ -28,18 +29,18 @@ import engineer.asyncapi.spyder.model.Security;
  */
 final class SecurityParser extends AsyncAPICommonObjectParser {
 
-	static final Security parse(final ArrayNode node) {
-		if (null == node) {
-			return null;
-		}
-		final SecurityImpl.Builder builder = new SecurityImpl.Builder();
-		for (final JsonNode item : node) {
-			builder.add(SecurityRequirementParser.parse((ObjectNode) item));
-		}
-		return builder.build();
-	}
+  static final Security parse(final ArrayNode node) {
+    if (null == node) {
+      return null;
+    }
+    final SecurityImpl.Builder builder = new SecurityImpl.Builder();
+    for (final JsonNode item : node) {
+      builder.add(SecurityRequirementParser.parse((ObjectNode) item));
+    }
+    return builder.build();
+  }
 
-	private SecurityParser() {
-		/* this static utility should not be instantiated */
-	}
+  private SecurityParser() {
+    /* this static utility should not be instantiated */
+  }
 }

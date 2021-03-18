@@ -27,104 +27,104 @@ import engineer.asyncapi.spyder.model.License;
  */
 final class InfoImpl implements Info {
 
-	/**
-	 * 
-	 * @author johncatlin
-	 *
-	 */
-	static final class Builder {
+  /**
+   * 
+   * @author johncatlin
+   *
+   */
+  static final class Builder {
 
-		private InfoImpl info = new InfoImpl();
+    private InfoImpl info = new InfoImpl();
 
-		public final Info build() {
-			return info;
-		}
+    public final Info build() {
+      return info;
+    }
 
-		public final Builder contact(final Contact contact) {
-			info.contact = contact;
-			return this;
-		}
+    public final Builder contact(final Contact contact) {
+      info.contact = contact;
+      return this;
+    }
 
-		public final Builder description(final String description) {
-			info.description = description;
-			return this;
-		}
+    public final Builder description(final String description) {
+      info.description = description;
+      return this;
+    }
 
-		public final Builder extensions(final Extensions extensions) {
-			info.extensions = extensions;
-			return this;
-		}
+    public final Builder extensions(final Extensions extensions) {
+      info.extensions = extensions;
+      return this;
+    }
 
-		public final Builder license(final License license) {
-			info.license = license;
-			return this;
-		}
+    public final Builder license(final License license) {
+      info.license = license;
+      return this;
+    }
 
-		public final Builder termsOfService(final String termsOfService) {
-			info.termsOfService = termsOfService;
-			return this;
-		}
+    public final Builder termsOfService(final String termsOfService) {
+      info.termsOfService = termsOfService;
+      return this;
+    }
 
-		public final Builder title(final String title) {
-			info.title = title;
-			return this;
-		}
+    public final Builder title(final String title) {
+      info.title = title;
+      return this;
+    }
 
-		public final Builder version(final String version) {
-			info.version = version;
-			return this;
-		}
-	}
+    public final Builder version(final String version) {
+      info.version = version;
+      return this;
+    }
+  }
 
-	private Contact contact = null;
-	private String description = null;
-	private Extensions extensions = null;
-	private License license = null;
-	private String termsOfService = null;
-	private String title = null;
-	private String version = null;
+  private Contact contact = null;
+  private String description = null;
+  private Extensions extensions = null;
+  private License license = null;
+  private String termsOfService = null;
+  private String title = null;
+  private String version = null;
 
-	private InfoImpl() {
-		/* Use the builder for construction. */
-	}
+  private InfoImpl() {
+    /* Use the builder for construction. */
+  }
 
-	@Override
-	public final Contact getContact() {
-		return this.contact;
-	}
+  @Override
+  public final Contact getContact() {
+    return this.contact;
+  }
 
-	@Override
-	public final String getDescription() {
-		return this.description;
-	}
+  @Override
+  public final String getDescription() {
+    return this.description;
+  }
 
-	@Override
-	public final Extensions getExtensions() {
-		return this.extensions;
-	}
+  @Override
+  public final Extensions getExtensions() {
+    return this.extensions;
+  }
 
-	@Override
-	public final License getLicense() {
-		return this.license;
-	}
+  @Override
+  public final License getLicense() {
+    return this.license;
+  }
 
-	@Override
-	public final String getTermsOfService() {
-		return this.termsOfService;
-	}
+  @Override
+  public final String getTermsOfService() {
+    return this.termsOfService;
+  }
 
-	@Override
-	public final String getTitle() {
-		return this.title;
-	}
+  @Override
+  public final String getTitle() {
+    return this.title;
+  }
 
-	@Override
-	public final String getVersion() {
-		return this.version;
-	}
+  @Override
+  public final String getVersion() {
+    return this.version;
+  }
 
-	@Override
-	public final String toString() {
-		return ToStringFormatter.toString(this);
-	}
+  @Override
+  public final String toString() {
+    return ToStringFormatter.toString(this);
+  }
 }

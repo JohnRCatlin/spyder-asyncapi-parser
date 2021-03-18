@@ -30,123 +30,123 @@ import engineer.asyncapi.spyder.model.bindings.ServerBindings;
  */
 final class ServerImpl implements Server {
 
-	/**
-	 * 
-	 * @author johncatlin
-	 *
-	 */
-	static final class Builder {
+  /**
+   * 
+   * @author johncatlin
+   *
+   */
+  static final class Builder {
 
-		private ServerImpl server = new ServerImpl();
+    private ServerImpl server = new ServerImpl();
 
-		final Builder bindings(final ServerBindings bindings) {
-			server.bindings = bindings;
-			return this;
-		}
+    final Builder bindings(final ServerBindings bindings) {
+      server.bindings = bindings;
+      return this;
+    }
 
-		final ServerImpl build() {
-			return server;
-		}
+    final ServerImpl build() {
+      return server;
+    }
 
-		final Builder description(final String description) {
-			server.description = description;
-			return this;
-		}
+    final Builder description(final String description) {
+      server.description = description;
+      return this;
+    }
 
-		final Builder extension(final String name, final String value) {
-			if (ExtensionsParser.notValidExtension(name)) {
-				return this;
-			}
-			server.extensions.put(name, value);
-			return this;
-		}
+    final Builder extension(final String name, final String value) {
+      if (ExtensionsParser.notValidExtension(name)) {
+        return this;
+      }
+      server.extensions.put(name, value);
+      return this;
+    }
 
-		final Builder extensions(final Extensions extensions) {
-			server.extensions = extensions;
-			return this;
-		}
+    final Builder extensions(final Extensions extensions) {
+      server.extensions = extensions;
+      return this;
+    }
 
-		final Builder protocol(final String protocol) {
-			server.protocol = protocol;
-			return this;
-		}
+    final Builder protocol(final String protocol) {
+      server.protocol = protocol;
+      return this;
+    }
 
-		final Builder protocolVersion(final String protocolVersion) {
-			server.protocolVersion = protocolVersion;
-			return this;
-		}
+    final Builder protocolVersion(final String protocolVersion) {
+      server.protocolVersion = protocolVersion;
+      return this;
+    }
 
-		final Builder security(final Security security) {
-			server.security = security;
-			return this;
-		}
+    final Builder security(final Security security) {
+      server.security = security;
+      return this;
+    }
 
-		final Builder url(final String url) {
-			server.url = url;
-			return this;
-		}
+    final Builder url(final String url) {
+      server.url = url;
+      return this;
+    }
 
-		final Builder variables(final Map<String, ServerVariable> variables) {
-			server.variables = variables;
-			return this;
-		}
-	}
+    final Builder variables(final Map<String, ServerVariable> variables) {
+      server.variables = variables;
+      return this;
+    }
+  }
 
-	private ServerBindings bindings = null;
-	private String description = null;
-	private Extensions extensions = null;
-	private String protocol = null;
-	private String protocolVersion = null;
-	private Security security = null;
-	private String url = null;
-	private Map<String, ServerVariable> variables = null;
+  private ServerBindings bindings = null;
+  private String description = null;
+  private Extensions extensions = null;
+  private String protocol = null;
+  private String protocolVersion = null;
+  private Security security = null;
+  private String url = null;
+  private Map<String, ServerVariable> variables = null;
 
-	private ServerImpl() {
-		/* Use the builder for construction. */
-	}
+  private ServerImpl() {
+    /* Use the builder for construction. */
+  }
 
-	@Override
-	public final ServerBindings getBindings() {
-		return this.bindings;
-	}
+  @Override
+  public final ServerBindings getBindings() {
+    return this.bindings;
+  }
 
-	@Override
-	public final String getDescription() {
-		return this.description;
-	}
+  @Override
+  public final String getDescription() {
+    return this.description;
+  }
 
-	@Override
-	public final Extensions getExtensions() {
-		return this.extensions;
-	}
+  @Override
+  public final Extensions getExtensions() {
+    return this.extensions;
+  }
 
-	@Override
-	public final String getProtocol() {
-		return this.protocol;
-	}
+  @Override
+  public final String getProtocol() {
+    return this.protocol;
+  }
 
-	@Override
-	public final String getProtocolVersion() {
-		return this.protocolVersion;
-	}
+  @Override
+  public final String getProtocolVersion() {
+    return this.protocolVersion;
+  }
 
-	@Override
-	public final Security getSecurity() {
-		return this.security;
-	}
+  @Override
+  public final Security getSecurity() {
+    return this.security;
+  }
 
-	@Override
-	public final String getUrl() {
-		return this.url;
-	}
+  @Override
+  public final String getUrl() {
+    return this.url;
+  }
 
-	@Override
-	public final Map<String, ServerVariable> getVariables() {
-		return this.variables;
-	}
+  @Override
+  public final Map<String, ServerVariable> getVariables() {
+    return this.variables;
+  }
 
-	@Override
-	public final String toString() {
-		return ToStringFormatter.toString(this);
-	}
+  @Override
+  public final String toString() {
+    return ToStringFormatter.toString(this);
+  }
 }

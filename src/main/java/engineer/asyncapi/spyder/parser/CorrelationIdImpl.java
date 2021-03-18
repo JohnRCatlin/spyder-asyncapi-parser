@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import engineer.asyncapi.spyder.model.CorrelationId;
@@ -25,72 +26,72 @@ import engineer.asyncapi.spyder.model.Extensions;
  */
 final class CorrelationIdImpl implements CorrelationId {
 
-	/**
-	 * 
-	 * @author johncatlin
-	 *
-	 */
-	static final class Builder {
+  /**
+   * 
+   * @author johncatlin
+   *
+   */
+  static final class Builder {
 
-		private static final String REF_BASE = "#/components/messages/correlationId/";
-		private CorrelationIdImpl correlationId = new CorrelationIdImpl();
+    private static final String REF_BASE = "#/components/messages/correlationId/";
+    private CorrelationIdImpl correlationId = new CorrelationIdImpl();
 
-		public final CorrelationIdImpl build() {
-			return correlationId;
-		}
+    public final CorrelationIdImpl build() {
+      return correlationId;
+    }
 
-		public final Builder description(final String description) {
-			correlationId.description = description;
-			return this;
-		}
+    public final Builder description(final String description) {
+      correlationId.description = description;
+      return this;
+    }
 
-		public final Builder extensions(final Extensions extensions) {
-			correlationId.extensions = extensions;
-			return this;
-		}
+    public final Builder extensions(final Extensions extensions) {
+      correlationId.extensions = extensions;
+      return this;
+    }
 
-		public final Builder location(final String location) {
-			correlationId.location = location;
-			return this;
-		}
+    public final Builder location(final String location) {
+      correlationId.location = location;
+      return this;
+    }
 
-		public final Builder ref(final String ref) {
-			correlationId.ref = (ref != null && RefUtility.isRelative(ref)) ? REF_BASE + ref : ref;
-			return this;
-		}
-	}
+    public final Builder ref(final String ref) {
+      correlationId.ref = (ref != null && RefUtility.isRelative(ref)) ? REF_BASE + ref : ref;
+      return this;
+    }
+  }
 
-	private String description = null;
-	private Extensions extensions = null;
-	private String location = null;
-	private String ref = null;
+  private String description = null;
+  private Extensions extensions = null;
+  private String location = null;
+  private String ref = null;
 
-	private CorrelationIdImpl() {
-		/* Use the builder for construction. */
-	}
+  private CorrelationIdImpl() {
+    /* Use the builder for construction. */
+  }
 
-	@Override
-	public final String getDescription() {
-		return this.description;
-	}
+  @Override
+  public final String getDescription() {
+    return this.description;
+  }
 
-	@Override
-	public final Extensions getExtensions() {
-		return this.extensions;
-	}
+  @Override
+  public final Extensions getExtensions() {
+    return this.extensions;
+  }
 
-	@Override
-	public final String getLocation() {
-		return this.location;
-	}
+  @Override
+  public final String getLocation() {
+    return this.location;
+  }
 
-	@Override
-	public final String getRef() {
-		return this.ref;
-	}
+  @Override
+  public final String getRef() {
+    return this.ref;
+  }
 
-	@Override
-	public final String toString() {
-		return ToStringFormatter.toString(this);
-	}
+  @Override
+  public final String toString() {
+    return ToStringFormatter.toString(this);
+  }
 }

@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import org.apache.commons.lang3.StringUtils;
@@ -31,66 +32,66 @@ import engineer.asyncapi.spyder.model.fields.Fields;
  */
 final class MessageTraitParser extends AsyncAPICommonObjectParser {
 
-	static final MessageTrait parse(final ObjectNode node) {
-		if (node == null) {
-			return null;
-		}
-		if (hasRef(node)) {
-			final String ref = parseRef(node);
-			final MessageTraitImpl.Builder messageTrait = new MessageTraitImpl.Builder();
-			messageTrait.ref(RefUtility.ensureSafeLocalReference(ref));
-			return messageTrait.build();
-		}
-		final MessageTraitImpl.Builder builder = new MessageTraitImpl.Builder();
-		builder.schemaFormat(parseSchemaFormat(node));
-		builder.bindings(parseMessageBindings(node));
-		builder.correlationId(parseCorrelationId(node));
-		builder.headers(parseHeaders(node));
-		builder.tags(parseTags(node));
-		builder.contentType(parseContentType(node));
-		builder.name(parseName(node));
-		builder.title(parseTitle(node));
-		builder.summary(parseSummary(node));
-		builder.description(parseDescription(node));
-		builder.externalDocs(parseExternalDocs(node));
-		builder.extensions(parseExtensions(node));
-		return builder.build();
-	}
+  static final MessageTrait parse(final ObjectNode node) {
+    if (node == null) {
+      return null;
+    }
+    if (hasRef(node)) {
+      final String ref = parseRef(node);
+      final MessageTraitImpl.Builder messageTrait = new MessageTraitImpl.Builder();
+      messageTrait.ref(RefUtility.ensureSafeLocalReference(ref));
+      return messageTrait.build();
+    }
+    final MessageTraitImpl.Builder builder = new MessageTraitImpl.Builder();
+    builder.schemaFormat(parseSchemaFormat(node));
+    builder.bindings(parseMessageBindings(node));
+    builder.correlationId(parseCorrelationId(node));
+    builder.headers(parseHeaders(node));
+    builder.tags(parseTags(node));
+    builder.contentType(parseContentType(node));
+    builder.name(parseName(node));
+    builder.title(parseTitle(node));
+    builder.summary(parseSummary(node));
+    builder.description(parseDescription(node));
+    builder.externalDocs(parseExternalDocs(node));
+    builder.extensions(parseExtensions(node));
+    return builder.build();
+  }
 
-	static final CorrelationId parseCorrelationId(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		final ObjectNode correlationIdObject = objectNodeFrom(Fields.CORRELATION_ID.value, node);
-		if (correlationIdObject != null) {
-			return CorrelationIdParser.parse(correlationIdObject);
-		}
-		return null;
-	}
+  static final CorrelationId parseCorrelationId(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    final ObjectNode correlationIdObject = objectNodeFrom(Fields.CORRELATION_ID.value, node);
+    if (correlationIdObject != null) {
+      return CorrelationIdParser.parse(correlationIdObject);
+    }
+    return null;
+  }
 
-	static final MessageBindings parseMessageBindings(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		final ObjectNode bindingsObject = objectNodeFrom(Fields.BINDINGS.value, node);
-		if (bindingsObject != null) {
-			return MessageBindingsParser.parse(bindingsObject);
-		}
-		return null;
-	}
+  static final MessageBindings parseMessageBindings(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    final ObjectNode bindingsObject = objectNodeFrom(Fields.BINDINGS.value, node);
+    if (bindingsObject != null) {
+      return MessageBindingsParser.parse(bindingsObject);
+    }
+    return null;
+  }
 
-	static final String parseSchemaFormat(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		String value = valueOfKeyOrNull(Fields.SCHEMA_FORMAT.value, node);
-		if (StringUtils.isNotBlank(value)) {
-			return value;
-		}
-		return null;
-	}
+  static final String parseSchemaFormat(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    String value = valueOfKeyOrNull(Fields.SCHEMA_FORMAT.value, node);
+    if (StringUtils.isNotBlank(value)) {
+      return value;
+    }
+    return null;
+  }
 
-	private MessageTraitParser() {
-		/* this static utility should not be instantiated */
-	}
+  private MessageTraitParser() {
+    /* this static utility should not be instantiated */
+  }
 }

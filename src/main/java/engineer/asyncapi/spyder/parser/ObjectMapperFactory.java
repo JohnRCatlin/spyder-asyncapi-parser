@@ -31,26 +31,28 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
  */
 final class ObjectMapperFactory {
 
-	private static final ObjectMapper create(final JsonFactory jsonFactory) {
-		final ObjectMapper mapper = new ObjectMapper(jsonFactory);
-		mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-		mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
-		mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
-		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-		return mapper;
-	}
+  private static final ObjectMapper create(final JsonFactory jsonFactory) {
+    final ObjectMapper mapper = new ObjectMapper(jsonFactory);
+    mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+    mapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+    mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+    mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    return mapper;
+  }
 
-	public static final ObjectMapper forJson() {
-		JsonFactory factory = new JsonFactoryBuilder().enable(StreamReadFeature.STRICT_DUPLICATE_DETECTION).build();
-		return create(factory);
-	}
+  public static final ObjectMapper forJson() {
+    JsonFactory factory = new JsonFactoryBuilder()
+        .enable(StreamReadFeature.STRICT_DUPLICATE_DETECTION).build();
+    return create(factory);
+  }
 
-	public static final ObjectMapper forYaml() {
-		JsonFactory factory = YAMLFactory.builder().enable(StreamReadFeature.STRICT_DUPLICATE_DETECTION).build();
-		return create(factory);
-	}
+  public static final ObjectMapper forYaml() {
+    JsonFactory factory = YAMLFactory.builder().enable(StreamReadFeature.STRICT_DUPLICATE_DETECTION)
+        .build();
+    return create(factory);
+  }
 
-	private ObjectMapperFactory() {
-		/* Use the builder for construction. */
-	}
+  private ObjectMapperFactory() {
+    /* Use the builder for construction. */
+  }
 }

@@ -30,70 +30,70 @@ import engineer.asyncapi.spyder.model.Servers;
  */
 class ServersImpl implements Servers {
 
-	private final Map<String, Server> delegate = new LinkedHashMap<>();
+  private final Map<String, Server> delegate = new LinkedHashMap<>();
 
-	@Override
-	public final void clear() {
-		delegate.clear();
-	}
+  @Override
+  public final void clear() {
+    delegate.clear();
+  }
 
-	@Override
-	public final boolean containsKey(final Object key) {
-		return delegate.containsKey(key);
-	}
+  @Override
+  public final boolean containsKey(final Object key) {
+    return delegate.containsKey(key);
+  }
 
-	@Override
-	public final boolean containsValue(final Object value) {
-		return delegate.containsValue(value);
-	}
+  @Override
+  public final boolean containsValue(final Object value) {
+    return delegate.containsValue(value);
+  }
 
-	@Override
-	public final Set<Entry<String, Server>> entrySet() {
-		return delegate.entrySet();
-	}
+  @Override
+  public final Set<Entry<String, Server>> entrySet() {
+    return delegate.entrySet();
+  }
 
-	@Override
-	public final Server get(final Object key) {
-		return delegate.get(key);
-	}
+  @Override
+  public final Server get(final Object key) {
+    return delegate.get(key);
+  }
 
-	@Override
-	public final boolean isEmpty() {
-		return delegate.isEmpty();
-	}
+  @Override
+  public final boolean isEmpty() {
+    return delegate.isEmpty();
+  }
 
-	@Override
-	public final Set<String> keySet() {
-		return delegate.keySet();
-	}
+  @Override
+  public final Set<String> keySet() {
+    return delegate.keySet();
+  }
 
-	@Override
-	public final Server put(final String key, final Server value) {
-		return delegate.put(key, value);
-	}
+  @Override
+  public final Server put(final String key, final Server value) {
+    return delegate.put(key, value);
+  }
 
-	@Override
-	public final void putAll(final Map<? extends String, ? extends Server> m) {
-		delegate.putAll(m);
-	}
+  @Override
+  public final void putAll(final Map<? extends String, ? extends Server> m) {
+    delegate.putAll(m);
+  }
 
-	@Override
-	public final Server remove(final Object key) {
-		return delegate.remove(key);
-	}
+  @Override
+  public final Server remove(final Object key) {
+    return delegate.remove(key);
+  }
 
-	@Override
-	public final int size() {
-		return delegate.size();
-	}
+  @Override
+  public final int size() {
+    return delegate.size();
+  }
 
-	@Override
-	public final Collection<Server> values() {
-		return delegate.values();
-	}
+  @Override
+  public final Collection<Server> values() {
+    return delegate.values();
+  }
 
-	@Override
-	public final String toString() {
-		return ToStringFormatter.toString(this);
-	}
+  @Override
+  public final String toString() {
+    return ToStringFormatter.toString(this);
+  }
 }

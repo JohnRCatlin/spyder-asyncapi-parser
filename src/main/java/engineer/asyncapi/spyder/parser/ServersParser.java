@@ -30,29 +30,29 @@ import engineer.asyncapi.spyder.model.Servers;
  */
 final class ServersParser extends AsyncAPICommonObjectParser {
 
-	static final Servers parse(final ObjectNode node) {
-		if (node == null) {
-			return null;
-		}
-		final Servers servers = new ServersImpl();
-		final Iterator<Map.Entry<String, JsonNode>> i = node.fields();
-		while (i.hasNext()) {
-			final Map.Entry<String, JsonNode> entry = i.next();
-			if (isObjectNode(entry.getValue())) {
-				final ServerImpl server = ServerParser.parse((ObjectNode) entry.getValue());
-				if (server != null) {
-					servers.put(entry.getKey(), server);
-				} else {
-					final ServerImpl.Builder defaultServer = new ServerImpl.Builder();
-					defaultServer.url("/");
-					servers.put("null", defaultServer.build());
-				}
-			}
-		}
-		return servers;
-	}
+  static final Servers parse(final ObjectNode node) {
+    if (node == null) {
+      return null;
+    }
+    final Servers servers = new ServersImpl();
+    final Iterator<Map.Entry<String, JsonNode>> i = node.fields();
+    while (i.hasNext()) {
+      final Map.Entry<String, JsonNode> entry = i.next();
+      if (isObjectNode(entry.getValue())) {
+        final ServerImpl server = ServerParser.parse((ObjectNode) entry.getValue());
+        if (server != null) {
+          servers.put(entry.getKey(), server);
+        } else {
+          final ServerImpl.Builder defaultServer = new ServerImpl.Builder();
+          defaultServer.url("/");
+          servers.put("null", defaultServer.build());
+        }
+      }
+    }
+    return servers;
+  }
 
-	private ServersParser() {
-		/* this static utility should not be instantiated */
-	}
+  private ServersParser() {
+    /* this static utility should not be instantiated */
+  }
 }

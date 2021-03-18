@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model.fields;
 
 /**
@@ -22,25 +23,25 @@ package engineer.asyncapi.spyder.model.fields;
  */
 enum MessageTraitFields {
 
-	BINDINGS("bindings", false),
-	CONTENT_TYPE("contentType", false),
-	CORRELATION_ID("correlationId", false),
-	DESCRIPTION("description", false),
-	EXAMPLES("examples", false),
-	EXTENSIONS("extensions", false),
-	EXTERNAL_DOCS("externalDocs", false),
-	NAME("name", false),
-	PAYLOAD("payload", false),
-	SCHEMA_FORMAT("schemaFormat", false),
-	SUMMARY("summary", false),
-	TAGS("tags", false),
-	TITLE("title", false);
+  BINDINGS("bindings", false),
+  CONTENT_TYPE("contentType", false),
+  CORRELATION_ID("correlationId", false),
+  DESCRIPTION("description", false),
+  EXAMPLES("examples", false),
+  EXTENSIONS("extensions", false),
+  EXTERNAL_DOCS("externalDocs", false),
+  NAME("name", false),
+  PAYLOAD("payload", false),
+  SCHEMA_FORMAT("schemaFormat", false),
+  SUMMARY("summary", false),
+  TAGS("tags", false),
+  TITLE("title", false);
 
-	public final String field;
-	public final boolean required;
+  public final String field;
+  public final boolean required;
 
-	MessageTraitFields(final String field, final boolean required) {
-		this.field = field;
-		this.required = required;
-	}
+  MessageTraitFields(final String field, final boolean required) {
+    this.field = field;
+    this.required = required;
+  }
 }

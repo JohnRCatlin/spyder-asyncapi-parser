@@ -30,70 +30,70 @@ import engineer.asyncapi.spyder.model.SecuritySchemes;
  */
 final class SecuritySchemesImpl implements SecuritySchemes {
 
-	private Map<String, SecurityScheme> delegate = new LinkedHashMap<>();
+  private Map<String, SecurityScheme> delegate = new LinkedHashMap<>();
 
-	@Override
-	public final void clear() {
-		delegate.clear();
-	}
+  @Override
+  public final void clear() {
+    delegate.clear();
+  }
 
-	@Override
-	public final boolean containsKey(final Object key) {
-		return delegate.containsKey(key);
-	}
+  @Override
+  public final boolean containsKey(final Object key) {
+    return delegate.containsKey(key);
+  }
 
-	@Override
-	public final boolean containsValue(final Object value) {
-		return delegate.containsValue(value);
-	}
+  @Override
+  public final boolean containsValue(final Object value) {
+    return delegate.containsValue(value);
+  }
 
-	@Override
-	public final Set<Entry<String, SecurityScheme>> entrySet() {
-		return delegate.entrySet();
-	}
+  @Override
+  public final Set<Entry<String, SecurityScheme>> entrySet() {
+    return delegate.entrySet();
+  }
 
-	@Override
-	public final SecurityScheme get(final Object key) {
-		return delegate.get(key);
-	}
+  @Override
+  public final SecurityScheme get(final Object key) {
+    return delegate.get(key);
+  }
 
-	@Override
-	public final boolean isEmpty() {
-		return delegate.isEmpty();
-	}
+  @Override
+  public final boolean isEmpty() {
+    return delegate.isEmpty();
+  }
 
-	@Override
-	public final Set<String> keySet() {
-		return delegate.keySet();
-	}
+  @Override
+  public final Set<String> keySet() {
+    return delegate.keySet();
+  }
 
-	@Override
-	public final SecurityScheme put(final String key, final SecurityScheme value) {
-		return delegate.put(key, value);
-	}
+  @Override
+  public final SecurityScheme put(final String key, final SecurityScheme value) {
+    return delegate.put(key, value);
+  }
 
-	@Override
-	public final void putAll(Map<? extends String, ? extends SecurityScheme> m) {
-		delegate.putAll(m);
-	}
+  @Override
+  public final void putAll(Map<? extends String, ? extends SecurityScheme> m) {
+    delegate.putAll(m);
+  }
 
-	@Override
-	public final SecurityScheme remove(final Object key) {
-		return delegate.remove(key);
-	}
+  @Override
+  public final SecurityScheme remove(final Object key) {
+    return delegate.remove(key);
+  }
 
-	@Override
-	public final int size() {
-		return delegate.size();
-	}
+  @Override
+  public final int size() {
+    return delegate.size();
+  }
 
-	@Override
-	public final String toString() {
-		return ToStringFormatter.toString(this);
-	}
+  @Override
+  public final String toString() {
+    return ToStringFormatter.toString(this);
+  }
 
-	@Override
-	public final Collection<SecurityScheme> values() {
-		return delegate.values();
-	}
+  @Override
+  public final Collection<SecurityScheme> values() {
+    return delegate.values();
+  }
 }

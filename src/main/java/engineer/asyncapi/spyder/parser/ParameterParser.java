@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -28,28 +29,28 @@ import engineer.asyncapi.spyder.model.fields.Fields;
  */
 final class ParameterParser extends AsyncAPICommonObjectParser {
 
-	public static final Parameter parse(final ObjectNode node) {
-		if (node == null) {
-			return null;
-		}
-		ParameterImpl.Builder builder = new ParameterImpl.Builder();
-		builder.schema(parseSchema(node));
-		builder.ref(parseRef(node));
-		builder.description(parseDescription(node));
-		builder.location(parseLocation(node));
-		builder.extensions(parseExtensions(node));
-		return builder.build();
-	}
+  public static final Parameter parse(final ObjectNode node) {
+    if (node == null) {
+      return null;
+    }
+    ParameterImpl.Builder builder = new ParameterImpl.Builder();
+    builder.schema(parseSchema(node));
+    builder.ref(parseRef(node));
+    builder.description(parseDescription(node));
+    builder.location(parseLocation(node));
+    builder.extensions(parseExtensions(node));
+    return builder.build();
+  }
 
-	static final Schema parseSchema(final ObjectNode node) {
-		final ObjectNode schemaNode = objectNodeFrom(Fields.SCHEMA.value, node);
-		if (schemaNode != null) {
-			return SchemaParser.parse(schemaNode);
-		}
-		return null;
-	}
+  static final Schema parseSchema(final ObjectNode node) {
+    final ObjectNode schemaNode = objectNodeFrom(Fields.SCHEMA.value, node);
+    if (schemaNode != null) {
+      return SchemaParser.parse(schemaNode);
+    }
+    return null;
+  }
 
-	private ParameterParser() {
-		/* this static utility should not be instantiated */
-	}
+  private ParameterParser() {
+    /* this static utility should not be instantiated */
+  }
 }

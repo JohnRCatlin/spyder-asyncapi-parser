@@ -34,90 +34,90 @@ import engineer.asyncapi.spyder.model.fields.Fields;
  */
 final class MessageParser extends AsyncAPICommonObjectParser {
 
-	static final Message parse(final ObjectNode node) {
-		if (node == null) {
-			return null;
-		}
+  static final Message parse(final ObjectNode node) {
+    if (node == null) {
+      return null;
+    }
 
-		if (hasRef(node)) {
-			final MessageImpl.Builder builder = new MessageImpl.Builder();
-			builder.ref(parseRef(node));
-			return builder.build();
-		}
+    if (hasRef(node)) {
+      final MessageImpl.Builder builder = new MessageImpl.Builder();
+      builder.ref(parseRef(node));
+      return builder.build();
+    }
 
-		final MessageImpl.Builder builder = new MessageImpl.Builder();
-		builder.schemaFormat(parserSchemaFormat(node));
-		builder.contentType(parseContentType(node));
-		builder.name(parseName(node));
-		builder.title(parseTitle(node));
-		builder.summary(parseSummary(node));
-		builder.description(parseDescription(node));
-		builder.headers(parseHeaders(node));
-		builder.payload(parsePayload(node));
-		builder.correlationId(parseCorrelationId(node));
-		builder.tags(parseTags(node));
-		builder.externalDocs(parseExternalDocs(node));
-		builder.bindings(parseMessageBindings(node));
-		builder.traits(parseMessageTraits(node));
-		builder.extensions(parseExtensions(objectNodeFrom(Fields.EXTENSIONS.value, node)));
+    final MessageImpl.Builder builder = new MessageImpl.Builder();
+    builder.schemaFormat(parserSchemaFormat(node));
+    builder.contentType(parseContentType(node));
+    builder.name(parseName(node));
+    builder.title(parseTitle(node));
+    builder.summary(parseSummary(node));
+    builder.description(parseDescription(node));
+    builder.headers(parseHeaders(node));
+    builder.payload(parsePayload(node));
+    builder.correlationId(parseCorrelationId(node));
+    builder.tags(parseTags(node));
+    builder.externalDocs(parseExternalDocs(node));
+    builder.bindings(parseMessageBindings(node));
+    builder.traits(parseMessageTraits(node));
+    builder.extensions(parseExtensions(objectNodeFrom(Fields.EXTENSIONS.value, node)));
 
-		return builder.build();
-	}
+    return builder.build();
+  }
 
-	static final CorrelationId parseCorrelationId(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		final ObjectNode correlationIdNode = objectNodeFrom(Fields.CORRELATION_ID.value, node);
-		if (correlationIdNode != null) {
-			return CorrelationIdParser.parse(correlationIdNode);
-		}
-		return null;
-	}
+  static final CorrelationId parseCorrelationId(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    final ObjectNode correlationIdNode = objectNodeFrom(Fields.CORRELATION_ID.value, node);
+    if (correlationIdNode != null) {
+      return CorrelationIdParser.parse(correlationIdNode);
+    }
+    return null;
+  }
 
-	static final MessageBindings parseMessageBindings(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		final ObjectNode bindingsNode = objectNodeFrom(Fields.BINDINGS.value, node);
-		if (bindingsNode != null) {
-			return MessageBindingsParser.parse(bindingsNode);
-		}
-		return null;
-	}
+  static final MessageBindings parseMessageBindings(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    final ObjectNode bindingsNode = objectNodeFrom(Fields.BINDINGS.value, node);
+    if (bindingsNode != null) {
+      return MessageBindingsParser.parse(bindingsNode);
+    }
+    return null;
+  }
 
-	static final MessageTraitsList parseMessageTraits(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		final ArrayNode traitsNode = arrayNodeFrom(Fields.TRAITS.value, node);
-		if (traitsNode != null) {
-			return MessageTraitsParser.parseList(traitsNode);
-		}
-		return null;
-	}
+  static final MessageTraitsList parseMessageTraits(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    final ArrayNode traitsNode = arrayNodeFrom(Fields.TRAITS.value, node);
+    if (traitsNode != null) {
+      return MessageTraitsParser.parseList(traitsNode);
+    }
+    return null;
+  }
 
-	static final Schema parsePayload(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		final ObjectNode payloadNode = objectNodeFrom(Fields.PAYLOAD.value, node);
-		if (payloadNode != null) {
-			return SchemaParser.parse(payloadNode);
-		}
-		return null;
-	}
+  static final Schema parsePayload(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    final ObjectNode payloadNode = objectNodeFrom(Fields.PAYLOAD.value, node);
+    if (payloadNode != null) {
+      return SchemaParser.parse(payloadNode);
+    }
+    return null;
+  }
 
-	static final String parserSchemaFormat(final ObjectNode node) {
-		String value = valueOfKeyOrNull(Fields.SCHEMA_FORMAT.value, node);
-		if (StringUtils.isNotBlank(value)) {
-			return value;
-		}
-		return null;
-	}
+  static final String parserSchemaFormat(final ObjectNode node) {
+    String value = valueOfKeyOrNull(Fields.SCHEMA_FORMAT.value, node);
+    if (StringUtils.isNotBlank(value)) {
+      return value;
+    }
+    return null;
+  }
 
-	private MessageParser() {
-		/* this static utility should not be instantiated */
-	}
+  private MessageParser() {
+    /* this static utility should not be instantiated */
+  }
 
 }

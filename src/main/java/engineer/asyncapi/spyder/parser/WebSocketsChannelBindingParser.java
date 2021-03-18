@@ -28,40 +28,41 @@ import engineer.asyncapi.spyder.model.fields.Fields;
  */
 final class WebSocketsChannelBindingParser extends AsyncAPICommonObjectParser {
 
-	static final WebSocketsChannelBinding parse(final ObjectNode node) {
-		try {
-			final String bindingVersion = parseBindingVersion(node);
-			if (null == bindingVersion || bindingVersion.equals(WebSocketsChannelBinding010Impl.BINDING_VERSION)) {
-				return parseBindingV010(node);
-			}
-			// use latest
-			return parseBindingV010(node);
-		} catch (Exception e) {
-			return null;
-		}
-	}
+  static final WebSocketsChannelBinding parse(final ObjectNode node) {
+    try {
+      final String bindingVersion = parseBindingVersion(node);
+      if (null == bindingVersion
+          || bindingVersion.equals(WebSocketsChannelBinding010Impl.BINDING_VERSION)) {
+        return parseBindingV010(node);
+      }
+      // use latest
+      return parseBindingV010(node);
+    } catch (Exception e) {
+      return null;
+    }
+  }
 
-	private static final WebSocketsChannelBinding parseBindingV010(final ObjectNode node) {
-		final WebSocketsChannelBinding010Impl.Builder builder = new WebSocketsChannelBinding010Impl.Builder();
-		builder.extensions(parseExtensions(node));
-		builder.query(parseQuery(node));
-		builder.headers(parseHeaders(node));
-		builder.method(parseMethod(node));
-		return builder.build();
-	}
+  private static final WebSocketsChannelBinding parseBindingV010(final ObjectNode node) {
+    final WebSocketsChannelBinding010Impl.Builder builder = new WebSocketsChannelBinding010Impl.Builder();
+    builder.extensions(parseExtensions(node));
+    builder.query(parseQuery(node));
+    builder.headers(parseHeaders(node));
+    builder.method(parseMethod(node));
+    return builder.build();
+  }
 
-	private static Schema parseQuery(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		final ObjectNode query = objectNodeFrom(Fields.QUERY.value, node);
-		if (null == query) {
-			return null;
-		}
-		return SchemaParser.parse(query);
-	}
+  private static Schema parseQuery(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    final ObjectNode query = objectNodeFrom(Fields.QUERY.value, node);
+    if (null == query) {
+      return null;
+    }
+    return SchemaParser.parse(query);
+  }
 
-	private WebSocketsChannelBindingParser() {
-		/* this static utility should not be instantiated */
-	}
+  private WebSocketsChannelBindingParser() {
+    /* this static utility should not be instantiated */
+  }
 }

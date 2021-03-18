@@ -26,35 +26,35 @@ import engineer.asyncapi.spyder.model.AsyncAPI;
 
 public class TestAsyncAPIV2Parser_fragment_asyncapi extends AsyncApiV2ParserTestBase {
 
-	private static AsyncAPI api;
-	private static String rawSubjectModel;
+  private static AsyncAPI api;
+  private static String rawSubjectModel;
 
-	private static final String SUBJECT_MODEL_SOURCE = "/src/test/resources/fragments/root.empty.yml";
+  private static final String SUBJECT_MODEL_SOURCE = "/src/test/resources/fragments/root.empty.yml";
 
-	@Test
-	public void fundamentalParseExpectation() {
-		// then
-		assertNotNull(api);
-	}
+  @Test
+  public void fundamentalParseExpectation() {
+    // then
+    assertNotNull(api);
+  }
 
-	@Before
-	public void setUp() throws Exception {
-		// given
-		rawSubjectModel = rawModelFromFile(currentWorkingDirectory() + SUBJECT_MODEL_SOURCE);
-		// given
-		AsyncAPIParser parser = new AsyncAPIv20ParserImpl();
-		// when
-		api = parser.parseFromString(rawSubjectModel);
-	}
+  @Before
+  public void setUp() throws Exception {
+    // given
+    rawSubjectModel = rawModelFromFile(currentWorkingDirectory() + SUBJECT_MODEL_SOURCE);
+    // given
+    AsyncAPIParser parser = new AsyncAPIv20ParserImpl();
+    // when
+    api = parser.parseFromString(rawSubjectModel);
+  }
 
-	@After
-	public void tearDown() throws Exception {
-	}
+  @After
+  public void tearDown() throws Exception {
+  }
 
-	@Test
-	public void versionExpectations() {
-		// then
-		assertEquals("2.0.0", api.getAsyncapi());
-	}
+  @Test
+  public void versionExpectations() {
+    // then
+    assertEquals("2.0.0", api.getAsyncapi());
+  }
 
 }

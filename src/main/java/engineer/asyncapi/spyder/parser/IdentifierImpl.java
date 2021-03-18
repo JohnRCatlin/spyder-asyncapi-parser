@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import engineer.asyncapi.spyder.model.Identifier;
@@ -24,38 +25,38 @@ import engineer.asyncapi.spyder.model.Identifier;
  */
 final class IdentifierImpl implements Identifier {
 
-	/**
-	 * 
-	 * @author johncatlin
-	 *
-	 */
-	static final class Builder {
+  /**
+   * 
+   * @author johncatlin
+   *
+   */
+  static final class Builder {
 
-		private IdentifierImpl identifier = new IdentifierImpl();
+    private IdentifierImpl identifier = new IdentifierImpl();
 
-		public final Identifier build() {
-			return identifier;
-		}
+    public final Identifier build() {
+      return identifier;
+    }
 
-		public final Builder id(final String id) {
-			identifier.id = id;
-			return this;
-		}
-	}
+    public final Builder id(final String id) {
+      identifier.id = id;
+      return this;
+    }
+  }
 
-	private String id = null;
+  private String id = null;
 
-	private IdentifierImpl() {
-		/* Use the builder for construction. */
-	}
+  private IdentifierImpl() {
+    /* Use the builder for construction. */
+  }
 
-	@Override
-	public final String getId() {
-		return this.id;
-	}
+  @Override
+  public final String getId() {
+    return this.id;
+  }
 
-	@Override
-	public final String toString() {
-		return ToStringFormatter.toString(this);
-	}
+  @Override
+  public final String toString() {
+    return ToStringFormatter.toString(this);
+  }
 }

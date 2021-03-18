@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import java.util.Set;
@@ -32,40 +33,40 @@ import engineer.asyncapi.spyder.model.MessageTraitsList;
  */
 final class MessageTraitsParser extends AsyncAPICommonObjectParser {
 
-	static final MessageTraits parse(final ObjectNode obj) {
-		if (obj == null) {
-			return null;
-		}
-		final MessageTraits messageTraits = new MessageTraitsImpl();
-		final Set<String> messageTraitKeys = keySetFrom(obj);
-		for (final String messageTraitName : messageTraitKeys) {
-			final JsonNode messageTraitValue = obj.get(messageTraitName);
-			if (isObjectNode(messageTraitValue)) {
-				final ObjectNode messageTrait = (ObjectNode) messageTraitValue;
-				final MessageTrait messageTraitObj = MessageTraitParser.parse(messageTrait);
-				if (messageTraitObj != null) {
-					messageTraits.put(messageTraitName, messageTraitObj);
-				}
-			}
-		}
-		return messageTraits;
-	}
+  static final MessageTraits parse(final ObjectNode obj) {
+    if (obj == null) {
+      return null;
+    }
+    final MessageTraits messageTraits = new MessageTraitsImpl();
+    final Set<String> messageTraitKeys = keySetFrom(obj);
+    for (final String messageTraitName : messageTraitKeys) {
+      final JsonNode messageTraitValue = obj.get(messageTraitName);
+      if (isObjectNode(messageTraitValue)) {
+        final ObjectNode messageTrait = (ObjectNode) messageTraitValue;
+        final MessageTrait messageTraitObj = MessageTraitParser.parse(messageTrait);
+        if (messageTraitObj != null) {
+          messageTraits.put(messageTraitName, messageTraitObj);
+        }
+      }
+    }
+    return messageTraits;
+  }
 
-	static final MessageTraitsList parseList(final ArrayNode nodes) {
-		if (nodes == null) {
-			return null;
-		}
-		final MessageTraitsList messageTraits = new MessageTriatsListImpl();
-		for (final JsonNode node : nodes) {
-			if (isObjectNode(node)) {
-				final MessageTrait messageTrait = MessageTraitParser.parse((ObjectNode) node);
-				messageTraits.add(messageTrait);
-			}
-		}
-		return messageTraits;
-	}
+  static final MessageTraitsList parseList(final ArrayNode nodes) {
+    if (nodes == null) {
+      return null;
+    }
+    final MessageTraitsList messageTraits = new MessageTriatsListImpl();
+    for (final JsonNode node : nodes) {
+      if (isObjectNode(node)) {
+        final MessageTrait messageTrait = MessageTraitParser.parse((ObjectNode) node);
+        messageTraits.add(messageTrait);
+      }
+    }
+    return messageTraits;
+  }
 
-	private MessageTraitsParser() {
-		/* this static utility should not be instantiated */
-	}
+  private MessageTraitsParser() {
+    /* this static utility should not be instantiated */
+  }
 }

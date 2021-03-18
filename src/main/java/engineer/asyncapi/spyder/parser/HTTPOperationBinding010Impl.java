@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import engineer.asyncapi.spyder.model.Extensions;
@@ -27,85 +28,85 @@ import engineer.asyncapi.spyder.model.bindings.HTTPOperationBinding010;
  */
 final class HTTPOperationBinding010Impl implements HTTPOperationBinding010 {
 
-	/**
-	 * 
-	 * @author johncatlin
-	 *
-	 */
-	static final class Builder {
+  /**
+   * 
+   * @author johncatlin
+   *
+   */
+  static final class Builder {
 
-		private HTTPOperationBinding010Impl binding = new HTTPOperationBinding010Impl();
+    private HTTPOperationBinding010Impl binding = new HTTPOperationBinding010Impl();
 
-		public final HTTPOperationBinding010Impl build() {
-			return binding;
-		}
+    public final HTTPOperationBinding010Impl build() {
+      return binding;
+    }
 
-		final Builder extensions(final Extensions extensions) {
-			binding.extensions = extensions;
-			return this;
-		}
+    final Builder extensions(final Extensions extensions) {
+      binding.extensions = extensions;
+      return this;
+    }
 
-		final Builder method(final String method) {
-			binding.method = method;
-			return this;
-		}
+    final Builder method(final String method) {
+      binding.method = method;
+      return this;
+    }
 
-		final Builder query(final Schema query) {
-			binding.query = query;
-			return this;
-		}
+    final Builder query(final Schema query) {
+      binding.query = query;
+      return this;
+    }
 
-		final Builder type(final String type) {
-			binding.channelType = type;
-			return this;
-		}
-	}
+    final Builder type(final String type) {
+      binding.channelType = type;
+      return this;
+    }
+  }
 
-	static final String BINDING_VERSION = "0.1.0";
-	static final String TYPE = BindingType.HTTP.value;
+  static final String BINDING_VERSION = "0.1.0";
+  static final String TYPE = BindingType.HTTP.value;
 
-	private String channelType;
-	private Extensions extensions = null;
-	private String method;
-	private Schema query;
+  private String channelType;
+  private Extensions extensions = null;
+  private String method;
+  private Schema query;
 
-	private HTTPOperationBinding010Impl() {
-		/* Use the builder for construction. */
-	}
+  private HTTPOperationBinding010Impl() {
+    /* Use the builder for construction. */
+  }
 
-	@Override
-	public final String getBindingType() {
-		return TYPE;
-	}
+  @Override
+  public final String getBindingType() {
+    return TYPE;
+  }
 
-	@Override
-	public final String getBindingVersion() {
-		return BINDING_VERSION;
-	}
+  @Override
+  public final String getBindingVersion() {
+    return BINDING_VERSION;
+  }
 
-	@Override
-	public final String getChannelType() {
-		return this.channelType;
-	}
+  @Override
+  public final String getChannelType() {
+    return this.channelType;
+  }
 
-	@Override
-	public final Extensions getExtensions() {
-		return this.extensions;
-	}
+  @Override
+  public final Extensions getExtensions() {
+    return this.extensions;
+  }
 
-	@Override
-	public final String getMethod() {
-		return this.method;
-	}
+  @Override
+  public final String getMethod() {
+    return this.method;
+  }
 
-	@Override
-	public final Schema getQuery() {
-		return this.query;
-	}
+  @Override
+  public final Schema getQuery() {
+    return this.query;
+  }
 
-	@Override
-	public final String toString() {
-		return ToStringFormatter.toString(this);
-	}
+  @Override
+  public final String toString() {
+    return ToStringFormatter.toString(this);
+  }
 
 }

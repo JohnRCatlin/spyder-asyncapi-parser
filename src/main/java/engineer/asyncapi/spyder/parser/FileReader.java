@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import java.io.File;
@@ -29,18 +30,18 @@ import org.apache.commons.io.IOUtils;
  */
 final class FileReader {
 
-	protected final String currentWorkingDirectory() {
-		return new File("").getAbsolutePath();
-	}
+  protected final String currentWorkingDirectory() {
+    return new File("").getAbsolutePath();
+  }
 
-	public final String fromLocation(final String fileLocation) {
-		String modelRawString = null;
-		File file = new File(fileLocation);
-		try (InputStream modelInputStream = new FileInputStream(file)) {
-			modelRawString = IOUtils.toString(modelInputStream, Charset.defaultCharset()).trim();
-		} catch (Exception e) {
-			return null;
-		}
-		return modelRawString;
-	}
+  public final String fromLocation(final String fileLocation) {
+    String modelRawString = null;
+    File file = new File(fileLocation);
+    try (InputStream modelInputStream = new FileInputStream(file)) {
+      modelRawString = IOUtils.toString(modelInputStream, Charset.defaultCharset()).trim();
+    } catch (Exception e) {
+      return null;
+    }
+    return modelRawString;
+  }
 }

@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model;
 
 import engineer.asyncapi.spyder.model.bindings.MessageBindings;
@@ -24,36 +25,36 @@ import engineer.asyncapi.spyder.model.bindings.MessageBindings;
  */
 public interface Message {
 
-	MessageBindings getBindings();
+  MessageBindings getBindings();
 
-	String getContentType();
+  String getContentType();
 
-	CorrelationId getCorrelationId();
+  CorrelationId getCorrelationId();
 
-	String getDescription();
+  String getDescription();
 
-	Extensions getExtensions();
+  Extensions getExtensions();
 
-	ExternalDocs getExternalDocs();
+  ExternalDocs getExternalDocs();
 
-	Schema getHeaders();
+  Schema getHeaders();
 
-	String getName();
+  String getName();
 
-	Schema getPayload();
+  Schema getPayload();
 
-	String getRef();
+  String getRef();
 
-	String getSchemaFormat();
+  String getSchemaFormat();
 
-	String getSummary();
+  String getSummary();
 
-	Tags getTags();
+  Tags getTags();
 
-	String getTitle();
+  String getTitle();
 
-	MessageTraitsList getTraits();
+  MessageTraitsList getTraits();
 
-	String toString();
+  String toString();
 
 }

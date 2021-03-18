@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import static org.junit.Assert.assertEquals;
@@ -31,52 +32,52 @@ import engineer.asyncapi.spyder.model.ServerVariable;
 
 public class ServerVariableParserTest {
 
-	private static final String Default = "443";
-	private static final String Enum = "['80','443']";
-	private static final String rawModel;
-	private static final String xBar = "x..bar..value";
-	private static final String xFoo = "x..foo..value";
+  private static final String Default = "443";
+  private static final String Enum = "['80','443']";
+  private static final String rawModel;
+  private static final String xBar = "x..bar..value";
+  private static final String xFoo = "x..foo..value";
 
-	// given
-	static {
-		StringBuilder sb = new StringBuilder();
-		sb.append("{\n");
-		sb.append("  'enum':" + Enum + ",\n");
-		sb.append("  'default':'" + Default + "',\n");
-		sb.append("  'extensions': {\n");
-		sb.append("     'x-foo':'" + xFoo + "',\n");
-		sb.append("     'x-bar':'" + xBar + "'\n");
-		sb.append("  }\n");
-		sb.append("}");
-		rawModel = sb.toString();
-	}
+  // given
+  static {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{\n");
+    sb.append("  'enum':" + Enum + ",\n");
+    sb.append("  'default':'" + Default + "',\n");
+    sb.append("  'extensions': {\n");
+    sb.append("     'x-foo':'" + xFoo + "',\n");
+    sb.append("     'x-bar':'" + xBar + "'\n");
+    sb.append("  }\n");
+    sb.append("}");
+    rawModel = sb.toString();
+  }
 
-	private ObjectMapper mapper = null;
-	private JsonNode rootNode = null;
+  private ObjectMapper mapper = null;
+  private JsonNode rootNode = null;
 
-	@Before
-	public void setUp() throws Exception {
-		//System.out.println(rawModel);
-		mapper = ObjectMapperFactory.forYaml();
-		rootNode = mapper.readTree(rawModel);
-	}
+  @Before
+  public void setUp() throws Exception {
+    // System.out.println(rawModel);
+    mapper = ObjectMapperFactory.forYaml();
+    rootNode = mapper.readTree(rawModel);
+  }
 
-	@Test
-	public void shouldParse() {
-		// when
-		ServerVariable parsed = ServerVariableParser.parse((ObjectNode) rootNode);
+  @Test
+  public void shouldParse() {
+    // when
+    ServerVariable parsed = ServerVariableParser.parse((ObjectNode) rootNode);
 
-		// then
-		assertNotNull(parsed);
-		assertTrue(parsed.getEnum().contains("80"));
-		assertTrue(parsed.getEnum().contains("443"));
-		assertEquals(Default, parsed.getDefault());
-		assertNotNull(parsed.getExtensions());
-		assertTrue(parsed.getExtensions().containsKey("x-foo"));
-		assertTrue(parsed.getExtensions().containsKey("x-bar"));
-	}
+    // then
+    assertNotNull(parsed);
+    assertTrue(parsed.getEnum().contains("80"));
+    assertTrue(parsed.getEnum().contains("443"));
+    assertEquals(Default, parsed.getDefault());
+    assertNotNull(parsed.getExtensions());
+    assertTrue(parsed.getExtensions().containsKey("x-foo"));
+    assertTrue(parsed.getExtensions().containsKey("x-bar"));
+  }
 
-	@After
-	public void tearDown() throws Exception {
-	}
+  @After
+  public void tearDown() throws Exception {
+  }
 }

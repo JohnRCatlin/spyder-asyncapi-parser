@@ -26,107 +26,107 @@ import engineer.asyncapi.spyder.model.bindings.IBMMQServerBinding010;
  */
 final class IBMMQServerBinding010Impl implements IBMMQServerBinding010 {
 
-	/**
-	 * 
-	 * @author johncatlin
-	 *
-	 */
-	static final class Builder {
+  /**
+   * 
+   * @author johncatlin
+   *
+   */
+  static final class Builder {
 
-		private IBMMQServerBinding010Impl binding = new IBMMQServerBinding010Impl();
+    private IBMMQServerBinding010Impl binding = new IBMMQServerBinding010Impl();
 
-		public final IBMMQServerBinding010Impl build() {
-			return binding;
-		}
+    public final IBMMQServerBinding010Impl build() {
+      return binding;
+    }
 
-		final Builder ccdtQueueManagerName(final String ccdtQueueManagerName) {
-			binding.ccdtQueueManagerName = ccdtQueueManagerName;
-			return this;
-		}
+    final Builder ccdtQueueManagerName(final String ccdtQueueManagerName) {
+      binding.ccdtQueueManagerName = ccdtQueueManagerName;
+      return this;
+    }
 
-		final Builder cipherSpec(final String cipherSpec) {
-			binding.cipherSpec = cipherSpec;
-			return this;
-		}
+    final Builder cipherSpec(final String cipherSpec) {
+      binding.cipherSpec = cipherSpec;
+      return this;
+    }
 
-		final Builder extensions(final Extensions extensions) {
-			binding.extensions = extensions;
-			return this;
-		}
+    final Builder extensions(final Extensions extensions) {
+      binding.extensions = extensions;
+      return this;
+    }
 
-		public Builder groupId(final String groupId) {
-			binding.groupId = groupId;
-			return this;
-		}
+    public Builder groupId(final String groupId) {
+      binding.groupId = groupId;
+      return this;
+    }
 
-		final Builder heartBeatInterval(final Integer heartBeatInterval) {
-			binding.heartBeatInterval = heartBeatInterval;
-			return this;
-		}
+    final Builder heartBeatInterval(final Integer heartBeatInterval) {
+      binding.heartBeatInterval = heartBeatInterval;
+      return this;
+    }
 
-		final Builder multiEndpointServer(final Boolean multiEndpointServer) {
-			binding.multiEndpointServer = multiEndpointServer;
-			return this;
-		}
-	}
+    final Builder multiEndpointServer(final Boolean multiEndpointServer) {
+      binding.multiEndpointServer = multiEndpointServer;
+      return this;
+    }
+  }
 
-	static final String BINDING_VERSION = "0.1.0";
-	static final String TYPE = BindingType.IBMMQ.value;
+  static final String BINDING_VERSION = "0.1.0";
+  static final String TYPE = BindingType.IBMMQ.value;
 
-	private String ccdtQueueManagerName = null;
-	private String cipherSpec = null;
-	private Extensions extensions = null;
-	private String groupId = null;
-	private Integer heartBeatInterval = null;
-	private Boolean multiEndpointServer = null;
+  private String ccdtQueueManagerName = null;
+  private String cipherSpec = null;
+  private Extensions extensions = null;
+  private String groupId = null;
+  private Integer heartBeatInterval = null;
+  private Boolean multiEndpointServer = null;
 
-	private IBMMQServerBinding010Impl() {
-		/* Use the builder for construction. */
-	}
+  private IBMMQServerBinding010Impl() {
+    /* Use the builder for construction. */
+  }
 
-	@Override
-	public final String getBindingType() {
-		return TYPE;
-	}
+  @Override
+  public final String getBindingType() {
+    return TYPE;
+  }
 
-	@Override
-	public final String getBindingVersion() {
-		return BINDING_VERSION;
-	}
+  @Override
+  public final String getBindingVersion() {
+    return BINDING_VERSION;
+  }
 
-	@Override
-	public final String getCcdtQueueManagerName() {
-		return this.ccdtQueueManagerName;
-	}
+  @Override
+  public final String getCcdtQueueManagerName() {
+    return this.ccdtQueueManagerName;
+  }
 
-	@Override
-	public final String getCipherSpec() {
-		return this.cipherSpec;
-	}
+  @Override
+  public final String getCipherSpec() {
+    return this.cipherSpec;
+  }
 
-	@Override
-	public final Extensions getExtensions() {
-		return this.extensions;
-	}
+  @Override
+  public final Extensions getExtensions() {
+    return this.extensions;
+  }
 
-	@Override
-	public final String getGroupId() {
-		return this.groupId;
-	}
+  @Override
+  public final String getGroupId() {
+    return this.groupId;
+  }
 
-	@Override
-	public final Integer getHeartBeatInterval() {
-		return this.heartBeatInterval;
-	}
+  @Override
+  public final Integer getHeartBeatInterval() {
+    return this.heartBeatInterval;
+  }
 
-	@Override
-	public final Boolean getMultiEndpointServer() {
-		return this.multiEndpointServer;
-	}
+  @Override
+  public final Boolean getMultiEndpointServer() {
+    return this.multiEndpointServer;
+  }
 
-	@Override
-	public final String toString() {
-		return ToStringFormatter.toString(this);
-	}
+  @Override
+  public final String toString() {
+    return ToStringFormatter.toString(this);
+  }
 
 }

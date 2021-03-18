@@ -26,91 +26,91 @@ import engineer.asyncapi.spyder.model.Schema;
  */
 final class ParameterImpl implements Parameter {
 
-	/**
-	 * 
-	 * @author johncatlin
-	 *
-	 */
-	static final class Builder {
+  /**
+   * 
+   * @author johncatlin
+   *
+   */
+  static final class Builder {
 
-		private static final String REF_BASE = "#/components/parameters/";
-		private ParameterImpl parameter = new ParameterImpl();
+    private static final String REF_BASE = "#/components/parameters/";
+    private ParameterImpl parameter = new ParameterImpl();
 
-		final ParameterImpl build() {
-			return parameter;
-		}
+    final ParameterImpl build() {
+      return parameter;
+    }
 
-		final Builder description(final String description) {
-			parameter.description = description;
-			return this;
-		}
+    final Builder description(final String description) {
+      parameter.description = description;
+      return this;
+    }
 
-		final Builder extension(final String name, final String value) {
-			if (ExtensionsParser.notValidExtension(name)) {
-				return this;
-			}
-			parameter.extensions.put(name, value);
-			return this;
-		}
+    final Builder extension(final String name, final String value) {
+      if (ExtensionsParser.notValidExtension(name)) {
+        return this;
+      }
+      parameter.extensions.put(name, value);
+      return this;
+    }
 
-		final Builder extensions(final Extensions extensions) {
-			parameter.extensions = extensions;
-			return this;
-		}
+    final Builder extensions(final Extensions extensions) {
+      parameter.extensions = extensions;
+      return this;
+    }
 
-		final Builder location(final String location) {
-			parameter.location = location;
-			return this;
-		}
+    final Builder location(final String location) {
+      parameter.location = location;
+      return this;
+    }
 
-		final Builder ref(final String ref) {
-			parameter.ref = (ref != null && RefUtility.isRelative(ref)) ? REF_BASE + ref : ref;
-			return this;
-		}
+    final Builder ref(final String ref) {
+      parameter.ref = (ref != null && RefUtility.isRelative(ref)) ? REF_BASE + ref : ref;
+      return this;
+    }
 
-		final Builder schema(final Schema schema2) {
-			parameter.schema = schema2;
-			return this;
-		}
-	}
+    final Builder schema(final Schema schema2) {
+      parameter.schema = schema2;
+      return this;
+    }
+  }
 
-	private String description = null;
-	private Extensions extensions = null;
-	private String location = null;
-	private String ref = null;
-	private Schema schema = null;
+  private String description = null;
+  private Extensions extensions = null;
+  private String location = null;
+  private String ref = null;
+  private Schema schema = null;
 
-	private ParameterImpl() {
-		/* Use the builder for construction. */
-	}
+  private ParameterImpl() {
+    /* Use the builder for construction. */
+  }
 
-	@Override
-	public final String getDescription() {
-		return this.description;
-	}
+  @Override
+  public final String getDescription() {
+    return this.description;
+  }
 
-	@Override
-	public final Extensions getExtensions() {
-		return this.extensions;
-	}
+  @Override
+  public final Extensions getExtensions() {
+    return this.extensions;
+  }
 
-	@Override
-	public final String getLocation() {
-		return this.location;
-	}
+  @Override
+  public final String getLocation() {
+    return this.location;
+  }
 
-	@Override
-	public final String getRef() {
-		return this.ref;
-	}
+  @Override
+  public final String getRef() {
+    return this.ref;
+  }
 
-	@Override
-	public final Schema getSchema() {
-		return this.schema;
-	}
+  @Override
+  public final Schema getSchema() {
+    return this.schema;
+  }
 
-	@Override
-	public final String toString() {
-		return ToStringFormatter.toString(this);
-	}
+  @Override
+  public final String toString() {
+    return ToStringFormatter.toString(this);
+  }
 }

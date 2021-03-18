@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -26,20 +27,20 @@ import engineer.asyncapi.spyder.model.ServerVariable;
  */
 final class ServerVariableParser extends AsyncAPICommonObjectParser {
 
-	static final ServerVariable parse(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		final ServerVariableImpl.Builder builder = new ServerVariableImpl.Builder();
-		builder.theEnum(parseEnum(node));
-		builder.theDefault(parseDefault(node));
-		builder.description(parseDescription(node));
-		builder.extensions(parseExtensions(node));
-		return builder.build();
-	}
+  static final ServerVariable parse(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    final ServerVariableImpl.Builder builder = new ServerVariableImpl.Builder();
+    builder.theEnum(parseEnum(node));
+    builder.theDefault(parseDefault(node));
+    builder.description(parseDescription(node));
+    builder.extensions(parseExtensions(node));
+    return builder.build();
+  }
 
-	private ServerVariableParser() {
-		/* this static utility should not be instantiated */
-	}
+  private ServerVariableParser() {
+    /* this static utility should not be instantiated */
+  }
 
 }

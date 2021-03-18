@@ -30,50 +30,51 @@ import engineer.asyncapi.spyder.model.bindings.MQTTOperationBinding010;
 
 public class MQTTOperationBindingParserTest {
 
-	private static final String rawModel;
+  private static final String rawModel;
 
-	// given
-	static {
-		StringBuilder sb = new StringBuilder();
-		sb.append("qos: 2\n");
-		sb.append("retain: false\n");
-		sb.append("bindingVersion: '0.1.0'\n");
-		sb.append("extensions:\n");
-		sb.append("  x-1: foo\n");
-		rawModel = sb.toString();
-	}
+  // given
+  static {
+    StringBuilder sb = new StringBuilder();
+    sb.append("qos: 2\n");
+    sb.append("retain: false\n");
+    sb.append("bindingVersion: '0.1.0'\n");
+    sb.append("extensions:\n");
+    sb.append("  x-1: foo\n");
+    rawModel = sb.toString();
+  }
 
-	private ObjectMapper mapper = null;
-	private JsonNode rootNode = null;
+  private ObjectMapper mapper = null;
+  private JsonNode rootNode = null;
 
-	@Before
-	public void setUp() throws Exception {
-		// System.out.println(rawModel);
-		mapper = ObjectMapperFactory.forYaml();
-		rootNode = mapper.readTree(rawModel);
-	}
+  @Before
+  public void setUp() throws Exception {
+    // System.out.println(rawModel);
+    mapper = ObjectMapperFactory.forYaml();
+    rootNode = mapper.readTree(rawModel);
+  }
 
-	@Test
-	public void shouldParse() {
-		// when
-		MQTTOperationBinding010 parsed = (MQTTOperationBinding010) MQTTOperationBindingParser.parse((ObjectNode) rootNode);
+  @Test
+  public void shouldParse() {
+    // when
+    MQTTOperationBinding010 parsed = (MQTTOperationBinding010) MQTTOperationBindingParser
+        .parse((ObjectNode) rootNode);
 
-		// then
-		assertNotNull(parsed);
+    // then
+    assertNotNull(parsed);
 
-		assertEquals("mqtt", parsed.getBindingType());
+    assertEquals("mqtt", parsed.getBindingType());
 
-		assertEquals(Integer.valueOf(2), parsed.getQos());
-		assertEquals(false, parsed.getRetain());
+    assertEquals(Integer.valueOf(2), parsed.getQos());
+    assertEquals(false, parsed.getRetain());
 
-		assertEquals(1, parsed.getExtensions().size());
-		assertEquals("foo", parsed.getExtensions().get("x-1"));
+    assertEquals(1, parsed.getExtensions().size());
+    assertEquals("foo", parsed.getExtensions().get("x-1"));
 
-		assertEquals("0.1.0", parsed.getBindingVersion());
-	}
+    assertEquals("0.1.0", parsed.getBindingVersion());
+  }
 
-	@After
-	public void tearDown() throws Exception {
-	}
+  @After
+  public void tearDown() throws Exception {
+  }
 
 }

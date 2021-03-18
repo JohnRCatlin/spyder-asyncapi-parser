@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import java.util.Set;
@@ -33,27 +34,28 @@ import engineer.asyncapi.spyder.model.bindings.OperationBindings;
  */
 final class OperationBindingsParser extends AsyncAPICommonObjectParser {
 
-	static final Logger log = LoggerFactory.getLogger(OperationBindingsParser.class);
+  static final Logger log = LoggerFactory.getLogger(OperationBindingsParser.class);
 
-	static final OperationBindings parse(final ObjectNode node) {
-		if (node == null) {
-			return null;
-		}
-		final OperationBindings operationBindings = new OperationBindingsImpl();
-		final Set<String> keys = keySetFrom(node);
-		for (final String key : keys) {
-			final JsonNode bindingNode = node.get(key);
-			if (isObjectNode(bindingNode)) {
-				final OperationBinding binding = OperationBindingParser.parse((ObjectNode) bindingNode, key);
-				if (binding != null) {
-					operationBindings.put(key, binding);
-				}
-			}
-		}
-		return operationBindings;
-	}
+  static final OperationBindings parse(final ObjectNode node) {
+    if (node == null) {
+      return null;
+    }
+    final OperationBindings operationBindings = new OperationBindingsImpl();
+    final Set<String> keys = keySetFrom(node);
+    for (final String key : keys) {
+      final JsonNode bindingNode = node.get(key);
+      if (isObjectNode(bindingNode)) {
+        final OperationBinding binding = OperationBindingParser.parse((ObjectNode) bindingNode,
+            key);
+        if (binding != null) {
+          operationBindings.put(key, binding);
+        }
+      }
+    }
+    return operationBindings;
+  }
 
-	private OperationBindingsParser() {
-		/* this static utility should not be instantiated */
-	}
+  private OperationBindingsParser() {
+    /* this static utility should not be instantiated */
+  }
 }

@@ -22,48 +22,48 @@ package engineer.asyncapi.spyder.model.fields;
  */
 enum SchemaFields {
 
-	ADDITIONAL_PROPERTIES("additionalProperties", false),
-	ALL_OF("allOf", false),
-	ANY_OF("anyOf", false),
-	DEFAULT("_default", false),
-	DEPRECATED("deprecated", false),
-	DESCRIPTION("description", false),
-	DISCRIMINATOR("discriminator", false),
-	ENUM("enum", false),
-	EXAMPLE("example", false),
-	EXCLUSIVE_MAXIMUM("exclusiveMaximum", false),
-	EXCLUSIVE_MINIMUM("exclusiveMinimum", false),
-	EXTENSIONS("extensions", false),
-	EXTERNAL_DOCS("externalDocs", false),
-	FROMAT("format", false),
-	ITEMS("items", false),
-	MAX_ITEMS("maxItems", false),
-	MAX_PROPERTIES("maxProperties", false),
-	MAXIMUM("maximum", false),
-	MAXIMUM_LENGHT("maxLength", false),
-	MIN_ITEM("minItems", false),
-	MIN_PROPERTIES("minProperties", false),
-	MINIMUM("minimum", false),
-	MINIMUM_LENGHT("minLength", false),
-	MULTIPLE_OF("multipleOf", false),
-	NOT("not", false),
-	NULLABLE("nullable", false),
-	ONE_OF("oneOf", false),
-	PATTERN("pattern", false),
-	PROPERTIES("properties", false),
-	READ_ONLY("readOnly", false),
-	REF("$ref", false),
-	REQUIRED("required", false),
-	TITLE("title", false),
-	TYPE("type", false),
-	UNIQUE_ITEMS("uniqueItems", false),
-	WRITE_ONLY("writeOnly", false);
+  ADDITIONAL_PROPERTIES("additionalProperties", false),
+  ALL_OF("allOf", false),
+  ANY_OF("anyOf", false),
+  DEFAULT("_default", false),
+  DEPRECATED("deprecated", false),
+  DESCRIPTION("description", false),
+  DISCRIMINATOR("discriminator", false),
+  ENUM("enum", false),
+  EXAMPLE("example", false),
+  EXCLUSIVE_MAXIMUM("exclusiveMaximum", false),
+  EXCLUSIVE_MINIMUM("exclusiveMinimum", false),
+  EXTENSIONS("extensions", false),
+  EXTERNAL_DOCS("externalDocs", false),
+  FROMAT("format", false),
+  ITEMS("items", false),
+  MAX_ITEMS("maxItems", false),
+  MAX_PROPERTIES("maxProperties", false),
+  MAXIMUM("maximum", false),
+  MAXIMUM_LENGHT("maxLength", false),
+  MIN_ITEM("minItems", false),
+  MIN_PROPERTIES("minProperties", false),
+  MINIMUM("minimum", false),
+  MINIMUM_LENGHT("minLength", false),
+  MULTIPLE_OF("multipleOf", false),
+  NOT("not", false),
+  NULLABLE("nullable", false),
+  ONE_OF("oneOf", false),
+  PATTERN("pattern", false),
+  PROPERTIES("properties", false),
+  READ_ONLY("readOnly", false),
+  REF("$ref", false),
+  REQUIRED("required", false),
+  TITLE("title", false),
+  TYPE("type", false),
+  UNIQUE_ITEMS("uniqueItems", false),
+  WRITE_ONLY("writeOnly", false);
 
-	public final String field;
-	public final boolean required;
+  public final String field;
+  public final boolean required;
 
-	SchemaFields(final String field, final boolean required) {
-		this.field = field;
-		this.required = required;
-	}
+  SchemaFields(final String field, final boolean required) {
+    this.field = field;
+    this.required = required;
+  }
 }

@@ -30,52 +30,53 @@ import engineer.asyncapi.spyder.model.bindings.IBMMQMessageBinding010;
 
 public class IBMMQMessageBindingParserTest {
 
-	private static final String rawModel;
+  private static final String rawModel;
 
-	// given
-	static {
-		StringBuilder sb = new StringBuilder();
-		sb.append("type: jms\n");
-		sb.append("description: JMS stream\n");
-		sb.append("expiry: 0\n");
-		sb.append("headers: MQFMT_DEAD_LETTER_HEADER, MQFMT_REF_MSG_HEADER\n");
-		sb.append("bindingVersion: '0.1.0'\n");
-		sb.append("extensions:\n");
-		sb.append("  x-1: foo\n");
-		rawModel = sb.toString();
-	}
+  // given
+  static {
+    StringBuilder sb = new StringBuilder();
+    sb.append("type: jms\n");
+    sb.append("description: JMS stream\n");
+    sb.append("expiry: 0\n");
+    sb.append("headers: MQFMT_DEAD_LETTER_HEADER, MQFMT_REF_MSG_HEADER\n");
+    sb.append("bindingVersion: '0.1.0'\n");
+    sb.append("extensions:\n");
+    sb.append("  x-1: foo\n");
+    rawModel = sb.toString();
+  }
 
-	private ObjectMapper mapper = null;
-	private JsonNode rootNode = null;
+  private ObjectMapper mapper = null;
+  private JsonNode rootNode = null;
 
-	@Before
-	public void setUp() throws Exception {
-		// System.out.println(rawModel);
-		mapper = ObjectMapperFactory.forYaml();
-		rootNode = mapper.readTree(rawModel);
-	}
+  @Before
+  public void setUp() throws Exception {
+    // System.out.println(rawModel);
+    mapper = ObjectMapperFactory.forYaml();
+    rootNode = mapper.readTree(rawModel);
+  }
 
-	@Test
-	public void shouldParse() {
-		// when
-		IBMMQMessageBinding010 parsed = (IBMMQMessageBinding010) IBMMQMessageBindingParser.parse((ObjectNode) rootNode);
+  @Test
+  public void shouldParse() {
+    // when
+    IBMMQMessageBinding010 parsed = (IBMMQMessageBinding010) IBMMQMessageBindingParser
+        .parse((ObjectNode) rootNode);
 
-		// then
-		assertNotNull(parsed);
-		assertEquals("ibmmq", parsed.getBindingType());
-		assertEquals("0.1.0", parsed.getBindingVersion());
+    // then
+    assertNotNull(parsed);
+    assertEquals("ibmmq", parsed.getBindingType());
+    assertEquals("0.1.0", parsed.getBindingVersion());
 
-		assertEquals("jms", parsed.getType());
-		assertEquals("JMS stream", parsed.getDescription());
-		assertEquals(Integer.valueOf(0), parsed.getExpiry());
-		assertEquals("MQFMT_DEAD_LETTER_HEADER, MQFMT_REF_MSG_HEADER", parsed.getHeaders());
+    assertEquals("jms", parsed.getType());
+    assertEquals("JMS stream", parsed.getDescription());
+    assertEquals(Integer.valueOf(0), parsed.getExpiry());
+    assertEquals("MQFMT_DEAD_LETTER_HEADER, MQFMT_REF_MSG_HEADER", parsed.getHeaders());
 
-		assertEquals(1, parsed.getExtensions().size());
-		assertEquals("foo", parsed.getExtensions().get("x-1"));
-	}
+    assertEquals(1, parsed.getExtensions().size());
+    assertEquals("foo", parsed.getExtensions().get("x-1"));
+  }
 
-	@After
-	public void tearDown() throws Exception {
-	}
+  @After
+  public void tearDown() throws Exception {
+  }
 
 }

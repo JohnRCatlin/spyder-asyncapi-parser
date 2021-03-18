@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import java.util.Set;
@@ -30,27 +31,27 @@ import engineer.asyncapi.spyder.model.Schemas;
  */
 final class SchemasParser extends AsyncAPICommonObjectParser {
 
-	static final Schemas parse(final ObjectNode node) {
-		if (node == null) {
-			return null;
-		}
-		final Schemas schemas = new SchemasImpl();
-		final Set<String> schemaKeys = keySetFrom(node);
-		for (final String schemaName : schemaKeys) {
-			final JsonNode schemaValue = node.get(schemaName);
-			if (isObjectNode(schemaValue)) {
-				final ObjectNode schema = (ObjectNode) schemaValue;
-				final Schema schemaObj = SchemaParser.parse(schema);
-				if (schemaObj != null) {
-					schemas.put(schemaName, schemaObj);
-				}
-			}
-		}
-		return schemas;
-	}
+  static final Schemas parse(final ObjectNode node) {
+    if (node == null) {
+      return null;
+    }
+    final Schemas schemas = new SchemasImpl();
+    final Set<String> schemaKeys = keySetFrom(node);
+    for (final String schemaName : schemaKeys) {
+      final JsonNode schemaValue = node.get(schemaName);
+      if (isObjectNode(schemaValue)) {
+        final ObjectNode schema = (ObjectNode) schemaValue;
+        final Schema schemaObj = SchemaParser.parse(schema);
+        if (schemaObj != null) {
+          schemas.put(schemaName, schemaObj);
+        }
+      }
+    }
+    return schemas;
+  }
 
-	private SchemasParser() {
-		/* this static utility should not be instantiated */
-	}
+  private SchemasParser() {
+    /* this static utility should not be instantiated */
+  }
 
 }

@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model;
 
 import java.util.List;
@@ -24,14 +25,14 @@ import java.util.List;
  */
 public interface ServerVariable {
 
-	String getDefault();
+  String getDefault();
 
-	String getDescription();
+  String getDescription();
 
-	List<String> getEnum();
+  List<String> getEnum();
 
-	Extensions getExtensions();
+  Extensions getExtensions();
 
-	void setEnum(List<String> theEnum);
+  void setEnum(List<String> theEnum);
 
 }

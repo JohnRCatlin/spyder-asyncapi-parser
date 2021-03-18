@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import java.util.List;
@@ -34,68 +35,68 @@ import engineer.asyncapi.spyder.model.fields.Fields;
  */
 final class OperationParser extends AsyncAPICommonObjectParser {
 
-	static final Operation parse(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		final OperationImpl.Builder builder = new OperationImpl.Builder();
-		builder.operationId(parseOperationId(node));
-		builder.summary(parseSummary(node));
-		builder.description(parseDescription(node));
-		builder.tags(parseTags(node));
-		builder.externalDocs(parseExternalDocs(node));
-		builder.extensions(parseExtensions(node));
-		builder.bindings(parseBindings(node));
-		builder.traits(parseOperatoinTraits(node));
-		builder.message(parseMessage(node));
-		return builder.build();
-	}
+  static final Operation parse(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    final OperationImpl.Builder builder = new OperationImpl.Builder();
+    builder.operationId(parseOperationId(node));
+    builder.summary(parseSummary(node));
+    builder.description(parseDescription(node));
+    builder.tags(parseTags(node));
+    builder.externalDocs(parseExternalDocs(node));
+    builder.extensions(parseExtensions(node));
+    builder.bindings(parseBindings(node));
+    builder.traits(parseOperatoinTraits(node));
+    builder.message(parseMessage(node));
+    return builder.build();
+  }
 
-	static final OperationBindings parseBindings(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		ObjectNode bindingsNode = objectNodeFrom(Fields.BINDINGS.value, node);
-		final OperationBindings bindings = OperationBindingsParser.parse(bindingsNode);
-		if (bindings != null && bindings.size() > 0) {
-			return bindings;
-		}
-		return null;
-	}
+  static final OperationBindings parseBindings(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    ObjectNode bindingsNode = objectNodeFrom(Fields.BINDINGS.value, node);
+    final OperationBindings bindings = OperationBindingsParser.parse(bindingsNode);
+    if (bindings != null && bindings.size() > 0) {
+      return bindings;
+    }
+    return null;
+  }
 
-	// smelly?
-	static Message parseMessage(final ObjectNode node) {
-		final ObjectNode requestObjectNode = objectNodeFrom(Fields.MESSAGE.value, node);
-		if (requestObjectNode != null) {
-			final ArrayNode oneOfArray = arrayNodeFrom(Fields.ONE_OF.value, requestObjectNode);
-			if (oneOfArray != null) {
-				ObjectNode itObj = null;
-				for (final JsonNode n : oneOfArray) {
-					if (n.isObject()) {
-						itObj = n.deepCopy();
-						return MessageParser.parse(itObj);
-					}
-				}
-			} else {
-				return MessageParser.parse(requestObjectNode);
-			}
-		}
-		return null;
-	}
+  // smelly?
+  static Message parseMessage(final ObjectNode node) {
+    final ObjectNode requestObjectNode = objectNodeFrom(Fields.MESSAGE.value, node);
+    if (requestObjectNode != null) {
+      final ArrayNode oneOfArray = arrayNodeFrom(Fields.ONE_OF.value, requestObjectNode);
+      if (oneOfArray != null) {
+        ObjectNode itObj = null;
+        for (final JsonNode n : oneOfArray) {
+          if (n.isObject()) {
+            itObj = n.deepCopy();
+            return MessageParser.parse(itObj);
+          }
+        }
+      } else {
+        return MessageParser.parse(requestObjectNode);
+      }
+    }
+    return null;
+  }
 
-	static final List<OperationTrait> parseOperatoinTraits(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		ArrayNode array = arrayNodeFrom(Fields.TRAITS.value, node);
-		if (array != null && array.size() > 0) {
-			return OperationTraitsParser.parse(array);
-		}
-		return null;
-	}
+  static final List<OperationTrait> parseOperatoinTraits(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    ArrayNode array = arrayNodeFrom(Fields.TRAITS.value, node);
+    if (array != null && array.size() > 0) {
+      return OperationTraitsParser.parse(array);
+    }
+    return null;
+  }
 
-	private OperationParser() {
-		/* this static utility should not be instantiated */
-	}
+  private OperationParser() {
+    /* this static utility should not be instantiated */
+  }
 
 }

@@ -27,47 +27,47 @@ import engineer.asyncapi.spyder.model.bindings.OperationBinding;
  */
 final class OperationBindingParser extends AsyncAPICommonObjectParser {
 
-	static final OperationBinding parse(final ObjectNode node) {
-		try {
-			final String operationBindingName = keySetFrom(node).iterator().next();
-			final ObjectNode binding = objectNodeFrom(operationBindingName, node);
-			return parse(binding, operationBindingName);
-		} catch (Exception e) {
-			return null;
-		}
-	}
+  static final OperationBinding parse(final ObjectNode node) {
+    try {
+      final String operationBindingName = keySetFrom(node).iterator().next();
+      final ObjectNode binding = objectNodeFrom(operationBindingName, node);
+      return parse(binding, operationBindingName);
+    } catch (Exception e) {
+      return null;
+    }
+  }
 
-	static final OperationBinding parse(final ObjectNode node, final String name) {
-		if (node == null) {
-			return null;
-		}
-		switch (BindingType.getType(name)) {
-		case KAFKA:
-			return KafkaOperationBindingParser.parse(node);
-		case AMQP:
-			return AMQP091OperationBindingParser.parse(node);
-		case HTTP:
-			return HTTPOperationBindingParser.parse(node);
-		case MQTT:
-			return MQTTOperationBindingParser.parse(node);
-		case IBMMQ:
-		case WEBSOCKETS:
-		case AMQP1:
-		case MQTT5:
-		case NATS:
-		case JMS:
-		case SNS:
-		case SQS:
-		case STOMP:
-		case REDIS:
-		case MERCURE:
-			return null;
-		default:
-			return null;
-		}
-	}
+  static final OperationBinding parse(final ObjectNode node, final String name) {
+    if (node == null) {
+      return null;
+    }
+    switch (BindingType.getType(name)) {
+    case KAFKA:
+      return KafkaOperationBindingParser.parse(node);
+    case AMQP:
+      return AMQP091OperationBindingParser.parse(node);
+    case HTTP:
+      return HTTPOperationBindingParser.parse(node);
+    case MQTT:
+      return MQTTOperationBindingParser.parse(node);
+    case IBMMQ:
+    case WEBSOCKETS:
+    case AMQP1:
+    case MQTT5:
+    case NATS:
+    case JMS:
+    case SNS:
+    case SQS:
+    case STOMP:
+    case REDIS:
+    case MERCURE:
+      return null;
+    default:
+      return null;
+    }
+  }
 
-	private OperationBindingParser() {
-		/* this static utility should not be instantiated */
-	}
+  private OperationBindingParser() {
+    /* this static utility should not be instantiated */
+  }
 }

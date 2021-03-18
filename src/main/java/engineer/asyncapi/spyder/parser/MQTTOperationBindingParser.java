@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -27,36 +28,37 @@ import engineer.asyncapi.spyder.model.fields.Fields;
  */
 final class MQTTOperationBindingParser extends AsyncAPICommonObjectParser {
 
-	static final MQTTOperationBinding parse(final ObjectNode node) {
-		try {
-			final String bindingVersion = parseBindingVersion(node);
-			if (null == bindingVersion || bindingVersion.equals(MQTTOperationBinding010Impl.BINDING_VERSION)) {
-				return parseBindingV010(node);
-			}
-			// use latest
-			return parseBindingV010(node);
-		} catch (Exception e) {
-			return null;
-		}
-	}
+  static final MQTTOperationBinding parse(final ObjectNode node) {
+    try {
+      final String bindingVersion = parseBindingVersion(node);
+      if (null == bindingVersion
+          || bindingVersion.equals(MQTTOperationBinding010Impl.BINDING_VERSION)) {
+        return parseBindingV010(node);
+      }
+      // use latest
+      return parseBindingV010(node);
+    } catch (Exception e) {
+      return null;
+    }
+  }
 
-	private static final MQTTOperationBinding parseBindingV010(final ObjectNode node) {
-		final MQTTOperationBinding010Impl.Builder builder = new MQTTOperationBinding010Impl.Builder();
-		builder.extensions(parseExtensions(node));
-		builder.qos(parseQos(node));
-		builder.retain(parseRetain(node));
-		return builder.build();
-	}
+  private static final MQTTOperationBinding parseBindingV010(final ObjectNode node) {
+    final MQTTOperationBinding010Impl.Builder builder = new MQTTOperationBinding010Impl.Builder();
+    builder.extensions(parseExtensions(node));
+    builder.qos(parseQos(node));
+    builder.retain(parseRetain(node));
+    return builder.build();
+  }
 
-	private static final Integer parseQos(final ObjectNode node) {
-		return integerFrom(Fields.QOS.value, node);
-	}
+  private static final Integer parseQos(final ObjectNode node) {
+    return integerFrom(Fields.QOS.value, node);
+  }
 
-	private static final Boolean parseRetain(final ObjectNode node) {
-		return booleanFrom(Fields.RETAIN.value, node);
-	}
+  private static final Boolean parseRetain(final ObjectNode node) {
+    return booleanFrom(Fields.RETAIN.value, node);
+  }
 
-	private MQTTOperationBindingParser() {
-		/* this static utility should not be instantiated */
-	}
+  private MQTTOperationBindingParser() {
+    /* this static utility should not be instantiated */
+  }
 }

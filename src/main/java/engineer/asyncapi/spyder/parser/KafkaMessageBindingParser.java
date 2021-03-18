@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -29,35 +30,36 @@ import engineer.asyncapi.spyder.model.fields.Fields;
  */
 final class KafkaMessageBindingParser extends AsyncAPICommonObjectParser {
 
-	static final KafkaMessageBinding parse(final ObjectNode node) {
-		try {
-			final String bindingVersion = parseBindingVersion(node);
-			if (null == bindingVersion || bindingVersion.equals(KafkaMessageBinding010Impl.BINDING_VERSION)) {
-				return parseBindingV010(node);
-			}
-			// use latest
-			return parseBindingV010(node);
-		} catch (Exception e) {
-			return null;
-		}
-	}
+  static final KafkaMessageBinding parse(final ObjectNode node) {
+    try {
+      final String bindingVersion = parseBindingVersion(node);
+      if (null == bindingVersion
+          || bindingVersion.equals(KafkaMessageBinding010Impl.BINDING_VERSION)) {
+        return parseBindingV010(node);
+      }
+      // use latest
+      return parseBindingV010(node);
+    } catch (Exception e) {
+      return null;
+    }
+  }
 
-	private static final Schema parseKey(final ObjectNode node) {
-		final ObjectNode obj = objectNodeFrom(Fields.KEY.value, node);
-		if (obj != null) {
-			return SchemaParser.parse(obj);
-		}
-		return null;
-	}
+  private static final Schema parseKey(final ObjectNode node) {
+    final ObjectNode obj = objectNodeFrom(Fields.KEY.value, node);
+    if (obj != null) {
+      return SchemaParser.parse(obj);
+    }
+    return null;
+  }
 
-	private static final KafkaMessageBinding010 parseBindingV010(final ObjectNode node) {
-		final KafkaMessageBinding010Impl.Builder builder = new KafkaMessageBinding010Impl.Builder();
-		builder.setKey(parseKey(node));
-		builder.extensions(parseExtensions(node));
-		return builder.build();
-	}
+  private static final KafkaMessageBinding010 parseBindingV010(final ObjectNode node) {
+    final KafkaMessageBinding010Impl.Builder builder = new KafkaMessageBinding010Impl.Builder();
+    builder.setKey(parseKey(node));
+    builder.extensions(parseExtensions(node));
+    return builder.build();
+  }
 
-	private KafkaMessageBindingParser() {
-		/* this static utility should not be instantiated */
-	}
+  private KafkaMessageBindingParser() {
+    /* this static utility should not be instantiated */
+  }
 }

@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -28,45 +29,45 @@ import engineer.asyncapi.spyder.model.security.OAuthFlows;
  */
 final class SecuritySchemeParser extends AsyncAPICommonObjectParser {
 
-	static final SecurityScheme parse(final ObjectNode node) {
-		if (node == null) {
-			return null;
-		}
-		final SecuritySchemeImpl.Builder builder = new SecuritySchemeImpl.Builder();
-		if (hasRef(node)) {
-			final String ref = valueOfKeyOrNull(Fields.REF.value, node);
-			builder.ref(RefUtility.ensureSafeLocalReference(ref));
-			return builder.build();
-		}
-		builder.type(valueOfKeyOrNull("type", node));
-		builder.in(parseIn(node));
-		builder.description(valueOfKeyOrNull("description", node));
-		builder.name(valueOfKeyOrNull("name", node));
-		builder.scheme(valueOfKeyOrNull("scheme", node));
-		builder.bearerFormat(valueOfKeyOrNull("bearerFormat", node));
-		builder.flows(parseFlows(node));
-		builder.openIdConnectUrl(valueOfKeyOrNull("openIdConnectUrl", node));
-		builder.extensions(parseExtensions(node));
-		return builder.build();
-	}
+  static final SecurityScheme parse(final ObjectNode node) {
+    if (node == null) {
+      return null;
+    }
+    final SecuritySchemeImpl.Builder builder = new SecuritySchemeImpl.Builder();
+    if (hasRef(node)) {
+      final String ref = valueOfKeyOrNull(Fields.REF.value, node);
+      builder.ref(RefUtility.ensureSafeLocalReference(ref));
+      return builder.build();
+    }
+    builder.type(valueOfKeyOrNull("type", node));
+    builder.in(parseIn(node));
+    builder.description(valueOfKeyOrNull("description", node));
+    builder.name(valueOfKeyOrNull("name", node));
+    builder.scheme(valueOfKeyOrNull("scheme", node));
+    builder.bearerFormat(valueOfKeyOrNull("bearerFormat", node));
+    builder.flows(parseFlows(node));
+    builder.openIdConnectUrl(valueOfKeyOrNull("openIdConnectUrl", node));
+    builder.extensions(parseExtensions(node));
+    return builder.build();
+  }
 
-	private static final OAuthFlows parseFlows(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		final ObjectNode flowsNode = objectNodeFrom("flows", node);
-		if (null == flowsNode) {
-			return null;
-		}
-		return OAuthFlowsParser.parse(flowsNode);
-	}
+  private static final OAuthFlows parseFlows(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    final ObjectNode flowsNode = objectNodeFrom("flows", node);
+    if (null == flowsNode) {
+      return null;
+    }
+    return OAuthFlowsParser.parse(flowsNode);
+  }
 
-	private static final String parseIn(final ObjectNode node) {
-		return valueOfKeyOrNull(Fields.IN.value, node);
-	}
+  private static final String parseIn(final ObjectNode node) {
+    return valueOfKeyOrNull(Fields.IN.value, node);
+  }
 
-	private SecuritySchemeParser() {
-		/* this static utility should not be instantiated */
-	}
+  private SecuritySchemeParser() {
+    /* this static utility should not be instantiated */
+  }
 
 }

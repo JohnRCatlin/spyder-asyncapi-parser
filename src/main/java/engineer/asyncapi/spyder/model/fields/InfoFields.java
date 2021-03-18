@@ -22,19 +22,19 @@ package engineer.asyncapi.spyder.model.fields;
  */
 enum InfoFields {
 
-	CONTACT(Fields.CONTACT.value, false),
-	DESCRIPTION(Fields.DESCRIPTION.value, false),
-	EXTENSIONS(Fields.EXTENSIONS.value, false),
-	LICENSE(Fields.LICENSE.value, false),
-	TERMS_OF_SERVICE(Fields.TERMS_OF_SERVICE.value, false),
-	TITLE(Fields.TITLE.value, true),
-	VERSION(Fields.VERSION.value, true);
+  CONTACT(Fields.CONTACT.value, false),
+  DESCRIPTION(Fields.DESCRIPTION.value, false),
+  EXTENSIONS(Fields.EXTENSIONS.value, false),
+  LICENSE(Fields.LICENSE.value, false),
+  TERMS_OF_SERVICE(Fields.TERMS_OF_SERVICE.value, false),
+  TITLE(Fields.TITLE.value, true),
+  VERSION(Fields.VERSION.value, true);
 
-	public final boolean required;
-	public final String value;
+  public final boolean required;
+  public final String value;
 
-	InfoFields(final String value, final boolean required) {
-		this.value = value;
-		this.required = required;
-	}
+  InfoFields(final String value, final boolean required) {
+    this.value = value;
+    this.required = required;
+  }
 }
