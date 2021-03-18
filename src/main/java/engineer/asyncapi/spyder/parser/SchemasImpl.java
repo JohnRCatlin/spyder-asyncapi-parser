@@ -13,15 +13,15 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
+import engineer.asyncapi.spyder.model.Schema;
+import engineer.asyncapi.spyder.model.Schemas;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
-
-import engineer.asyncapi.spyder.model.Schema;
-import engineer.asyncapi.spyder.model.Schemas;
 
 /**
  * 
@@ -30,70 +30,70 @@ import engineer.asyncapi.spyder.model.Schemas;
  */
 final class SchemasImpl implements Schemas {
 
-	private final LinkedHashMap<String, Schema> delegate = new LinkedHashMap<>();
+  private final LinkedHashMap<String, Schema> delegate = new LinkedHashMap<>();
 
-	@Override
-	public void clear() {
-		delegate.clear();
-	}
+  @Override
+  public void clear() {
+    delegate.clear();
+  }
 
-	@Override
-	public final boolean containsKey(final Object key) {
-		return delegate.containsKey(key);
-	}
+  @Override
+  public final boolean containsKey(final Object key) {
+    return delegate.containsKey(key);
+  }
 
-	@Override
-	public final boolean containsValue(final Object value) {
-		return delegate.containsValue(value);
-	}
+  @Override
+  public final boolean containsValue(final Object value) {
+    return delegate.containsValue(value);
+  }
 
-	@Override
-	public final Set<Entry<String, Schema>> entrySet() {
-		return delegate.entrySet();
-	}
+  @Override
+  public final Set<Entry<String, Schema>> entrySet() {
+    return delegate.entrySet();
+  }
 
-	@Override
-	public final Schema get(final Object key) {
-		return delegate.get(key);
-	}
+  @Override
+  public final Schema get(final Object key) {
+    return delegate.get(key);
+  }
 
-	@Override
-	public final boolean isEmpty() {
-		return delegate.isEmpty();
-	}
+  @Override
+  public final boolean isEmpty() {
+    return delegate.isEmpty();
+  }
 
-	@Override
-	public final Set<String> keySet() {
-		return delegate.keySet();
-	}
+  @Override
+  public final Set<String> keySet() {
+    return delegate.keySet();
+  }
 
-	@Override
-	public final Schema put(final String key, final Schema value) {
-		return delegate.put(key, value);
-	}
+  @Override
+  public final Schema put(final String key, final Schema value) {
+    return delegate.put(key, value);
+  }
 
-	@Override
-	public final void putAll(final Map<? extends String, ? extends Schema> m) {
-		delegate.putAll(m);
-	}
+  @Override
+  public final void putAll(final Map<? extends String, ? extends Schema> m) {
+    delegate.putAll(m);
+  }
 
-	@Override
-	public final Schema remove(final Object key) {
-		return delegate.remove(key);
-	}
+  @Override
+  public final Schema remove(final Object key) {
+    return delegate.remove(key);
+  }
 
-	@Override
-	public final int size() {
-		return delegate.size();
-	}
+  @Override
+  public final int size() {
+    return delegate.size();
+  }
 
-	@Override
-	public final Collection<Schema> values() {
-		return delegate.values();
-	}
+  @Override
+  public final Collection<Schema> values() {
+    return delegate.values();
+  }
 
-	@Override
-	public final String toString() {
-		return ToStringFormatter.toString(this);
-	}
+  @Override
+  public final String toString() {
+    return ToStringFormatter.toString(this);
+  }
 }

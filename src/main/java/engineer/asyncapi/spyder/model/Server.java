@@ -13,11 +13,11 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model;
 
-import java.util.Map;
-
 import engineer.asyncapi.spyder.model.bindings.ServerBindings;
+import java.util.Map;
 
 /**
  * 
@@ -26,20 +26,20 @@ import engineer.asyncapi.spyder.model.bindings.ServerBindings;
  */
 public interface Server {
 
-	ServerBindings getBindings();
+  ServerBindings getBindings();
 
-	String getDescription();
+  String getDescription();
 
-	Extensions getExtensions();
+  Extensions getExtensions();
 
-	String getProtocol();
+  String getProtocol();
 
-	String getProtocolVersion();
+  String getProtocolVersion();
 
-	Security getSecurity();
+  Security getSecurity();
 
-	String getUrl();
+  String getUrl();
 
-	Map<String, ServerVariable> getVariables();
+  Map<String, ServerVariable> getVariables();
 
 }

@@ -13,17 +13,16 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
-package engineer.asyncapi.spyder.parser;
 
-import java.util.Map;
+package engineer.asyncapi.spyder.parser;
 
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.Security;
 import engineer.asyncapi.spyder.model.ServerVariable;
 import engineer.asyncapi.spyder.model.bindings.ServerBindings;
 import engineer.asyncapi.spyder.model.fields.Fields;
+import java.util.Map;
 
 /**
  * 

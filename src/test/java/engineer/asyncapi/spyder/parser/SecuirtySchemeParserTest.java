@@ -4,17 +4,15 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
-import org.junit.Before;
-import org.junit.Test;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.SecurityScheme;
 import engineer.asyncapi.spyder.model.security.OAuthFlow;
 import engineer.asyncapi.spyder.model.security.OAuthFlows;
 import engineer.asyncapi.spyder.model.security.SecurityType;
+import org.junit.Before;
+import org.junit.Test;
 
 public class SecuirtySchemeParserTest {
 

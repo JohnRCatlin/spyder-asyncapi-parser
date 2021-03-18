@@ -13,10 +13,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.Contact;
 import engineer.asyncapi.spyder.model.fields.Fields;
 
@@ -27,23 +27,23 @@ import engineer.asyncapi.spyder.model.fields.Fields;
  */
 class ContactParser extends AsyncAPICommonObjectParser {
 
-	static final Contact parse(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		final ContactImpl.Builder builder = new ContactImpl.Builder();
-		builder.name(parseName(node));
-		builder.url(parseUrl(node));
-		builder.email(parseEmail(node));
-		builder.extensions(parseExtensions(node));
-		return builder.build();
-	}
+  static final Contact parse(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    final ContactImpl.Builder builder = new ContactImpl.Builder();
+    builder.name(parseName(node));
+    builder.url(parseUrl(node));
+    builder.email(parseEmail(node));
+    builder.extensions(parseExtensions(node));
+    return builder.build();
+  }
 
-	static final String parseEmail(final ObjectNode node) {
-		return valueOfKeyOrNull(Fields.EMAIL.value, node);
-	}
+  static final String parseEmail(final ObjectNode node) {
+    return valueOfKeyOrNull(Fields.EMAIL.value, node);
+  }
 
-	private ContactParser() {
-		/* this static utility should not be instantiated */
-	}
+  private ContactParser() {
+    /* this static utility should not be instantiated */
+  }
 }

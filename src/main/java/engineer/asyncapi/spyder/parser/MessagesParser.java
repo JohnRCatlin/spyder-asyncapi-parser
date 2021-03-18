@@ -13,15 +13,14 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
-package engineer.asyncapi.spyder.parser;
 
-import java.util.Set;
+package engineer.asyncapi.spyder.parser;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.Message;
 import engineer.asyncapi.spyder.model.Messages;
+import java.util.Set;
 
 /**
  * 
@@ -30,26 +29,26 @@ import engineer.asyncapi.spyder.model.Messages;
  */
 class MessagesParser extends AsyncAPICommonObjectParser {
 
-	public static final Messages parse(final ObjectNode node) {
-		if (node == null) {
-			return null;
-		}
-		final Messages messages = new MessagesImpl();
-		final Set<String> keys = keySetFrom(node);
-		for (final String key : keys) {
-			final JsonNode messageNode = node.get(key);
-			if (isObjectNode(messageNode)) {
-				final Message messageObj = MessageParser.parse((ObjectNode) messageNode);
-				if (messageObj != null) {
-					messages.put(key, messageObj);
-				}
-			}
-		}
-		return messages;
-	}
+  public static final Messages parse(final ObjectNode node) {
+    if (node == null) {
+      return null;
+    }
+    final Messages messages = new MessagesImpl();
+    final Set<String> keys = keySetFrom(node);
+    for (final String key : keys) {
+      final JsonNode messageNode = node.get(key);
+      if (isObjectNode(messageNode)) {
+        final Message messageObj = MessageParser.parse((ObjectNode) messageNode);
+        if (messageObj != null) {
+          messages.put(key, messageObj);
+        }
+      }
+    }
+    return messages;
+  }
 
-	private MessagesParser() {
-		/* this static utility should not be instantiated */
-	}
+  private MessagesParser() {
+    /* this static utility should not be instantiated */
+  }
 
 }

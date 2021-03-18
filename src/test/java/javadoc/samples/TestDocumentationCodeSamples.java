@@ -16,14 +16,14 @@ limitations under the License.
 
 package javadoc.samples;
 
-import java.io.File;
-
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 import engineer.asyncapi.spyder.model.AsyncAPI;
 import engineer.asyncapi.spyder.parser.AsyncAPIParser;
 import engineer.asyncapi.spyder.parser.AsyncAPIParserFactory;
 import engineer.asyncapi.spyder.parser.SupportedAsyncAPIVersions;
+import java.io.File;
+import org.junit.Test;
 
 public class TestDocumentationCodeSamples {
 
@@ -35,7 +35,7 @@ public class TestDocumentationCodeSamples {
     final AsyncAPIParser parser = AsyncAPIParserFactory.create(SupportedAsyncAPIVersions.V2_0_0);
     final AsyncAPI root = parser.parseFromUrl(source);
 
-    assert root.getAsyncapi().equals(SupportedAsyncAPIVersions.V2_0_0.value);
+    assertEquals(SupportedAsyncAPIVersions.V2_0_0.value, root.getAsyncapi());
   }
 
   @Test
@@ -56,9 +56,9 @@ public class TestDocumentationCodeSamples {
     final AsyncAPIParser parser = AsyncAPIParserFactory.create(SupportedAsyncAPIVersions.V2_0_0);
     final AsyncAPI root = parser.parseFromString(source);
 
-    assert root.getAsyncapi().equals(SupportedAsyncAPIVersions.V2_0_0.value);
-    assert root.getInfo().getTitle().equals("Streetlights API");
-    assert root.getInfo().getLicense().getName().equals("Apache 2.0");
+    assertEquals(SupportedAsyncAPIVersions.V2_0_0.value, root.getAsyncapi());
+    assertEquals("Streetlights API", root.getInfo().getTitle());
+    assertEquals("Apache 2.0", root.getInfo().getLicense().getName());
   }
 
   @Test
@@ -68,7 +68,7 @@ public class TestDocumentationCodeSamples {
     final AsyncAPIParser parser = AsyncAPIParserFactory.create(SupportedAsyncAPIVersions.V2_0_0);
     final AsyncAPI root = parser.parseFromFile(source);
 
-    assert root.getAsyncapi().equals(SupportedAsyncAPIVersions.V2_0_0.value);
+    assertEquals(SupportedAsyncAPIVersions.V2_0_0.value, root.getAsyncapi());
   }
 
 }

@@ -16,11 +16,10 @@ limitations under the License.
 
 package engineer.asyncapi.spyder.parser;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import engineer.asyncapi.spyder.model.Extensions;
 import engineer.asyncapi.spyder.model.ServerVariable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 
@@ -38,8 +37,8 @@ final class ServerVariableImpl implements ServerVariable {
 
     private ServerVariableImpl variable = new ServerVariableImpl();
 
-    final Builder theDefault(final String _default) {
-      variable.theDefault = _default;
+    final Builder theDefault(final String theDefault) {
+      variable.theDefault = theDefault;
       return this;
     }
 

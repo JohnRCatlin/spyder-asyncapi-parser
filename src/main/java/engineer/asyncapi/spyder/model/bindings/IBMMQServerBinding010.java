@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model.bindings;
 
 /**
@@ -23,14 +24,14 @@ package engineer.asyncapi.spyder.model.bindings;
  */
 public interface IBMMQServerBinding010 extends IBMMQServerBinding {
 
-	String getGroupId();
+  String getGroupId();
 
-	String getCcdtQueueManagerName();
+  String getCcdtQueueManagerName();
 
-	String getCipherSpec();
+  String getCipherSpec();
 
-	Boolean getMultiEndpointServer();
+  Boolean getMultiEndpointServer();
 
-	Integer getHeartBeatInterval();
+  Integer getHeartBeatInterval();
 
 }

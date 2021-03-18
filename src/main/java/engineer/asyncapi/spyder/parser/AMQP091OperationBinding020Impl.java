@@ -16,11 +16,10 @@ limitations under the License.
 
 package engineer.asyncapi.spyder.parser;
 
-import java.util.List;
-
 import engineer.asyncapi.spyder.model.Extensions;
 import engineer.asyncapi.spyder.model.bindings.AMQP091OperationBinding020;
 import engineer.asyncapi.spyder.model.bindings.BindingType;
+import java.util.List;
 
 /**
  * 

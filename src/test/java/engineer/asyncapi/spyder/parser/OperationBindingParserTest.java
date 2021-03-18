@@ -19,20 +19,18 @@ package engineer.asyncapi.spyder.parser;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.After;
-import org.junit.Test;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.bindings.AMQP091OperationBinding020;
 import engineer.asyncapi.spyder.model.bindings.HTTPOperationBinding010;
 import engineer.asyncapi.spyder.model.bindings.KafkaOperationBinding010;
 import engineer.asyncapi.spyder.model.bindings.MQTTOperationBinding010;
 import engineer.asyncapi.spyder.model.bindings.OperationBindings;
+import org.junit.After;
+import org.junit.Test;
 
 public class OperationBindingParserTest {
 
@@ -238,7 +236,7 @@ public class OperationBindingParserTest {
   }
 
   @Test
-  public void MATTBinding() throws JsonMappingException, JsonProcessingException {
+  public void MQTTBinding() throws JsonMappingException, JsonProcessingException {
     // given
     final StringBuilder sb = new StringBuilder();
     sb.append("mqtt:\n");

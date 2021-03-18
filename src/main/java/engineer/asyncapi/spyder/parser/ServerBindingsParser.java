@@ -16,17 +16,14 @@ limitations under the License.
 
 package engineer.asyncapi.spyder.parser;
 
-import java.util.Set;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.bindings.BindingType;
 import engineer.asyncapi.spyder.model.bindings.ServerBinding;
 import engineer.asyncapi.spyder.model.bindings.ServerBindings;
+import java.util.Set;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 
@@ -57,29 +54,29 @@ final class ServerBindingsParser extends AsyncAPICommonObjectParser {
 
   static ServerBinding parse(final String type, final ObjectNode node) {
     switch (BindingType.getType(type)) {
-    case KAFKA:
-      return KafkaServerBindingParser.parse(node);
-    case AMQP:
-      return AMQP091ServerBindingParser.parse(node);
-    case MQTT:
-      return MQTTServerBindingParser.parse(node);
-    case IBMMQ:
-      return IBMMQServerBindingParser.parse(node);
-    case HTTP:
-    case WEBSOCKETS:
-    case AMQP1:
-    case MQTT5:
-    case NATS:
-    case JMS:
-    case SNS:
-    case SQS:
-    case STOMP:
-    case REDIS:
-    case MERCURE:
-      log.warn(ParseMessages.SERVER_BINDINGS_PARSER_NOT_IMPLEMENTED.message, type);
-      return null;
-    default:
-      return null;
+      case KAFKA:
+        return KafkaServerBindingParser.parse(node);
+      case AMQP:
+        return AMQP091ServerBindingParser.parse(node);
+      case MQTT:
+        return MQTTServerBindingParser.parse(node);
+      case IBMMQ:
+        return IBMMQServerBindingParser.parse(node);
+      case HTTP:
+      case WEBSOCKETS:
+      case AMQP1:
+      case MQTT5:
+      case NATS:
+      case JMS:
+      case SNS:
+      case SQS:
+      case STOMP:
+      case REDIS:
+      case MERCURE:
+        log.warn(ParseMessages.SERVER_BINDINGS_PARSER_NOT_IMPLEMENTED.message, type);
+        return null;
+      default:
+        return null;
     }
   }
 

@@ -18,15 +18,13 @@ package engineer.asyncapi.spyder.parser;
 
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.bindings.KafkaServerBinding010;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 public class KafkaServerBindingParserTest {
 

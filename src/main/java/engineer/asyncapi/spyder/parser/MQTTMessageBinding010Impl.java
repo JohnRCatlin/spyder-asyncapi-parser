@@ -27,52 +27,52 @@ import engineer.asyncapi.spyder.model.bindings.MQTTMessageBinding010;
  */
 final class MQTTMessageBinding010Impl implements MQTTMessageBinding010 {
 
-	/**
-	 * 
-	 * @author johncatlin
-	 *
-	 */
-	static final class Builder {
+  /**
+   * 
+   * @author johncatlin
+   *
+   */
+  static final class Builder {
 
-		private MQTTMessageBinding010Impl binding = new MQTTMessageBinding010Impl();
+    private MQTTMessageBinding010Impl binding = new MQTTMessageBinding010Impl();
 
-		public final MQTTMessageBinding010Impl build() {
-			return binding;
-		}
+    public final MQTTMessageBinding010Impl build() {
+      return binding;
+    }
 
-		final Builder extensions(final Extensions extensions) {
-			binding.extensions = extensions;
-			return this;
-		}
-	}
+    final Builder extensions(final Extensions extensions) {
+      binding.extensions = extensions;
+      return this;
+    }
+  }
 
-	static final String BINDING_VERSION = "0.1.0";
-	static final String TYPE = BindingType.MQTT.value;
+  static final String BINDING_VERSION = "0.1.0";
+  static final String TYPE = BindingType.MQTT.value;
 
-	private Extensions extensions = null;
+  private Extensions extensions = null;
 
-	private MQTTMessageBinding010Impl() {
-		/* Use the builder for construction. */
-	}
-
-	@Override
-	public final String getBindingType() {
-		return TYPE;
-	}
-
-	@Override
-	public final String getBindingVersion() {
-		return BINDING_VERSION;
-	}
-
-	@Override
-	public final Extensions getExtensions() {
-		return this.extensions;
-	}
+  private MQTTMessageBinding010Impl() {
+    /* Use the builder for construction. */
+  }
 
   @Override
-	public final String toString() {
-		return ToStringFormatter.toString(this);
-	}
+  public final String getBindingType() {
+    return TYPE;
+  }
+
+  @Override
+  public final String getBindingVersion() {
+    return BINDING_VERSION;
+  }
+
+  @Override
+  public final Extensions getExtensions() {
+    return this.extensions;
+  }
+
+  @Override
+  public final String toString() {
+    return ToStringFormatter.toString(this);
+  }
 
 }

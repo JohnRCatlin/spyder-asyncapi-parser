@@ -13,29 +13,26 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.Identifier;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 public class IdentifierParserTest {
 
   private static final String ID = "adfaseagbvaefdh df `dvsg";
 
   // given
-  private static final String rawModel = "{" + "\n" +
-      "'id':'" + ID + "'" + ",\n" +
-      "}";
+  private static final String rawModel = "{" + "\n" + "'id':'" + ID + "'" + ",\n" + "}";
 
   private ObjectMapper mapper = null;
   private JsonNode rootNode = null;

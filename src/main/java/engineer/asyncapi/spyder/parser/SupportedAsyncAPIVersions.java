@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 /**
@@ -22,12 +23,12 @@ package engineer.asyncapi.spyder.parser;
  */
 public enum SupportedAsyncAPIVersions {
 
-	V2_0_0("2.0.0");
+  V2_0_0("2.0.0");
 
-	public final String value;
+  public final String value;
 
-	SupportedAsyncAPIVersions(final String value) {
-		this.value = value;
-	}
+  SupportedAsyncAPIVersions(final String value) {
+    this.value = value;
+  }
 
 }

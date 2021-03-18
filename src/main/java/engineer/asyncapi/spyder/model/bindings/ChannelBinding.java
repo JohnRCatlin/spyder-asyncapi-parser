@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model.bindings;
 
 import engineer.asyncapi.spyder.model.Binding;
@@ -25,8 +26,8 @@ import engineer.asyncapi.spyder.model.Extensions;
  */
 public interface ChannelBinding extends Binding {
 
-	public Extensions getExtensions();
-	
-	String getBindingVersion();
+  public Extensions getExtensions();
+
+  String getBindingVersion();
 
 }

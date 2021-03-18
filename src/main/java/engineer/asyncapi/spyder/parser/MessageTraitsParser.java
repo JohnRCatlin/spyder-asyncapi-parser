@@ -16,15 +16,13 @@ limitations under the License.
 
 package engineer.asyncapi.spyder.parser;
 
-import java.util.Set;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.MessageTrait;
 import engineer.asyncapi.spyder.model.MessageTraits;
 import engineer.asyncapi.spyder.model.MessageTraitsList;
+import java.util.Set;
 
 /**
  * 

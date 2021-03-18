@@ -16,13 +16,12 @@ limitations under the License.
 
 package engineer.asyncapi.spyder.parser;
 
+import engineer.asyncapi.spyder.model.SecurityRequirement;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
-
-import engineer.asyncapi.spyder.model.SecurityRequirement;
 
 /**
  * 

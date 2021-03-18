@@ -13,11 +13,11 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model;
 
-import java.util.List;
-
 import engineer.asyncapi.spyder.model.bindings.OperationBindings;
+import java.util.List;
 
 /**
  * 
@@ -26,22 +26,22 @@ import engineer.asyncapi.spyder.model.bindings.OperationBindings;
  */
 public interface Operation {
 
-	OperationBindings getBindings();
+  OperationBindings getBindings();
 
-	String getDescription();
+  String getDescription();
 
-	Extensions getExtensions();
+  Extensions getExtensions();
 
-	ExternalDocs getExternalDocs();
+  ExternalDocs getExternalDocs();
 
-	Message getMessage();
+  Message getMessage();
 
-	String getOperationId();
+  String getOperationId();
 
-	String getSummary();
+  String getSummary();
 
-	List<Tag> getTags();
+  List<Tag> getTags();
 
-	List<OperationTrait> getTraits();
+  List<OperationTrait> getTraits();
 
 }

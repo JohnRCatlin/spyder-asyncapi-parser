@@ -23,5 +23,5 @@ package engineer.asyncapi.spyder.model.bindings;
  *
  */
 public interface KafkaServerBinding extends ServerBinding {
-	
+
 }

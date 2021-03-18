@@ -13,15 +13,14 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
-package engineer.asyncapi.spyder.parser;
 
-import java.util.Iterator;
-import java.util.Map;
+package engineer.asyncapi.spyder.parser;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.CorrelationId;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * 
@@ -30,25 +29,25 @@ import engineer.asyncapi.spyder.model.CorrelationId;
  */
 final class CorrelationIdsParser extends AsyncAPICommonObjectParser {
 
-	static final CorrelationIdsImpl parse(final ObjectNode node) {
-		if (node == null) {
-			return null;
-		}
-		final CorrelationIdsImpl correlationIds = new CorrelationIdsImpl();
-		final Iterator<Map.Entry<String, JsonNode>> i = node.fields();
-		while (i.hasNext()) {
-			final Map.Entry<String, JsonNode> entry = i.next();
-			if (isObjectNode(entry.getValue())) {
-				CorrelationId correlationId = CorrelationIdParser.parse((ObjectNode) entry.getValue());
-				if (correlationId != null) {
-					correlationIds.put(entry.getKey(), correlationId);
-				}
-			}
-		}
-		return correlationIds;
-	}
+  static final CorrelationIdsImpl parse(final ObjectNode node) {
+    if (node == null) {
+      return null;
+    }
+    final CorrelationIdsImpl correlationIds = new CorrelationIdsImpl();
+    final Iterator<Map.Entry<String, JsonNode>> i = node.fields();
+    while (i.hasNext()) {
+      final Map.Entry<String, JsonNode> entry = i.next();
+      if (isObjectNode(entry.getValue())) {
+        CorrelationId correlationId = CorrelationIdParser.parse((ObjectNode) entry.getValue());
+        if (correlationId != null) {
+          correlationIds.put(entry.getKey(), correlationId);
+        }
+      }
+    }
+    return correlationIds;
+  }
 
-	private CorrelationIdsParser() {
-		/* this static utility should not be instantiated */
-	}
+  private CorrelationIdsParser() {
+    /* this static utility should not be instantiated */
+  }
 }

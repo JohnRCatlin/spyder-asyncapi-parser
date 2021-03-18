@@ -16,16 +16,13 @@ limitations under the License.
 
 package engineer.asyncapi.spyder.parser;
 
-import java.util.Set;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.bindings.OperationBinding;
 import engineer.asyncapi.spyder.model.bindings.OperationBindings;
+import java.util.Set;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 

@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import static org.junit.Assert.assertEquals;
@@ -20,13 +21,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-
-import java.math.BigDecimal;
-import java.util.Map;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 
 import engineer.asyncapi.spyder.model.AsyncAPI;
 import engineer.asyncapi.spyder.model.Channel;
@@ -39,6 +33,11 @@ import engineer.asyncapi.spyder.model.Security;
 import engineer.asyncapi.spyder.model.ServerVariable;
 import engineer.asyncapi.spyder.model.bindings.KafkaOperationBinding010;
 import engineer.asyncapi.spyder.model.security.OAuthFlow;
+import java.math.BigDecimal;
+import java.util.Map;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 public class TestAsyncAPIV2Parser_streetlights extends AsyncApiV2ParserTestBase {
 
@@ -250,11 +249,11 @@ public class TestAsyncAPIV2Parser_streetlights extends AsyncApiV2ParserTestBase 
 
     assertTrue(trait.getHeaders().getProperties().containsKey("my-app-header"));
     assertNotNull(trait.getHeaders().getProperties().get("my-app-header"));
-//TODO: sort these when Scheme are refacotred
-    // assertEquals("integer",
-    // trait.getHeaders().getProperties().get("my-app-header").getType());
-//		assertEquals(new BigDecimal(0), trait.getHeaders().getProperties().get("my-app-header").getMinimum());
-//		assertEquals(new BigDecimal(100), trait.getHeaders().getProperties().get("my-app-header").getMaximum());
+    assertEquals("integer", trait.getHeaders().getProperties().get("my-app-header").getType());
+    assertEquals(new BigDecimal(0),
+        trait.getHeaders().getProperties().get("my-app-header").getMinimum());
+    assertEquals(new BigDecimal(100),
+        trait.getHeaders().getProperties().get("my-app-header").getMaximum());
   }
 
   @Test
@@ -362,12 +361,12 @@ public class TestAsyncAPIV2Parser_streetlights extends AsyncApiV2ParserTestBase 
     assertTrue(api.getComponents().getSecuritySchemes().containsKey("supportedOauthFlows"));
     assertTrue(api.getComponents().getSecuritySchemes().containsKey("openIdConnectWellKnown"));
 
-//		assertEquals(Type.APIKEY, api.getComponents().getSecuritySchemes().get("apiKey").getType());
+//assertEquals(Type.APIKEY, api.getComponents().getSecuritySchemes().get("apiKey").getType());
     assertEquals("user", api.getComponents().getSecuritySchemes().get("apiKey").getIn());
     assertTrue(api.getComponents().getSecuritySchemes().get("apiKey").getDescription()
         .contains("Provide your API key as the user and leave the password empty."));
 
-//		assertEquals(Type.OAUTH2, api.getComponents().getSecuritySchemes().get("supportedOauthFlows").getType());
+//assertEquals(Type.OAUTH2, api.getComponents().getSecuritySchemes().get("supportedOauthFlows").getType());
     assertNotNull(api.getComponents().getSecuritySchemes().get("supportedOauthFlows").getFlows());
 
     OAuthFlow implicitFlow = api.getComponents().getSecuritySchemes().get("supportedOauthFlows")

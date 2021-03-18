@@ -13,16 +13,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 
 import engineer.asyncapi.spyder.model.AsyncAPI;
 import engineer.asyncapi.spyder.model.CorrelationId;
@@ -42,6 +39,9 @@ import engineer.asyncapi.spyder.model.bindings.MessageBindings;
 import engineer.asyncapi.spyder.model.bindings.OperationBindings;
 import engineer.asyncapi.spyder.model.bindings.ServerBindings;
 import engineer.asyncapi.spyder.model.fields.Fields;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 public class TestComponentsFragments extends AsyncApiV2ParserTestBase {
 
@@ -428,8 +428,8 @@ public class TestComponentsFragments extends AsyncApiV2ParserTestBase {
     assertNotNull(api.getComponents().getSecuritySchemes().get("supportedOauthFlows"));
     SecurityScheme scheme = api.getComponents().getSecuritySchemes().get("supportedOauthFlows");
 
-//		assertNotNull(scheme.getType());
-//		assertEquals(Type.OAUTH2, scheme.getType());
+//assertNotNull(scheme.getType());
+//assertEquals(Type.OAUTH2, scheme.getType());
 
     assertNotNull(scheme.getFlows());
     assertNotNull(scheme.getFlows().getImplicit());

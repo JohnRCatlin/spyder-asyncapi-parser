@@ -16,13 +16,12 @@ limitations under the License.
 
 package engineer.asyncapi.spyder.parser;
 
+import engineer.asyncapi.spyder.model.CorrelationId;
+import engineer.asyncapi.spyder.model.CorrelationIds;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
-
-import engineer.asyncapi.spyder.model.CorrelationId;
-import engineer.asyncapi.spyder.model.CorrelationIds;
 
 /**
  * 

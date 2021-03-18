@@ -19,20 +19,18 @@ package engineer.asyncapi.spyder.parser;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.After;
-import org.junit.Test;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.bindings.AMQP091ChannelBinding020;
 import engineer.asyncapi.spyder.model.bindings.ChannelBindings;
 import engineer.asyncapi.spyder.model.bindings.IBMMQChannelBinding010;
 import engineer.asyncapi.spyder.model.bindings.KafkaChannelBinding010;
 import engineer.asyncapi.spyder.model.bindings.WebSocketsChannelBinding010;
+import org.junit.After;
+import org.junit.Test;
 
 public class ChannelBindingParserTest {
 

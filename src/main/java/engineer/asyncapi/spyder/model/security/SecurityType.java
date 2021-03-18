@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model.security;
 
 /**
@@ -22,19 +23,19 @@ package engineer.asyncapi.spyder.model.security;
  */
 public enum SecurityType {
 
-	APIKEY("apiKey"),
-	ASYMMETRICENCRYPTION("asymmetricEncryption"),
-	HTTP("http"),
-	HTTPAPIKEY("httpApiKey"),
-	OAUTH2("oauth2"),
-	OPENIDCONNECT("openIdConnect"),
-	SYMMETRICENCRYPTION("symmetricEncryption"),
-	USERPASSWORD("userPassword"),
-	X509("X509");
+  APIKEY("apiKey"),
+  ASYMMETRICENCRYPTION("asymmetricEncryption"),
+  HTTP("http"),
+  HTTPAPIKEY("httpApiKey"),
+  OAUTH2("oauth2"),
+  OPENIDCONNECT("openIdConnect"),
+  SYMMETRICENCRYPTION("symmetricEncryption"),
+  USERPASSWORD("userPassword"),
+  X509("X509");
 
-	public final String value;
+  public final String value;
 
-	SecurityType(final String value) {
-		this.value = value;
-	}
+  SecurityType(final String value) {
+    this.value = value;
+  }
 }

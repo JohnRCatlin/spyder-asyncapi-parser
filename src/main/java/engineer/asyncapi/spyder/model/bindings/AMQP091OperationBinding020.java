@@ -13,11 +13,11 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model.bindings;
 
-import java.util.List;
-
 import engineer.asyncapi.spyder.model.Extensions;
+import java.util.List;
 
 /**
  * .
@@ -27,28 +27,28 @@ import engineer.asyncapi.spyder.model.Extensions;
  */
 public interface AMQP091OperationBinding020 extends AMQP091OperationBinding {
 
-	List<String> getBcc();
+  List<String> getBcc();
 
-	List<String> getCc();
+  List<String> getCc();
 
-	int getDeliveryMode();
+  int getDeliveryMode();
 
-	long getExpiration();
+  long getExpiration();
 
-	Extensions getExtensions();
+  Extensions getExtensions();
 
-	int getPriority();
+  int getPriority();
 
-	String getReplyTo();
+  String getReplyTo();
 
-	String getBindingType();
+  String getBindingType();
 
-	String getUserId();
+  String getUserId();
 
-	boolean isAck();
+  boolean isAck();
 
-	boolean isMandatory();
+  boolean isMandatory();
 
-	boolean isTimestamp();
+  boolean isTimestamp();
 
 }

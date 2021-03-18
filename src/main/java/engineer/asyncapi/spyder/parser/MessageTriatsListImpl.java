@@ -13,16 +13,16 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
+import engineer.asyncapi.spyder.model.MessageTrait;
+import engineer.asyncapi.spyder.model.MessageTraitsList;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
-
-import engineer.asyncapi.spyder.model.MessageTrait;
-import engineer.asyncapi.spyder.model.MessageTraitsList;
 
 /**
  * 

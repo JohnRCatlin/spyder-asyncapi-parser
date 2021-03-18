@@ -13,15 +13,15 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
-package engineer.asyncapi.spyder.parser;
 
-import java.util.Map;
+package engineer.asyncapi.spyder.parser;
 
 import engineer.asyncapi.spyder.model.Extensions;
 import engineer.asyncapi.spyder.model.Security;
 import engineer.asyncapi.spyder.model.Server;
 import engineer.asyncapi.spyder.model.ServerVariable;
 import engineer.asyncapi.spyder.model.bindings.ServerBindings;
+import java.util.Map;
 
 /**
  * 

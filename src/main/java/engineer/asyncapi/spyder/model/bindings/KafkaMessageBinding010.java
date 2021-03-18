@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model.bindings;
 
 import engineer.asyncapi.spyder.model.Schema;
@@ -25,6 +26,6 @@ import engineer.asyncapi.spyder.model.Schema;
  */
 public interface KafkaMessageBinding010 extends KafkaMessageBinding {
 
-	Schema getKey();
+  Schema getKey();
 
 }

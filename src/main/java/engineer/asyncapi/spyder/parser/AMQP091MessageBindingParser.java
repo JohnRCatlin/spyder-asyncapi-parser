@@ -13,10 +13,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.bindings.AMQP091MessageBinding;
 import engineer.asyncapi.spyder.model.bindings.AMQP091MessageBinding020;
 import engineer.asyncapi.spyder.model.fields.Fields;
@@ -28,43 +28,44 @@ import engineer.asyncapi.spyder.model.fields.Fields;
  */
 final class AMQP091MessageBindingParser extends AsyncAPICommonObjectParser {
 
-	static final AMQP091MessageBinding parse(final ObjectNode node) {
-		try {
-			final String bindingVersion = parseBindingVersion(node);
-			if (null == bindingVersion || bindingVersion.equals(AMQP091MessageBinding020Impl.BINDING_VERSION)) {
-				return parseBindingV020(node);
-			}
-			// use latest
-			return parseBindingV020(node);
-		} catch (Exception e) {
-			return null;
-		}
-	}
+  static final AMQP091MessageBinding parse(final ObjectNode node) {
+    try {
+      final String bindingVersion = parseBindingVersion(node);
+      if (null == bindingVersion
+          || bindingVersion.equals(AMQP091MessageBinding020Impl.BINDING_VERSION)) {
+        return parseBindingV020(node);
+      }
+      // use latest
+      return parseBindingV020(node);
+    } catch (Exception e) {
+      return null;
+    }
+  }
 
-	private static final String parseContentEncoding(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		return stringFrom(Fields.CONTENT_ENCODING.value, node);
-	}
+  private static final String parseContentEncoding(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    return stringFrom(Fields.CONTENT_ENCODING.value, node);
+  }
 
-	private static final AMQP091MessageBinding020 parseBindingV020(final ObjectNode node) {
-		final AMQP091MessageBinding020Impl.Builder builder = new AMQP091MessageBinding020Impl.Builder();
-		builder.contentEncoding(parseContentEncoding(node));
-		builder.messageType(parseMessageType(node));
-		builder.extensions(parseExtensions(node));
-		return builder.build();
-	}
+  private static final AMQP091MessageBinding020 parseBindingV020(final ObjectNode node) {
+    final AMQP091MessageBinding020Impl.Builder builder = new AMQP091MessageBinding020Impl.Builder();
+    builder.contentEncoding(parseContentEncoding(node));
+    builder.messageType(parseMessageType(node));
+    builder.extensions(parseExtensions(node));
+    return builder.build();
+  }
 
-	private static final String parseMessageType(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		return stringFrom(Fields.MESSAGE_TYPE.value, node);
-	}
+  private static final String parseMessageType(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    return stringFrom(Fields.MESSAGE_TYPE.value, node);
+  }
 
-	private AMQP091MessageBindingParser() {
-		/* this static utility should not be instantiated */
-	}
+  private AMQP091MessageBindingParser() {
+    /* this static utility should not be instantiated */
+  }
 
 }

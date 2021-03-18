@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model.security;
 
 import engineer.asyncapi.spyder.model.Extensions;
@@ -25,14 +26,14 @@ import engineer.asyncapi.spyder.model.OAuthScopes;
  */
 public interface OAuthFlow {
 
-	String getAuthorizationUrl();
+  String getAuthorizationUrl();
 
-	Extensions getExtensions();
+  Extensions getExtensions();
 
-	String getRefreshUrl();
+  String getRefreshUrl();
 
-	OAuthScopes getScopes();
+  OAuthScopes getScopes();
 
-	String getTokenUrl();
+  String getTokenUrl();
 
 }

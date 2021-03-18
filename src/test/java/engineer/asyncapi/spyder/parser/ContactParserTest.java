@@ -20,15 +20,13 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.Contact;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 public class ContactParserTest {
 
@@ -41,14 +39,9 @@ public class ContactParserTest {
   private ObjectMapper mapper = null;
 
   // given
-  private final String rawModel = "{" + "\n" +
-      "'name':'" + Name + "'" + ",\n" +
-      "'url':'" + Url + "'" + ",\n" +
-      "'email':'" + Email + "'" + ",\n" +
-      "'extensions': {" + "\n" +
-      "'x-foo':'" + xFoo + "'" + ",\n" +
-      "'x-bar':'" + xBar + "'" + "}\n" +
-      "}";
+  private final String rawModel = "{" + "\n" + "'name':'" + Name + "'" + ",\n" + "'url':'" + Url
+      + "'" + ",\n" + "'email':'" + Email + "'" + ",\n" + "'extensions': {" + "\n" + "'x-foo':'"
+      + xFoo + "'" + ",\n" + "'x-bar':'" + xBar + "'" + "}\n" + "}";
   private JsonNode rootNode = null;
 
   @Before

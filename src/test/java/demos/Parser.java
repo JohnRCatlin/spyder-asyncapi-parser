@@ -13,19 +13,18 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package demos;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import java.io.File;
-
-import org.junit.Test;
-
 import engineer.asyncapi.spyder.model.AsyncAPI;
 import engineer.asyncapi.spyder.parser.AsyncAPIParser;
 import engineer.asyncapi.spyder.parser.AsyncAPIParserFactory;
 import engineer.asyncapi.spyder.parser.SupportedAsyncAPIVersions;
+import java.io.File;
+import org.junit.Test;
 
 public class Parser {
 

@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model.security;
 
 import engineer.asyncapi.spyder.model.Extensions;
@@ -24,14 +25,14 @@ import engineer.asyncapi.spyder.model.Extensions;
  */
 public interface OAuthFlows {
 
-	OAuthFlow getAuthorizationCode();
+  OAuthFlow getAuthorizationCode();
 
-	OAuthFlow getClientCredentials();
+  OAuthFlow getClientCredentials();
 
-	Extensions getExtensions();
+  Extensions getExtensions();
 
-	OAuthFlow getImplicit();
+  OAuthFlow getImplicit();
 
-	OAuthFlow getPassword();
+  OAuthFlow getPassword();
 
 }

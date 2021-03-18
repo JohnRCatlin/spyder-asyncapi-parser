@@ -16,16 +16,15 @@ limitations under the License.
 
 package engineer.asyncapi.spyder.parser;
 
-import java.math.BigDecimal;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import engineer.asyncapi.spyder.model.Example;
 import engineer.asyncapi.spyder.model.Examples;
 import engineer.asyncapi.spyder.model.Extensions;
 import engineer.asyncapi.spyder.model.ExternalDocs;
 import engineer.asyncapi.spyder.model.Schema;
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 class SchemaImpl implements Schema {
 

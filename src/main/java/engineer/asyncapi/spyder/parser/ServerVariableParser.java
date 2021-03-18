@@ -17,7 +17,6 @@ limitations under the License.
 package engineer.asyncapi.spyder.parser;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.ServerVariable;
 
 /**

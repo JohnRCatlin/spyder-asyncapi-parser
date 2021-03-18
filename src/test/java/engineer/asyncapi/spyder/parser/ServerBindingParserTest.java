@@ -13,25 +13,24 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
-
-import org.junit.After;
-import org.junit.Test;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.bindings.AMQP091ServerBinding020;
 import engineer.asyncapi.spyder.model.bindings.IBMMQServerBinding010;
 import engineer.asyncapi.spyder.model.bindings.KafkaServerBinding010;
 import engineer.asyncapi.spyder.model.bindings.MQTTServerBinding010;
 import engineer.asyncapi.spyder.model.bindings.ServerBindings;
+import org.junit.After;
+import org.junit.Test;
 
 public class ServerBindingParserTest {
 

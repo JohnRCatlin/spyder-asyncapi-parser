@@ -13,16 +13,15 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
-package engineer.asyncapi.spyder.parser;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
+package engineer.asyncapi.spyder.parser;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.ServerVariable;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * 
@@ -31,23 +30,23 @@ import engineer.asyncapi.spyder.model.ServerVariable;
  */
 final class ServerVariablesParser extends AsyncAPICommonObjectParser {
 
-	static final Map<String, ServerVariable> parse(final ObjectNode node) {
-		if (node == null) {
-			return null;
-		}
-		final Map<String, ServerVariable> serverVariables = new LinkedHashMap<>();
-		final Set<String> serverKeys = keySetFrom(node);
-		for (final String serverName : serverKeys) {
-			final JsonNode serverValue = node.get(serverName);
-			final ObjectNode server = (ObjectNode) serverValue;
-			final ServerVariable serverVariable = ServerVariableParser.parse(server);
-			serverVariables.put(serverName, serverVariable);
-		}
-		return serverVariables;
-	}
+  static final Map<String, ServerVariable> parse(final ObjectNode node) {
+    if (node == null) {
+      return null;
+    }
+    final Map<String, ServerVariable> serverVariables = new LinkedHashMap<>();
+    final Set<String> serverKeys = keySetFrom(node);
+    for (final String serverName : serverKeys) {
+      final JsonNode serverValue = node.get(serverName);
+      final ObjectNode server = (ObjectNode) serverValue;
+      final ServerVariable serverVariable = ServerVariableParser.parse(server);
+      serverVariables.put(serverName, serverVariable);
+    }
+    return serverVariables;
+  }
 
-	private ServerVariablesParser() {
-		/* this static utility should not be instantiated */
-	}
+  private ServerVariablesParser() {
+    /* this static utility should not be instantiated */
+  }
 
 }

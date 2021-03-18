@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model.fields;
 
 /**
@@ -22,19 +23,19 @@ package engineer.asyncapi.spyder.model.fields;
  */
 enum ChannelItemFields {
 
-	BINDINGS("bindings", false),
-	DESCRIPTION("description", false),
-	EXTENSIONS("extensions", false),
-	PARAMETERS("parameters", false),
-	PUBLISH("publish", false),
-	REF("$ref", false),
-	SUBSCRIBE("subscribe", false);
+  BINDINGS("bindings", false),
+  DESCRIPTION("description", false),
+  EXTENSIONS("extensions", false),
+  PARAMETERS("parameters", false),
+  PUBLISH("publish", false),
+  REF("$ref", false),
+  SUBSCRIBE("subscribe", false);
 
-	public final String field;
-	public final boolean required;
+  public final String field;
+  public final boolean required;
 
-	ChannelItemFields(final String field, final boolean required) {
-		this.field = field;
-		this.required = required;
-	}
+  ChannelItemFields(final String field, final boolean required) {
+    this.field = field;
+    this.required = required;
+  }
 }

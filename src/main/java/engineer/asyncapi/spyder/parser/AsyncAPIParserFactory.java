@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 /**
@@ -22,14 +23,14 @@ package engineer.asyncapi.spyder.parser;
  */
 public final class AsyncAPIParserFactory {
 
-	public static final AsyncAPIParser create(final SupportedAsyncAPIVersions version) {
-		if (version.equals(SupportedAsyncAPIVersions.V2_0_0)) {
-			return new AsyncAPIv20ParserImpl();
-		}
-		return null;
-	}
+  public static final AsyncAPIParser create(final SupportedAsyncAPIVersions version) {
+    if (version.equals(SupportedAsyncAPIVersions.V2_0_0)) {
+      return new AsyncAPIv20ParserImpl();
+    }
+    return null;
+  }
 
-	private AsyncAPIParserFactory() {
-		/* this static utility should not be instantiated */
-	}
+  private AsyncAPIParserFactory() {
+    /* this static utility should not be instantiated */
+  }
 }

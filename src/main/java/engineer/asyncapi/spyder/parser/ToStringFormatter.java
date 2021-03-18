@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
@@ -25,11 +26,11 @@ import org.apache.commons.lang3.builder.ToStringStyle;
  */
 final class ToStringFormatter {
 
-	public static final String toString(final Object object) {
-		return ReflectionToStringBuilder.toString(object, ToStringStyle.MULTI_LINE_STYLE, true, true);
-	}
+  public static final String toString(final Object object) {
+    return ReflectionToStringBuilder.toString(object, ToStringStyle.MULTI_LINE_STYLE, true, true);
+  }
 
-	private ToStringFormatter() {
-		/* this static utility should not be instantiated */
-	}
+  private ToStringFormatter() {
+    /* this static utility should not be instantiated */
+  }
 }

@@ -20,15 +20,13 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.Server;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 public class ServerParserTest {
 
@@ -93,9 +91,9 @@ public class ServerParserTest {
     assertEquals(ProtocolVersion, parsed.getProtocolVersion());
     assertEquals(Description, parsed.getDescription());
 
-//		assertNotNull(parsed.getExtensions());
-//		assertTrue(parsed.getExtensions().containsKey("x-foo"));
-//		assertTrue(parsed.getExtensions().containsKey("x-bar"));
+    assertNotNull(parsed.getExtensions());
+    assertTrue(parsed.getExtensions().containsKey("x-foo"));
+    assertTrue(parsed.getExtensions().containsKey("x-bar"));
 
     assertNotNull(parsed.getVariables());
     assertTrue(parsed.getVariables().containsKey("port"));

@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import static org.junit.Assert.assertEquals;
@@ -20,18 +21,15 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import java.util.List;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.Schema;
+import java.util.List;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 public class TestSchema2Fragments extends AsyncApiV2ParserTestBase {
 
@@ -59,19 +57,17 @@ public class TestSchema2Fragments extends AsyncApiV2ParserTestBase {
    */
   private ObjectNode getSchemaNode(final String schema) {
     JsonNode rootNode = null;
-    JsonNode componentsNode = null;
-    JsonNode schemasNode = null;
-    JsonNode testSubjectNode = null;
     FileReader reader = new FileReader();
     final String rawModel = reader.fromLocation(currentWorkingDirectory() + schema);
     final ObjectMapper mapper = mapperInstance(rawModel);
     try {
       rootNode = mapper.readTree(rawModel);
     } catch (JsonProcessingException e) {
+      //
     }
-    componentsNode = rootNode.get("components");
-    schemasNode = componentsNode.get("schemas");
-    testSubjectNode = schemasNode.get("test");
+    final JsonNode componentsNode = rootNode.get("components");
+    final JsonNode schemasNode = componentsNode.get("schemas");
+    final JsonNode testSubjectNode = schemasNode.get("test");
     return (ObjectNode) testSubjectNode;
   }
 
@@ -312,10 +308,9 @@ public class TestSchema2Fragments extends AsyncApiV2ParserTestBase {
     assertNotNull(schema.isDeprecated());
 
     // not yet implemented
-//		assertNotNull(schema.getContains());
-//		assertNotNull(schema.getItems());
-//		assertNotNull(schema.getExamples());
-//		assertNotNull(schema.getPatternProperties());
-//		assertNotNull(schema.getPropertyNames());
+    // assertNotNull(schema.getContains());
+    // assertNotNull(schema.getItems());
+    // assertNotNull(schema.getExamples());
+    // assertNotNull(schema.getPropertyNames());
   }
 }

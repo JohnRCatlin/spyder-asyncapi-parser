@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import static org.junit.Assert.assertNotNull;
@@ -24,25 +25,25 @@ import org.junit.Test;
 
 public class FileReaderTest {
 
-	@Before
-	public void setUp() throws Exception {
-	}
+  @Before
+  public void setUp() throws Exception {
+  }
 
-	@After
-	public void tearDown() throws Exception {
-	}
+  @After
+  public void tearDown() throws Exception {
+  }
 
-	@Test
-	public void test() {
-		// given
-		final String sourceFile = "/src/test/resources/streetlights2.yml";
+  @Test
+  public void test() {
+    // given
+    final String sourceFile = "/src/test/resources/streetlights2.yml";
 
-		// when
-		FileReader reader = new FileReader();
-		final String rawModel = reader.fromLocation(reader.currentWorkingDirectory() + sourceFile);
+    // when
+    FileReader reader = new FileReader();
+    final String rawModel = reader.fromLocation(reader.currentWorkingDirectory() + sourceFile);
 
-		// then
-		assertNotNull(rawModel);
-		assertTrue(rawModel.contains("asyncapi: '2.0.0'"));
-	}
+    // then
+    assertNotNull(rawModel);
+    assertTrue(rawModel.contains("asyncapi: '2.0.0'"));
+  }
 }

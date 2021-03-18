@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model.bindings;
 
 /**
@@ -23,22 +24,22 @@ package engineer.asyncapi.spyder.model.bindings;
  */
 public interface IBMMQChannelBinding extends ChannelBinding {
 
-	String getDestinationType();
+  String getDestinationType();
 
-	Boolean getQueueExclusive();
+  Boolean getQueueExclusive();
 
-	Boolean getQueueIsPartitioned();
+  Boolean getQueueIsPartitioned();
 
-	String getQueueObjectName();
+  String getQueueObjectName();
 
-	Boolean getTopicDurablePermitted();
+  Boolean getTopicDurablePermitted();
 
-	Boolean getTopicLastMsgRetained();
+  Boolean getTopicLastMsgRetained();
 
-	String getTopicObjectName();
+  String getTopicObjectName();
 
-	String getTopicString();
+  String getTopicString();
 
-	Integer maxMsgLength();
+  Integer maxMsgLength();
 
 }

@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model.fields;
 
 /**
@@ -22,15 +23,15 @@ package engineer.asyncapi.spyder.model.fields;
  */
 enum LicenseFields {
 
-	EXTENSIONS("extensions", false),
-	NAME("name", false),
-	URL("url", false);
+  EXTENSIONS("extensions", false),
+  NAME("name", false),
+  URL("url", false);
 
-	public final String field;
-	public final boolean required;
+  public final String field;
+  public final boolean required;
 
-	LicenseFields(final String field, final boolean required) {
-		this.field = field;
-		this.required = required;
-	}
+  LicenseFields(final String field, final boolean required) {
+    this.field = field;
+    this.required = required;
+  }
 }

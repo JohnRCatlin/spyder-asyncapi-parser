@@ -13,12 +13,12 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-
 import org.apache.commons.io.IOUtils;
 
 /**
@@ -28,12 +28,12 @@ import org.apache.commons.io.IOUtils;
  */
 final class URLReader {
 
-	public final String fromLocation(final String url) {
-		try (InputStream inputStream = new URL(url).openStream()) {
-			return IOUtils.toString(inputStream, StandardCharsets.UTF_8);
-		} catch (Exception e) {
-			return null;
-		}
-	}
+  public final String fromLocation(final String url) {
+    try (InputStream inputStream = new URL(url).openStream()) {
+      return IOUtils.toString(inputStream, StandardCharsets.UTF_8);
+    } catch (Exception e) {
+      return null;
+    }
+  }
 
 }

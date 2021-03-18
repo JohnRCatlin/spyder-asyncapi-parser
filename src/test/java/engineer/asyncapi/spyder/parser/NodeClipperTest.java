@@ -20,13 +20,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 public class NodeClipperTest extends AsyncApiV2ParserTestBase {
 
@@ -35,9 +34,6 @@ public class NodeClipperTest extends AsyncApiV2ParserTestBase {
   private final ObjectMapper mapper = ObjectMapperFactory.forYaml();
   private JsonNode rootNode = null;
 
-  /**
-   * @throws Exception
-   */
   @Test
   public void objectValueClip() throws Exception {
 
@@ -57,9 +53,6 @@ public class NodeClipperTest extends AsyncApiV2ParserTestBase {
     rootNode = mapper.readTree(rawSubjectModel);
   }
 
-  /**
-   * @throws Exception
-   */
   @Test
   public void stringValueClip() throws Exception {
 
@@ -71,9 +64,6 @@ public class NodeClipperTest extends AsyncApiV2ParserTestBase {
     assertEquals("2.0.0", clippedValue);
   }
 
-  /**
-   * @throws Exception
-   */
   @Test
   public void stringValueFromObject() throws Exception {
 

@@ -16,13 +16,12 @@ limitations under the License.
 
 package engineer.asyncapi.spyder.parser;
 
+import engineer.asyncapi.spyder.model.MessageTrait;
+import engineer.asyncapi.spyder.model.MessageTraits;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
-
-import engineer.asyncapi.spyder.model.MessageTrait;
-import engineer.asyncapi.spyder.model.MessageTraits;
 
 /**
  * 

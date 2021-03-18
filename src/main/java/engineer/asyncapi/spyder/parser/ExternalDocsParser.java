@@ -13,10 +13,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.ExternalDocs;
 
 /**
@@ -26,19 +26,19 @@ import engineer.asyncapi.spyder.model.ExternalDocs;
  */
 final class ExternalDocsParser extends AsyncAPICommonObjectParser {
 
-	static final ExternalDocs parse(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		final ExternalDocsImpl.Builder builder = new ExternalDocsImpl.Builder();
-		builder.description(parseDescription(node));
-		builder.url(parseUrl(node));
-		builder.extensions(parseExtensions(node));
-		return builder.build();
-	}
+  static final ExternalDocs parse(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    final ExternalDocsImpl.Builder builder = new ExternalDocsImpl.Builder();
+    builder.description(parseDescription(node));
+    builder.url(parseUrl(node));
+    builder.extensions(parseExtensions(node));
+    return builder.build();
+  }
 
-	private ExternalDocsParser() {
-		/* this static utility should not be instantiated */
-	}
+  private ExternalDocsParser() {
+    /* this static utility should not be instantiated */
+  }
 
 }

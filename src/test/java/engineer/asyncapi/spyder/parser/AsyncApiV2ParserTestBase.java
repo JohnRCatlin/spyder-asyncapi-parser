@@ -13,72 +13,72 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
+import engineer.asyncapi.spyder.model.MessageTrait;
+import engineer.asyncapi.spyder.model.OperationTrait;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.util.List;
-
 import org.apache.commons.io.IOUtils;
-
-import engineer.asyncapi.spyder.model.MessageTrait;
-import engineer.asyncapi.spyder.model.OperationTrait;
 
 /*
  * 
  */
 public class AsyncApiV2ParserTestBase {
 
-	/*
-	 * 
-	 */
-	protected final String currentWorkingDirectory() {
-		return new File("").getAbsolutePath();
-	}
+  /*
+   * 
+   */
+  protected final String currentWorkingDirectory() {
+    return new File("").getAbsolutePath();
+  }
 
-	/*
-	 * 
-	 */
-	protected boolean messageTraitListContainsRef(final List<MessageTrait> list, final String value) {
+  /*
+   * 
+   */
+  protected boolean messageTraitListContainsRef(final List<MessageTrait> list, final String value) {
 
-		for (MessageTrait trait : list) {
-			if (trait.getRef().equals(value)) {
-				return true;
-			}
-		}
+    for (MessageTrait trait : list) {
+      if (trait.getRef().equals(value)) {
+        return true;
+      }
+    }
 
-		return false;
-	}
+    return false;
+  }
 
-	/*
-	 * 
-	 */
-	protected boolean operationTraitListContainsRef(final List<OperationTrait> list, final String value) {
+  /*
+   * 
+   */
+  protected boolean operationTraitListContainsRef(final List<OperationTrait> list,
+      final String value) {
 
-		for (OperationTrait trait : list) {
-			if (trait.getRef().equals(value)) {
-				return true;
-			}
-		}
+    for (OperationTrait trait : list) {
+      if (trait.getRef().equals(value)) {
+        return true;
+      }
+    }
 
-		return false;
-	}
+    return false;
+  }
 
-	/*
-	 * 
-	 */
-	protected final String rawModelFromFile(final String modelSourceLocation) throws Exception {
+  /*
+   * 
+   */
+  protected final String rawModelFromFile(final String modelSourceLocation) throws Exception {
 
-		String modelRawString = null;
-		File file = new File(modelSourceLocation);
-		try (InputStream modelInputStream = new FileInputStream(file)) {
-			modelRawString = IOUtils.toString(modelInputStream, Charset.defaultCharset()).trim();
-		} catch (Exception e) {
-			throw e;
-		}
+    String modelRawString = null;
+    File file = new File(modelSourceLocation);
+    try (InputStream modelInputStream = new FileInputStream(file)) {
+      modelRawString = IOUtils.toString(modelInputStream, Charset.defaultCharset()).trim();
+    } catch (Exception e) {
+      throw e;
+    }
 
-		return modelRawString;
-	}
+    return modelRawString;
+  }
 }

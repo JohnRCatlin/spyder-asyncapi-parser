@@ -13,9 +13,8 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
-package engineer.asyncapi.spyder.parser;
 
-import java.util.List;
+package engineer.asyncapi.spyder.parser;
 
 import engineer.asyncapi.spyder.model.Extensions;
 import engineer.asyncapi.spyder.model.ExternalDocs;
@@ -24,6 +23,7 @@ import engineer.asyncapi.spyder.model.Operation;
 import engineer.asyncapi.spyder.model.OperationTrait;
 import engineer.asyncapi.spyder.model.Tag;
 import engineer.asyncapi.spyder.model.bindings.OperationBindings;
+import java.util.List;
 
 /**
  * 

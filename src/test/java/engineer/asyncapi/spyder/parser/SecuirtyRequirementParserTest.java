@@ -19,14 +19,12 @@ package engineer.asyncapi.spyder.parser;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import org.junit.Before;
-import org.junit.Test;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.SecurityRequirement;
+import org.junit.Before;
+import org.junit.Test;
 
 public class SecuirtyRequirementParserTest {
 
@@ -63,14 +61,6 @@ public class SecuirtyRequirementParserTest {
     sb.append("}");
     rawModel3 = sb.toString();
   }
-
-//  security:
-//    - apiKey: []
-//    - supportedOauthFlows:
-//      - streetlights:on
-//      - streetlights:off
-//      - streetlights:dim
-//    - openIdConnectWellKnown: []
 
   private ObjectMapper mapper = null;
 

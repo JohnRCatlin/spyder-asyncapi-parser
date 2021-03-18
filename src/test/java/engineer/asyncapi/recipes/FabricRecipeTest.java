@@ -20,8 +20,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.Test;
-
 import engineer.asyncapi.spyder.model.AsyncAPI;
 import engineer.asyncapi.spyder.model.Channel;
 import engineer.asyncapi.spyder.model.Channels;
@@ -45,6 +43,7 @@ import engineer.asyncapi.spyder.model.bindings.MessageBindings;
 import engineer.asyncapi.spyder.parser.AsyncAPIParser;
 import engineer.asyncapi.spyder.parser.AsyncAPIParserFactory;
 import engineer.asyncapi.spyder.parser.SupportedAsyncAPIVersions;
+import org.junit.Test;
 
 public class FabricRecipeTest {
 

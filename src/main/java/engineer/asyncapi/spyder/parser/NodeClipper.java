@@ -16,19 +16,16 @@ limitations under the License.
 
 package engineer.asyncapi.spyder.parser;
 
-import java.math.BigDecimal;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.Set;
-
-import org.apache.commons.lang3.StringUtils;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.JsonNodeType;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.fields.Fields;
+import java.math.BigDecimal;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Set;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * 

@@ -16,17 +16,14 @@ limitations under the License.
 
 package engineer.asyncapi.spyder.parser;
 
-import java.util.Set;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.bindings.BindingType;
 import engineer.asyncapi.spyder.model.bindings.MessageBinding;
 import engineer.asyncapi.spyder.model.bindings.MessageBindings;
+import java.util.Set;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 
@@ -65,30 +62,30 @@ final class MessageBindingsParser extends AsyncAPICommonObjectParser {
 
   static final MessageBinding parse(final String type, final ObjectNode node) {
     switch (BindingType.getType(type)) {
-    case KAFKA:
-      return KafkaMessageBindingParser.parse(node);
-    case AMQP:
-      return AMQP091MessageBindingParser.parse(node);
-    case HTTP:
-      return HTTPMessageBindingParser.parse(node);
-    case MQTT:
-      return MQTTMessageBindingParser.parse(node);
-    case IBMMQ:
-      return IBMMQMessageBindingParser.parse(node);
-    case WEBSOCKETS:
-    case AMQP1:
-    case MQTT5:
-    case NATS:
-    case JMS:
-    case SNS:
-    case SQS:
-    case STOMP:
-    case REDIS:
-    case MERCURE:
-      log.warn(ParseMessages.MESSAGE_BINDINGS_PARSER_NOT_IMPLEMENTED.message, type);
-      return null;
-    default:
-      return null;
+      case KAFKA:
+        return KafkaMessageBindingParser.parse(node);
+      case AMQP:
+        return AMQP091MessageBindingParser.parse(node);
+      case HTTP:
+        return HTTPMessageBindingParser.parse(node);
+      case MQTT:
+        return MQTTMessageBindingParser.parse(node);
+      case IBMMQ:
+        return IBMMQMessageBindingParser.parse(node);
+      case WEBSOCKETS:
+      case AMQP1:
+      case MQTT5:
+      case NATS:
+      case JMS:
+      case SNS:
+      case SQS:
+      case STOMP:
+      case REDIS:
+      case MERCURE:
+        log.warn(ParseMessages.MESSAGE_BINDINGS_PARSER_NOT_IMPLEMENTED.message, type);
+        return null;
+      default:
+        return null;
     }
   }
 

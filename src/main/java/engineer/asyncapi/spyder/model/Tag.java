@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model;
 
 /**
@@ -22,12 +23,12 @@ package engineer.asyncapi.spyder.model;
  */
 public interface Tag {
 
-	String getDescription();
+  String getDescription();
 
-	Extensions getExtensions();
+  Extensions getExtensions();
 
-	ExternalDocs getExternalDocs();
+  ExternalDocs getExternalDocs();
 
-	String getName();
+  String getName();
 
 }

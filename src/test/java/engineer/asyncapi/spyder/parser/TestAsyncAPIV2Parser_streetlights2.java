@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import static org.junit.Assert.assertEquals;
@@ -20,13 +21,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-
-import java.math.BigDecimal;
-import java.util.Map;
-
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 
 import engineer.asyncapi.spyder.model.AsyncAPI;
 import engineer.asyncapi.spyder.model.Channel;
@@ -40,6 +34,11 @@ import engineer.asyncapi.spyder.model.ServerVariable;
 import engineer.asyncapi.spyder.model.bindings.KafkaOperationBinding010;
 import engineer.asyncapi.spyder.model.security.OAuthFlow;
 import engineer.asyncapi.spyder.model.security.SecurityType;
+import java.math.BigDecimal;
+import java.util.Map;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 public class TestAsyncAPIV2Parser_streetlights2 extends AsyncApiV2ParserTestBase {
 

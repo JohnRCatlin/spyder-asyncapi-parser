@@ -20,12 +20,11 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import engineer.asyncapi.spyder.model.AsyncAPI;
+import engineer.asyncapi.spyder.model.Schema;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import engineer.asyncapi.spyder.model.AsyncAPI;
-import engineer.asyncapi.spyder.model.Schema;
 
 public class TestSchemaFragments extends AsyncApiV2ParserTestBase {
 

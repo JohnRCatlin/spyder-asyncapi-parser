@@ -16,15 +16,13 @@ limitations under the License.
 
 package engineer.asyncapi.spyder.parser;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.fasterxml.jackson.databind.node.ObjectNode;
-
 import engineer.asyncapi.spyder.model.Schema;
 import engineer.asyncapi.spyder.model.bindings.KafkaOperationBinding;
 import engineer.asyncapi.spyder.model.bindings.KafkaOperationBinding010;
 import engineer.asyncapi.spyder.model.fields.Fields;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 

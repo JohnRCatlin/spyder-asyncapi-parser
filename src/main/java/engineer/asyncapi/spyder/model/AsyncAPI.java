@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model;
 
 /**
@@ -20,8 +21,8 @@ package engineer.asyncapi.spyder.model;
  * This is the model's root object.
  * </p>
  * <p>
- * To get started, see the code sample at <a href=
- * "../parser/package-summary.html">AsyncAPIParserFactory</a>.
+ * To get started, see the code sample at
+ * <a href= "../parser/package-summary.html">AsyncAPIParserFactory</a>.
  * </p>
  * 
  * @author johncatlin
@@ -29,26 +30,26 @@ package engineer.asyncapi.spyder.model;
  */
 public interface AsyncAPI {
 
-	String getAsyncapi();
+  String getAsyncapi();
 
-	Channels getChannels();
+  Channels getChannels();
 
-	Components getComponents();
+  Components getComponents();
 
-	String getDefaultContentType();
+  String getDefaultContentType();
 
-	Extensions getExtensions();
+  Extensions getExtensions();
 
-	ExternalDocs getExternalDocs();
+  ExternalDocs getExternalDocs();
 
-	Identifier getIdentifier();
+  Identifier getIdentifier();
 
-	Info getInfo();
+  Info getInfo();
 
-	Servers getServers();
+  Servers getServers();
 
-	Tags getTags();
+  Tags getTags();
 
-	String toString();
+  String toString();
 
 }

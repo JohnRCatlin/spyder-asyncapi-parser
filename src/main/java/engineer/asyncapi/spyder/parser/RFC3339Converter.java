@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import java.time.OffsetDateTime;
@@ -28,32 +29,33 @@ import java.util.regex.Pattern;
  */
 final class RFC3339Converter {
 
-	private static final Pattern RFC3339_DATE_PATTERN = Pattern.compile("^(\\d{4})-(\\d{2})-(\\d{2})$");
+  private static final Pattern RFC3339_DATE_PATTERN = Pattern
+      .compile("^(\\d{4})-(\\d{2})-(\\d{2})$");
 
-	static final Date toDate(final String rfc3339DateString) {
-		final Matcher matcher = RFC3339_DATE_PATTERN.matcher(rfc3339DateString);
-		if (matcher.matches()) {
-			final Integer year = Integer.parseInt(matcher.group(1));
-			final Integer month = Integer.parseInt(matcher.group(2));
-			final Integer day = Integer.parseInt(matcher.group(3));
-			try {
-				return new Calendar.Builder().setDate(year, month, day).build().getTime();
-			} catch (final Exception ignore) {
-				return null;
-			}
-		}
-		return null;
-	}
+  static final Date toDate(final String rfc3339DateString) {
+    final Matcher matcher = RFC3339_DATE_PATTERN.matcher(rfc3339DateString);
+    if (matcher.matches()) {
+      final Integer year = Integer.parseInt(matcher.group(1));
+      final Integer month = Integer.parseInt(matcher.group(2));
+      final Integer day = Integer.parseInt(matcher.group(3));
+      try {
+        return new Calendar.Builder().setDate(year, month, day).build().getTime();
+      } catch (final Exception ignore) {
+        return null;
+      }
+    }
+    return null;
+  }
 
-	static final OffsetDateTime toOffsetDateTime(final String rfc3339DateString) {
-		try {
-			return OffsetDateTime.parse(rfc3339DateString);
-		} catch (final Exception ignore) {
-			return null;
-		}
-	}
+  static final OffsetDateTime toOffsetDateTime(final String rfc3339DateString) {
+    try {
+      return OffsetDateTime.parse(rfc3339DateString);
+    } catch (final Exception ignore) {
+      return null;
+    }
+  }
 
-	private RFC3339Converter() {
-		// static utility should not be instantiated.
-	}
+  private RFC3339Converter() {
+    // static utility should not be instantiated.
+  }
 }

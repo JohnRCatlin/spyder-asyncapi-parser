@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model;
 
 import java.util.List;
@@ -24,5 +25,5 @@ import java.util.List;
  */
 public interface SecurityRequirement extends List<String> {
 
-	String getName();
+  String getName();
 }

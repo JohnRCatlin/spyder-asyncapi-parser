@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model;
 
 import engineer.asyncapi.spyder.model.bindings.ChannelBindings;
@@ -27,28 +28,28 @@ import engineer.asyncapi.spyder.model.bindings.ServerBindings;
  */
 public interface Components {
 
-	ChannelBindings getChannelBindings();
+  ChannelBindings getChannelBindings();
 
-	CorrelationIds getCorrelationIds();
+  CorrelationIds getCorrelationIds();
 
-	Extensions getExtensions();
+  Extensions getExtensions();
 
-	MessageBindings getMessageBindings();
+  MessageBindings getMessageBindings();
 
-	Messages getMessages();
+  Messages getMessages();
 
-	MessageTraits getMessageTraits();
+  MessageTraits getMessageTraits();
 
-	OperationBindings getOperationBindings();
+  OperationBindings getOperationBindings();
 
-	OperationTraits getOperationTraits();
+  OperationTraits getOperationTraits();
 
-	Parameters getParameters();
+  Parameters getParameters();
 
-	Schemas getSchemas();
+  Schemas getSchemas();
 
-	SecuritySchemes getSecuritySchemes();
+  SecuritySchemes getSecuritySchemes();
 
-	ServerBindings getServerBindings();
+  ServerBindings getServerBindings();
 
 }

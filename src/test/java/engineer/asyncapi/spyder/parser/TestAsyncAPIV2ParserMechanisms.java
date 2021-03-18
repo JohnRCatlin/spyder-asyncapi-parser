@@ -13,65 +13,64 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
+import engineer.asyncapi.spyder.model.AsyncAPI;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import engineer.asyncapi.spyder.model.AsyncAPI;
-
 public class TestAsyncAPIV2ParserMechanisms extends AsyncApiV2ParserTestBase {
 
-	private static AsyncAPI api;
-	private static String rawSubjectModel;
-	private static final String SUBJECT_FILE_LOCATION = "/src/test/resources/streetlights2.yml";
-	private static final String URL = "https://raw.githubusercontent.com/JohnRCatlin/asyncapi-recipes/main/src/fabrics/fabrics.amqp.yml";
+  private static AsyncAPI api;
+  private static String rawSubjectModel;
+  private static final String SUBJECT_FILE_LOCATION = "/src/test/resources/streetlights2.yml";
+  private static final String URL = "https://raw.githubusercontent.com/JohnRCatlin/asyncapi-recipes/main/src/fabrics/fabrics.amqp.yml";
 
-	
-	@Before
-	public void setUp() throws Exception {
-		// given
-		rawSubjectModel = rawModelFromFile(currentWorkingDirectory() + SUBJECT_FILE_LOCATION);
-	}
+  @Before
+  public void setUp() throws Exception {
+    // given
+    rawSubjectModel = rawModelFromFile(currentWorkingDirectory() + SUBJECT_FILE_LOCATION);
+  }
 
-	@After
-	public void tearDown() throws Exception {
-	}
+  @After
+  public void tearDown() throws Exception {
+  }
 
-	@Test
-	public void testFundamentalParseFromFileLocation() {
-		// when
-		AsyncAPIParser parser = new AsyncAPIv20ParserImpl();
-		api = parser.parseFromFile(currentWorkingDirectory() + SUBJECT_FILE_LOCATION);
+  @Test
+  public void testFundamentalParseFromFileLocation() {
+    // when
+    AsyncAPIParser parser = new AsyncAPIv20ParserImpl();
+    api = parser.parseFromFile(currentWorkingDirectory() + SUBJECT_FILE_LOCATION);
 
-		// then
-		assertNotNull(api);
-		assertEquals("2.0.0", api.getAsyncapi());
-	}
+    // then
+    assertNotNull(api);
+    assertEquals("2.0.0", api.getAsyncapi());
+  }
 
-	@Test
-	public void testFundamentalParseFromString() {
-		// when
-		AsyncAPIParser parser = new AsyncAPIv20ParserImpl();
-		api = parser.parseFromString(rawSubjectModel);
+  @Test
+  public void testFundamentalParseFromString() {
+    // when
+    AsyncAPIParser parser = new AsyncAPIv20ParserImpl();
+    api = parser.parseFromString(rawSubjectModel);
 
-		// then
-		assertNotNull(api);
-		assertEquals("2.0.0", api.getAsyncapi());
-	}
+    // then
+    assertNotNull(api);
+    assertEquals("2.0.0", api.getAsyncapi());
+  }
 
-	@Test
-	public void testFundamentalParseFromURL() {
-		// when
-		AsyncAPIParser parser = new AsyncAPIv20ParserImpl();
-		api = parser.parseFromUrl(URL);
+  @Test
+  public void testFundamentalParseFromURL() {
+    // when
+    AsyncAPIParser parser = new AsyncAPIv20ParserImpl();
+    api = parser.parseFromUrl(URL);
 
-		// then
-		assertNotNull(api);
-		assertEquals("2.0.0", api.getAsyncapi());
-	}
+    // then
+    assertNotNull(api);
+    assertEquals("2.0.0", api.getAsyncapi());
+  }
 }

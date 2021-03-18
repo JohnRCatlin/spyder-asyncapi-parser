@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model.bindings;
 
 /**
@@ -23,28 +24,28 @@ package engineer.asyncapi.spyder.model.bindings;
  */
 public interface AMQP091ChannelBinding020 extends AMQP091ChannelBinding {
 
-	String getIs();
+  String getIs();
 
-	String getExchangeName();
+  String getExchangeName();
 
-	String getExchangeType();
+  String getExchangeType();
 
-	String getExchangeVHost();
+  String getExchangeVHost();
 
-	String getQueueName();
+  String getQueueName();
 
-	String getQueueVHost();
+  String getQueueVHost();
 
-	boolean isExchangeAutoDelete();
+  boolean isExchangeAutoDelete();
 
-	boolean isExchangeDurable();
+  boolean isExchangeDurable();
 
-	boolean isQueueAutoDelete();
+  boolean isQueueAutoDelete();
 
-	boolean isQueueDurable();
+  boolean isQueueDurable();
 
-	boolean isQueueExclusive();
+  boolean isQueueExclusive();
 
-	boolean isRoutingKey();
+  boolean isRoutingKey();
 
 }

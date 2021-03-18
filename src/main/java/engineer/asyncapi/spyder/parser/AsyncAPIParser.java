@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import engineer.asyncapi.spyder.model.AsyncAPI;
@@ -24,12 +25,12 @@ import engineer.asyncapi.spyder.model.AsyncAPI;
  */
 public interface AsyncAPIParser {
 
-	AsyncAPI parseFrom(final String urlOrFileOrRawString);
+  AsyncAPI parseFrom(final String urlOrFileOrRawString);
 
-	AsyncAPI parseFromFile(final String fileLocation);
+  AsyncAPI parseFromFile(final String fileLocation);
 
-	AsyncAPI parseFromString(final String documentContents);
+  AsyncAPI parseFromString(final String documentContents);
 
-	AsyncAPI parseFromUrl(final String url);
+  AsyncAPI parseFromUrl(final String url);
 
 }
