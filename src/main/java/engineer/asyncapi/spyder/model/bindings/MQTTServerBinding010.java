@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.model.bindings;
 
 /**
@@ -23,18 +24,18 @@ package engineer.asyncapi.spyder.model.bindings;
  */
 public interface MQTTServerBinding010 extends MQTTServerBinding {
 
-	Boolean getCleanSession();
+  Boolean getCleanSession();
 
-	String getClientId();
+  String getClientId();
 
-	Integer getKeepAlive();
+  Integer getKeepAlive();
 
-	String getLastWillMessage();
+  String getLastWillMessage();
 
-	Integer getLastWillQos();
+  Integer getLastWillQos();
 
-	Boolean getLastWillRetain();
+  Boolean getLastWillRetain();
 
-	String getLastWillTopic();
+  String getLastWillTopic();
 
 }

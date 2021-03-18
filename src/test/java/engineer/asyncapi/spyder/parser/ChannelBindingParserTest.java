@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import static org.junit.Assert.assertNotNull;
@@ -35,248 +36,253 @@ import engineer.asyncapi.spyder.model.bindings.WebSocketsChannelBinding010;
 
 public class ChannelBindingParserTest {
 
-	@Test
-	public void amqpBinding() throws JsonMappingException, JsonProcessingException {
-		// given
-		final StringBuilder sb = new StringBuilder();
-		sb.append("amqp:\n");
-		sb.append("  bindingVersion: '0.2.0'\n");
-		final String rawModel = sb.toString();
+  @Test
+  public void amqpBinding() throws JsonMappingException, JsonProcessingException {
+    // given
+    final StringBuilder sb = new StringBuilder();
+    sb.append("amqp:\n");
+    sb.append("  bindingVersion: '0.2.0'\n");
+    final String rawModel = sb.toString();
 
-		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
-		final JsonNode rootNode = mapper.readTree(rawModel);
+    final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+    final JsonNode rootNode = mapper.readTree(rawModel);
 
-		// when
-		ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
+    // when
+    ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
 
-		// then
-		assertNotNull(parsed);
-		assertTrue(parsed.containsKey("amqp"));
-		assertTrue(parsed.get("amqp") instanceof AMQP091ChannelBinding020);
-	}
+    // then
+    assertNotNull(parsed);
+    assertTrue(parsed.containsKey("amqp"));
+    assertTrue(parsed.get("amqp") instanceof AMQP091ChannelBinding020);
+  }
 
-	@Test
-	public void amqpBindingNoBindingVersion() throws JsonMappingException, JsonProcessingException {
-		// given
-		final StringBuilder sb = new StringBuilder();
-		sb.append("amqp:\n");
-		sb.append("  random: foo\n");
-		final String rawModel = sb.toString();
+  @Test
+  public void amqpBindingNoBindingVersion() throws JsonMappingException, JsonProcessingException {
+    // given
+    final StringBuilder sb = new StringBuilder();
+    sb.append("amqp:\n");
+    sb.append("  random: foo\n");
+    final String rawModel = sb.toString();
 
-		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
-		final JsonNode rootNode = mapper.readTree(rawModel);
+    final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+    final JsonNode rootNode = mapper.readTree(rawModel);
 
-		// when
-		ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
+    // when
+    ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
 
-		// then
-		assertNotNull(parsed);
-		assertTrue(parsed.containsKey("amqp"));
-		assertTrue(parsed.get("amqp") instanceof AMQP091ChannelBinding020);
-	}
+    // then
+    assertNotNull(parsed);
+    assertTrue(parsed.containsKey("amqp"));
+    assertTrue(parsed.get("amqp") instanceof AMQP091ChannelBinding020);
+  }
 
-	@Test
-	public void amqpBindingUnsupportedBindingVersion() throws JsonMappingException, JsonProcessingException {
-		// given
-		final StringBuilder sb = new StringBuilder();
-		sb.append("amqp:\n");
-		sb.append("  bindingVersion: '9.9.9'\n");
-		final String rawModel = sb.toString();
+  @Test
+  public void amqpBindingUnsupportedBindingVersion()
+      throws JsonMappingException, JsonProcessingException {
+    // given
+    final StringBuilder sb = new StringBuilder();
+    sb.append("amqp:\n");
+    sb.append("  bindingVersion: '9.9.9'\n");
+    final String rawModel = sb.toString();
 
-		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
-		final JsonNode rootNode = mapper.readTree(rawModel);
+    final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+    final JsonNode rootNode = mapper.readTree(rawModel);
 
-		// when
-		ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
+    // when
+    ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
 
-		// then
-		assertNotNull(parsed);
-		assertTrue(parsed.containsKey("amqp"));
-		assertTrue(parsed.get("amqp") instanceof AMQP091ChannelBinding020);
-	}
+    // then
+    assertNotNull(parsed);
+    assertTrue(parsed.containsKey("amqp"));
+    assertTrue(parsed.get("amqp") instanceof AMQP091ChannelBinding020);
+  }
 
-	@Test
-	public void IBMMQBinding() throws JsonMappingException, JsonProcessingException {
-		// given
-		final StringBuilder sb = new StringBuilder();
-		sb.append("ibmmq:\n");
-		sb.append("  bindingVersion: '0.1.0'\n");
-		final String rawModel = sb.toString();
+  @Test
+  public void IBMMQBinding() throws JsonMappingException, JsonProcessingException {
+    // given
+    final StringBuilder sb = new StringBuilder();
+    sb.append("ibmmq:\n");
+    sb.append("  bindingVersion: '0.1.0'\n");
+    final String rawModel = sb.toString();
 
-		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
-		final JsonNode rootNode = mapper.readTree(rawModel);
+    final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+    final JsonNode rootNode = mapper.readTree(rawModel);
 
-		// when
-		ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
+    // when
+    ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
 
-		// then
-		assertNotNull(parsed);
-		assertTrue(parsed.containsKey("ibmmq"));
-		assertTrue(parsed.get("ibmmq") instanceof IBMMQChannelBinding010);
-	}
+    // then
+    assertNotNull(parsed);
+    assertTrue(parsed.containsKey("ibmmq"));
+    assertTrue(parsed.get("ibmmq") instanceof IBMMQChannelBinding010);
+  }
 
-	@Test
-	public void IBMMQBindingNoVersion() throws JsonMappingException, JsonProcessingException {
-		// given
-		final StringBuilder sb = new StringBuilder();
-		sb.append("ibmmq:\n");
-		sb.append("  random: foo\n");
-		final String rawModel = sb.toString();
+  @Test
+  public void IBMMQBindingNoVersion() throws JsonMappingException, JsonProcessingException {
+    // given
+    final StringBuilder sb = new StringBuilder();
+    sb.append("ibmmq:\n");
+    sb.append("  random: foo\n");
+    final String rawModel = sb.toString();
 
-		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
-		final JsonNode rootNode = mapper.readTree(rawModel);
+    final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+    final JsonNode rootNode = mapper.readTree(rawModel);
 
-		// when
-		ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
+    // when
+    ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
 
-		// then
-		assertNotNull(parsed);
-		assertTrue(parsed.containsKey("ibmmq"));
-		assertTrue(parsed.get("ibmmq") instanceof IBMMQChannelBinding010);
-	}
+    // then
+    assertNotNull(parsed);
+    assertTrue(parsed.containsKey("ibmmq"));
+    assertTrue(parsed.get("ibmmq") instanceof IBMMQChannelBinding010);
+  }
 
-	@Test
-	public void IBMMQBindingUnsupportedVersion() throws JsonMappingException, JsonProcessingException {
-		// given
-		final StringBuilder sb = new StringBuilder();
-		sb.append("ibmmq:\n");
-		sb.append("  bindingVersion: '9.9.9'\n");
-		final String rawModel = sb.toString();
+  @Test
+  public void IBMMQBindingUnsupportedVersion()
+      throws JsonMappingException, JsonProcessingException {
+    // given
+    final StringBuilder sb = new StringBuilder();
+    sb.append("ibmmq:\n");
+    sb.append("  bindingVersion: '9.9.9'\n");
+    final String rawModel = sb.toString();
 
-		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
-		final JsonNode rootNode = mapper.readTree(rawModel);
+    final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+    final JsonNode rootNode = mapper.readTree(rawModel);
 
-		// when
-		ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
+    // when
+    ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
 
-		// then
-		assertNotNull(parsed);
-		assertTrue(parsed.containsKey("ibmmq"));
-		assertTrue(parsed.get("ibmmq") instanceof IBMMQChannelBinding010);
-	}
+    // then
+    assertNotNull(parsed);
+    assertTrue(parsed.containsKey("ibmmq"));
+    assertTrue(parsed.get("ibmmq") instanceof IBMMQChannelBinding010);
+  }
 
-	@Test
-	public void kafakBinding() throws JsonMappingException, JsonProcessingException {
-		// given
-		final StringBuilder sb = new StringBuilder();
-		sb.append("kafka:\n");
-		sb.append("  bindingVersion: '0.1.0'\n");
-		final String rawModel = sb.toString();
+  @Test
+  public void kafakBinding() throws JsonMappingException, JsonProcessingException {
+    // given
+    final StringBuilder sb = new StringBuilder();
+    sb.append("kafka:\n");
+    sb.append("  bindingVersion: '0.1.0'\n");
+    final String rawModel = sb.toString();
 
-		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
-		final JsonNode rootNode = mapper.readTree(rawModel);
+    final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+    final JsonNode rootNode = mapper.readTree(rawModel);
 
-		// when
-		ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
+    // when
+    ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
 
-		// then
-		assertNotNull(parsed);
-		assertTrue(parsed.containsKey("kafka"));
-		assertTrue(parsed.get("kafka") instanceof KafkaChannelBinding010);
-	}
+    // then
+    assertNotNull(parsed);
+    assertTrue(parsed.containsKey("kafka"));
+    assertTrue(parsed.get("kafka") instanceof KafkaChannelBinding010);
+  }
 
-	@Test
-	public void kafakBindingNoBindingVersion() throws JsonMappingException, JsonProcessingException {
-		// given
-		final StringBuilder sb = new StringBuilder();
-		sb.append("kafka:\n");
-		sb.append("  random: foo\n");
-		final String rawModel = sb.toString();
+  @Test
+  public void kafakBindingNoBindingVersion() throws JsonMappingException, JsonProcessingException {
+    // given
+    final StringBuilder sb = new StringBuilder();
+    sb.append("kafka:\n");
+    sb.append("  random: foo\n");
+    final String rawModel = sb.toString();
 
-		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
-		final JsonNode rootNode = mapper.readTree(rawModel);
+    final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+    final JsonNode rootNode = mapper.readTree(rawModel);
 
-		// when
-		ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
+    // when
+    ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
 
-		// then
-		assertNotNull(parsed);
-		assertTrue(parsed.containsKey("kafka"));
-		assertTrue(parsed.get("kafka") instanceof KafkaChannelBinding010);
-	}
+    // then
+    assertNotNull(parsed);
+    assertTrue(parsed.containsKey("kafka"));
+    assertTrue(parsed.get("kafka") instanceof KafkaChannelBinding010);
+  }
 
-	@Test
-	public void kafakBindingUnsupportedBindingVersion() throws JsonMappingException, JsonProcessingException {
-		// given
-		final StringBuilder sb = new StringBuilder();
-		sb.append("kafka:\n");
-		sb.append("  bindingVersion: '9.9.9'\n");
-		final String rawModel = sb.toString();
+  @Test
+  public void kafakBindingUnsupportedBindingVersion()
+      throws JsonMappingException, JsonProcessingException {
+    // given
+    final StringBuilder sb = new StringBuilder();
+    sb.append("kafka:\n");
+    sb.append("  bindingVersion: '9.9.9'\n");
+    final String rawModel = sb.toString();
 
-		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
-		final JsonNode rootNode = mapper.readTree(rawModel);
+    final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+    final JsonNode rootNode = mapper.readTree(rawModel);
 
-		// when
-		ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
+    // when
+    ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
 
-		// then
-		assertNotNull(parsed);
-		assertTrue(parsed.containsKey("kafka"));
-		assertTrue(parsed.get("kafka") instanceof KafkaChannelBinding010);
-	}
+    // then
+    assertNotNull(parsed);
+    assertTrue(parsed.containsKey("kafka"));
+    assertTrue(parsed.get("kafka") instanceof KafkaChannelBinding010);
+  }
 
-	@After
-	public void tearDown() throws Exception {
-	}
-	
-	@Test
-	public void webSocketsBinding() throws JsonMappingException, JsonProcessingException {
-		// given
-		final StringBuilder sb = new StringBuilder();
-		sb.append("websockets:\n");
-		sb.append("  bindingVersion: '0.1.0'\n");
-		final String rawModel = sb.toString();
+  @After
+  public void tearDown() throws Exception {
+  }
 
-		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
-		final JsonNode rootNode = mapper.readTree(rawModel);
+  @Test
+  public void webSocketsBinding() throws JsonMappingException, JsonProcessingException {
+    // given
+    final StringBuilder sb = new StringBuilder();
+    sb.append("websockets:\n");
+    sb.append("  bindingVersion: '0.1.0'\n");
+    final String rawModel = sb.toString();
 
-		// when
-		ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
+    final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+    final JsonNode rootNode = mapper.readTree(rawModel);
 
-		// then
-		assertNotNull(parsed);
-		assertTrue(parsed.containsKey("websockets"));
-		assertTrue(parsed.get("websockets") instanceof WebSocketsChannelBinding010);
-	}
+    // when
+    ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
 
-	@Test
-	public void webSocketsBindingNoBindingVersion() throws JsonMappingException, JsonProcessingException {
-		// given
-		final StringBuilder sb = new StringBuilder();
-		sb.append("websockets:\n");
-		sb.append("  random: foo\n");
-		final String rawModel = sb.toString();
+    // then
+    assertNotNull(parsed);
+    assertTrue(parsed.containsKey("websockets"));
+    assertTrue(parsed.get("websockets") instanceof WebSocketsChannelBinding010);
+  }
 
-		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
-		final JsonNode rootNode = mapper.readTree(rawModel);
+  @Test
+  public void webSocketsBindingNoBindingVersion()
+      throws JsonMappingException, JsonProcessingException {
+    // given
+    final StringBuilder sb = new StringBuilder();
+    sb.append("websockets:\n");
+    sb.append("  random: foo\n");
+    final String rawModel = sb.toString();
 
-		// when
-		ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
+    final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+    final JsonNode rootNode = mapper.readTree(rawModel);
 
-		// then
-		assertNotNull(parsed);
-		assertTrue(parsed.containsKey("websockets"));
-		assertTrue(parsed.get("websockets") instanceof WebSocketsChannelBinding010);
-	}
+    // when
+    ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
 
-	@Test
-	public void webSocketsBindingUnsupportedBindingVersion() throws JsonMappingException, JsonProcessingException {
-		// given
-		final StringBuilder sb = new StringBuilder();
-		sb.append("websockets:\n");
-		sb.append("  bindingVersion: '9.9.9'\n");
-		final String rawModel = sb.toString();
+    // then
+    assertNotNull(parsed);
+    assertTrue(parsed.containsKey("websockets"));
+    assertTrue(parsed.get("websockets") instanceof WebSocketsChannelBinding010);
+  }
 
-		final ObjectMapper mapper = ObjectMapperFactory.forYaml();
-		final JsonNode rootNode = mapper.readTree(rawModel);
+  @Test
+  public void webSocketsBindingUnsupportedBindingVersion()
+      throws JsonMappingException, JsonProcessingException {
+    // given
+    final StringBuilder sb = new StringBuilder();
+    sb.append("websockets:\n");
+    sb.append("  bindingVersion: '9.9.9'\n");
+    final String rawModel = sb.toString();
 
-		// when
-		ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
+    final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+    final JsonNode rootNode = mapper.readTree(rawModel);
 
-		// then
-		assertNotNull(parsed);
-		assertTrue(parsed.containsKey("websockets"));
-		assertTrue(parsed.get("websockets") instanceof WebSocketsChannelBinding010);
-	}
+    // when
+    ChannelBindings parsed = ChannelBindingsParser.parse((ObjectNode) rootNode);
+
+    // then
+    assertNotNull(parsed);
+    assertTrue(parsed.containsKey("websockets"));
+    assertTrue(parsed.get("websockets") instanceof WebSocketsChannelBinding010);
+  }
 
 }

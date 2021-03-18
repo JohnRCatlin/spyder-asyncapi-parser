@@ -25,104 +25,104 @@ import engineer.asyncapi.spyder.model.Extensions;
  */
 final class ExampleImpl implements Example {
 
-	/**
-	 * 
-	 * @author johncatlin
-	 *
-	 */
-	static final class Builder {
+  /**
+   * 
+   * @author johncatlin
+   *
+   */
+  static final class Builder {
 
-		private static final String REF_BASE = "#/components/examples/";
-		private ExampleImpl example = new ExampleImpl();
+    private static final String REF_BASE = "#/components/examples/";
+    private ExampleImpl example = new ExampleImpl();
 
-		public final Example build() {
-			return this.example;
-		}
+    public final Example build() {
+      return this.example;
+    }
 
-		public final Builder description(final String description) {
-			example.description = description;
-			return this;
-		}
+    public final Builder description(final String description) {
+      example.description = description;
+      return this;
+    }
 
-		public final Builder extension(final String name, final String value) {
-			if (ExtensionsParser.notValidExtension(name)) {
-				return this;
-			}
-			example.extensions.put(name, value);
-			return this;
-		}
+    public final Builder extension(final String name, final String value) {
+      if (ExtensionsParser.notValidExtension(name)) {
+        return this;
+      }
+      example.extensions.put(name, value);
+      return this;
+    }
 
-		public final Builder extensions(final Extensions extensions) {
-			example.extensions = extensions;
-			return this;
-		}
+    public final Builder extensions(final Extensions extensions) {
+      example.extensions = extensions;
+      return this;
+    }
 
-		public final Builder externalValue(final String externalValue) {
-			example.externalValue = externalValue;
-			return this;
-		}
+    public final Builder externalValue(final String externalValue) {
+      example.externalValue = externalValue;
+      return this;
+    }
 
-		public final Builder ref(final String ref) {
-			example.ref = (ref != null && RefUtility.isRelative(ref)) ? REF_BASE + ref : ref;
-			return this;
-		}
+    public final Builder ref(final String ref) {
+      example.ref = (ref != null && RefUtility.isRelative(ref)) ? REF_BASE + ref : ref;
+      return this;
+    }
 
-		public final Builder summary(final String summary) {
-			example.summary = summary;
-			return this;
-		}
+    public final Builder summary(final String summary) {
+      example.summary = summary;
+      return this;
+    }
 
-		//object type smell
-		public final Builder value(final Object value) {
-			example.value = value;
-			return this;
-		}
-	}
+    // object type smell
+    public final Builder value(final Object value) {
+      example.value = value;
+      return this;
+    }
+  }
 
-	private String description = null;
-	private Extensions extensions = null;
-	private String externalValue = null;
-	private String ref = null;
-	private String summary = null;
-	//object type smell
-	private Object value = null;
+  private String description = null;
+  private Extensions extensions = null;
+  private String externalValue = null;
+  private String ref = null;
+  private String summary = null;
+  // object type smell
+  private Object value = null;
 
-	private ExampleImpl() {
-		/* Use the builder for construction. */
-	}
+  private ExampleImpl() {
+    /* Use the builder for construction. */
+  }
 
-	@Override
-	public final String getDescription() {
-		return this.description;
-	}
+  @Override
+  public final String getDescription() {
+    return this.description;
+  }
 
-	@Override
-	public final Extensions getExtensions() {
-		return this.extensions;
-	}
+  @Override
+  public final Extensions getExtensions() {
+    return this.extensions;
+  }
 
-	@Override
-	public final String getExternalValue() {
-		return this.externalValue;
-	}
+  @Override
+  public final String getExternalValue() {
+    return this.externalValue;
+  }
 
-	@Override
-	public final String getRef() {
-		return this.ref;
-	}
+  @Override
+  public final String getRef() {
+    return this.ref;
+  }
 
-	@Override
-	public final String getSummary() {
-		return this.summary;
-	}
+  @Override
+  public final String getSummary() {
+    return this.summary;
+  }
 
-	@Override
-	public final Object getValue() {
-		return this.value;
-	}
+  @Override
+  public final Object getValue() {
+    return this.value;
+  }
 
-	@Override
-	public final String toString() {
-		return ToStringFormatter.toString(this);
-	}
+  @Override
+  public final String toString() {
+    return ToStringFormatter.toString(this);
+  }
 }

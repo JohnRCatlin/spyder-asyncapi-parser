@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import engineer.asyncapi.spyder.model.Extensions;
@@ -69,7 +70,7 @@ final class MQTTMessageBinding010Impl implements MQTTMessageBinding010 {
 		return this.extensions;
 	}
 
-	@Override
+  @Override
 	public final String toString() {
 		return ToStringFormatter.toString(this);
 	}

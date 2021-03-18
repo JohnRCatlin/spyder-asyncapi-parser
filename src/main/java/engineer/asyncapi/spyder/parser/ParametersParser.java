@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import java.util.Set;
@@ -30,25 +31,25 @@ import engineer.asyncapi.spyder.model.Parameters;
  */
 final class ParametersParser extends AsyncAPICommonObjectParser {
 
-	static final Parameters parse(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		final Parameters parameters = new ParametersImpl();
-		final Set<String> keys = keySetFrom(node);
-		for (final String key : keys) {
-			final JsonNode parameterNode = node.get(key);
-			if (isObjectNode(parameterNode)) {
-				Parameter parameter = ParameterParser.parse((ObjectNode) parameterNode);
-				if (parameter != null) {
-					parameters.put(key, parameter);
-				}
-			}
-		}
-		return parameters;
-	}
+  static final Parameters parse(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    final Parameters parameters = new ParametersImpl();
+    final Set<String> keys = keySetFrom(node);
+    for (final String key : keys) {
+      final JsonNode parameterNode = node.get(key);
+      if (isObjectNode(parameterNode)) {
+        Parameter parameter = ParameterParser.parse((ObjectNode) parameterNode);
+        if (parameter != null) {
+          parameters.put(key, parameter);
+        }
+      }
+    }
+    return parameters;
+  }
 
-	private ParametersParser() {
-		/* this static utility should not be instantiated */
-	}
+  private ParametersParser() {
+    /* this static utility should not be instantiated */
+  }
 }

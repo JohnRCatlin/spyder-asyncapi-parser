@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import java.util.Collection;
@@ -29,94 +30,94 @@ import engineer.asyncapi.spyder.model.OAuthScopes;
  */
 final class OAuthScopesImpl implements OAuthScopes {
 
-	/**
-	 * 
-	 * @author johncatlin
-	 *
-	 */
-	static final class Builder {
+  /**
+   * 
+   * @author johncatlin
+   *
+   */
+  static final class Builder {
 
-		private OAuthScopesImpl scopes = new OAuthScopesImpl();
+    private OAuthScopesImpl scopes = new OAuthScopesImpl();
 
-		final Builder addString(final String name, final String item) {
-			scopes.put(name, item);
-			return this;
-		}
+    final Builder addString(final String name, final String item) {
+      scopes.put(name, item);
+      return this;
+    }
 
-		final OAuthScopes build() {
-			return scopes;
-		}
+    final OAuthScopes build() {
+      return scopes;
+    }
 
-	}
+  }
 
-	private final Map<String, String> delegate = new LinkedHashMap<>();
+  private final Map<String, String> delegate = new LinkedHashMap<>();
 
-	private OAuthScopesImpl() {
-		/* Use the builder for construction. */
-	}
+  private OAuthScopesImpl() {
+    /* Use the builder for construction. */
+  }
 
-	@Override
-	public final void clear() {
-		delegate.clear();
-	}
+  @Override
+  public final void clear() {
+    delegate.clear();
+  }
 
-	@Override
-	public final boolean containsKey(final Object key) {
-		return delegate.containsKey(key);
-	}
+  @Override
+  public final boolean containsKey(final Object key) {
+    return delegate.containsKey(key);
+  }
 
-	@Override
-	public final boolean containsValue(final Object value) {
-		return delegate.containsValue(value);
-	}
+  @Override
+  public final boolean containsValue(final Object value) {
+    return delegate.containsValue(value);
+  }
 
-	@Override
-	public final Set<Entry<String, String>> entrySet() {
-		return delegate.entrySet();
-	}
+  @Override
+  public final Set<Entry<String, String>> entrySet() {
+    return delegate.entrySet();
+  }
 
-	@Override
-	public final String get(final Object key) {
-		return delegate.get(key);
-	}
+  @Override
+  public final String get(final Object key) {
+    return delegate.get(key);
+  }
 
-	@Override
-	public final boolean isEmpty() {
-		return delegate.isEmpty();
-	}
+  @Override
+  public final boolean isEmpty() {
+    return delegate.isEmpty();
+  }
 
-	@Override
-	public final Set<String> keySet() {
-		return delegate.keySet();
-	}
+  @Override
+  public final Set<String> keySet() {
+    return delegate.keySet();
+  }
 
-	@Override
-	public final String put(final String key, final String value) {
-		return delegate.put(key, value);
-	}
+  @Override
+  public final String put(final String key, final String value) {
+    return delegate.put(key, value);
+  }
 
-	@Override
-	public final void putAll(final Map<? extends String, ? extends String> m) {
-		delegate.putAll(m);
-	}
+  @Override
+  public final void putAll(final Map<? extends String, ? extends String> m) {
+    delegate.putAll(m);
+  }
 
-	@Override
-	public final String remove(final Object key) {
-		return delegate.remove(key);
-	}
+  @Override
+  public final String remove(final Object key) {
+    return delegate.remove(key);
+  }
 
-	@Override
-	public final int size() {
-		return delegate.size();
-	}
+  @Override
+  public final int size() {
+    return delegate.size();
+  }
 
-	@Override
-	public final String toString() {
-		return ToStringFormatter.toString(this);
-	}
+  @Override
+  public final String toString() {
+    return ToStringFormatter.toString(this);
+  }
 
-	@Override
-	public final Collection<String> values() {
-		return delegate.values();
-	}
+  @Override
+  public final Collection<String> values() {
+    return delegate.values();
+  }
 }

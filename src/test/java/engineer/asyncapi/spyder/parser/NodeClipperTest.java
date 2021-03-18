@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import static org.junit.Assert.assertEquals;
@@ -29,64 +30,64 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 
 public class NodeClipperTest extends AsyncApiV2ParserTestBase {
 
-	private static final String MODEL_SOURCE = "/src/test/resources/fragments/info.full.yml";
-	private static String rawSubjectModel;
-	private final ObjectMapper mapper = ObjectMapperFactory.forYaml();
-	private JsonNode rootNode = null;
+  private static final String MODEL_SOURCE = "/src/test/resources/fragments/info.full.yml";
+  private static String rawSubjectModel;
+  private final ObjectMapper mapper = ObjectMapperFactory.forYaml();
+  private JsonNode rootNode = null;
 
-	/**
-	 * @throws Exception
-	 */
-	@Test
-	public void objectValueClip() throws Exception {
+  /**
+   * @throws Exception
+   */
+  @Test
+  public void objectValueClip() throws Exception {
 
-		// when
-		ObjectNode clippedValue = NodeClipper.objectNodeFrom("info", (ObjectNode) rootNode);
+    // when
+    ObjectNode clippedValue = NodeClipper.objectNodeFrom("info", (ObjectNode) rootNode);
 
-		// then
-		assertNotNull(clippedValue);
-		assertTrue(clippedValue.isContainerNode());
-		assertTrue(clippedValue.isObject());
-	}
+    // then
+    assertNotNull(clippedValue);
+    assertTrue(clippedValue.isContainerNode());
+    assertTrue(clippedValue.isObject());
+  }
 
-	@Before
-	public void setUp() throws Exception {
-		// given
-		rawSubjectModel = rawModelFromFile(currentWorkingDirectory() + MODEL_SOURCE);
-		rootNode = mapper.readTree(rawSubjectModel);
-	}
+  @Before
+  public void setUp() throws Exception {
+    // given
+    rawSubjectModel = rawModelFromFile(currentWorkingDirectory() + MODEL_SOURCE);
+    rootNode = mapper.readTree(rawSubjectModel);
+  }
 
-	/**
-	 * @throws Exception
-	 */
-	@Test
-	public void stringValueClip() throws Exception {
+  /**
+   * @throws Exception
+   */
+  @Test
+  public void stringValueClip() throws Exception {
 
-		// when
-		String clippedValue = NodeClipper.stringFrom("asyncapi", (ObjectNode) rootNode);
+    // when
+    String clippedValue = NodeClipper.stringFrom("asyncapi", (ObjectNode) rootNode);
 
-		// then
-		assertNotNull(clippedValue);
-		assertEquals("2.0.0", clippedValue);
-	}
+    // then
+    assertNotNull(clippedValue);
+    assertEquals("2.0.0", clippedValue);
+  }
 
-	/**
-	 * @throws Exception
-	 */
-	@Test
-	public void stringValueFromObject() throws Exception {
+  /**
+   * @throws Exception
+   */
+  @Test
+  public void stringValueFromObject() throws Exception {
 
-		// when
-		ObjectNode clippedObject = NodeClipper.objectNodeFrom("info", (ObjectNode) rootNode);
-		String clippedValue = NodeClipper.stringFrom("title", clippedObject);
+    // when
+    ObjectNode clippedObject = NodeClipper.objectNodeFrom("info", (ObjectNode) rootNode);
+    String clippedValue = NodeClipper.stringFrom("title", clippedObject);
 
-		// then
-		assertNotNull(clippedValue);
-		assertEquals("example api", clippedValue);
-	}
+    // then
+    assertNotNull(clippedValue);
+    assertEquals("example api", clippedValue);
+  }
 
-	@After
-	public void tearDown() throws Exception {
-	}
+  @After
+  public void tearDown() throws Exception {
+  }
 
 }

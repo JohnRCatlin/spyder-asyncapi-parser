@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ------------------------------------------------------------------ */
+
 package engineer.asyncapi.spyder.parser;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -26,18 +27,18 @@ import engineer.asyncapi.spyder.model.License;
  */
 final class LicenseParser extends AsyncAPICommonObjectParser {
 
-	static final License parse(final ObjectNode node) {
-		if (null == node) {
-			return null;
-		}
-		final LicenseImpl.Builder builder = new LicenseImpl.Builder();
-		builder.name(parseName(node));
-		builder.url(parseUrl(node));
-		builder.extensions(parseExtensions(node));
-		return builder.build();
-	}
+  static final License parse(final ObjectNode node) {
+    if (null == node) {
+      return null;
+    }
+    final LicenseImpl.Builder builder = new LicenseImpl.Builder();
+    builder.name(parseName(node));
+    builder.url(parseUrl(node));
+    builder.extensions(parseExtensions(node));
+    return builder.build();
+  }
 
-	private LicenseParser() {
-		/* this static utility should not be instantiated */
-	}
+  private LicenseParser() {
+    /* this static utility should not be instantiated */
+  }
 }
